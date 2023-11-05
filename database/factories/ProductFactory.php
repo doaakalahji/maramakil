@@ -20,8 +20,10 @@ class ProductFactory extends Factory
             'name' => fake()->name(),
             'price' => fake()->randomNumber(2),
             'description' => fake()->sentence(200),
-            // 'image' => public_path("images/product_default.jpg"),
-            'image' => fake()->image(storage_path('app/public/images'),361,230, null, false),
+            // 'image' => public_path("img/product_default.jpg"),
+            // 'image' => fake()->image(storage_path('app/public/images'),361,230, null, false),
+            // 'image' => asset("img/product_default.jpg")
+            'image' => "product_default.jpg"
         ];
     }
 }
