@@ -5,18 +5,18 @@
             <!-- start .container -->
             <div class="container">
                 <!-- start .row -->
-                <div class="row">
+                <div class="row header">
                     <!-- start .col-md-3 -->
                     <div class="col-lg-3 col-md-3 col-6 v_middle">
                         <div class="author__notification_area">
                             <ul>
-                                <li class="has_dropdown">
+                                <li>
                                     <div class="icon_wrap">
                                         <span class="fa fa-facebook"></span>
                                     </div>
                                 </li>
 
-                                <li class="has_dropdown">
+                                <li>
                                     <div class="icon_wrap">
                                         <span class="fa fa-instagram"></span>
                                     </div>
@@ -34,22 +34,22 @@
 
                             <div class="author__notification_area">
                                 <ul>
-                                    <li class="has_dropdown">
-                                        <div class="icon_wrap">
-                                            <span class="lnr lnr-phone"> +90 536 954 06 16</span>
-                                        </div>
+                                    <li>
+                                            <a href="https://wa.me/905369540616" class="contact_information">
+                                              <span class="lnr lnr-phone"></span> +90 536 954 06 16
+                                            </a>
                                     </li>
 
-                                    <li class="has_dropdown">
-                                        <div class="icon_wrap">
-                                            <span class="lnr lnr-map-marker"> Istanbul</span>
-                                        </div>
+                                    <li>
+                                        <a href="#" class="contact_information">
+                                            <span class="lnr lnr-map-marker"></span> Emirbeyazıt Mah
+                                        </a>
                                     </li>
 
-                                    <li class="has_dropdown">
-                                        <div class="icon_wrap">
-                                            <span class="lnr lnr-envelope"> mervealmashhud@gmail.com</span>
-                                        </div>
+                                    <li>
+                                        <a href="mailto:mervealmashhud@gmail.com" class="contact_information">
+                                           <span class="lnr lnr-envelope"></span> mervealmashhud@gmail.com
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -177,7 +177,7 @@
                                     <ul>
                                         <li>
                                             <a href="author.html">
-                                                <span class="lnr lnr-user"></span>Profile</a>
+                                            <span class="lnr lnr-user"></span>Profile</a>
                                         </li>
                                         <li>
                                             <a href="dashboard.html">
@@ -247,6 +247,61 @@
                     <div class="col-md-12">
                         <div class="navbar-header">
                             <!-- start mainmenu__search -->
+                            {{-- <div class="author-author__info inline has_dropdown">
+                                <div class="autor__info">
+                                    <a href="signup.html" class="author-area__seller-btn inline">Login</a>
+                                </div>
+
+                                <div class="dropdowns dropdown--author">
+                                    <ul>
+                                        <li>
+                                            <a href="author.html">
+                                                <span class="lnr lnr-user"></span>Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="dashboard.html">
+                                                <span class="lnr lnr-home"></span> Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="dashboard-setting.html">
+                                                <span class="lnr lnr-cog"></span> Setting</a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html">
+                                                <span class="lnr lnr-cart"></span>Purchases</a>
+                                        </li>
+                                        <li>
+                                            <a href="favourites.html">
+                                                <span class="lnr lnr-heart"></span> Favourite</a>
+                                        </li>
+                                        <li>
+                                            <a href="dashboard-add-credit.html">
+                                                <span class="lnr lnr-dice"></span>Add Credits</a>
+                                        </li>
+                                        <li>
+                                            <a href="dashboard-statement.html">
+                                                <span class="lnr lnr-chart-bars"></span>Sale Statement</a>
+                                        </li>
+                                        <li>
+                                            <a href="dashboard-upload.html">
+                                                <span class="lnr lnr-upload"></span>Upload Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="dashboard-manage-item.html">
+                                                <span class="lnr lnr-book"></span>Manage Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="dashboard-withdrawal.html">
+                                                <span class="lnr lnr-briefcase"></span>Withdrawals</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="lnr lnr-exit"></span>Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> --}}
+
                             <div class="mainmenu__search">
                                 <form action="#">
                                     <div class="searc-wrap">
@@ -257,6 +312,7 @@
                                     </div>
                                 </form>
                             </div>
+
                             <!-- start mainmenu__search -->
                         </div>
 
