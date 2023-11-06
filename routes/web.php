@@ -53,13 +53,13 @@ Route::middleware(['auth' , 'admin'])->group(function () {
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [ProductController::class , "index"])->name('dashboard');
 
-    Route::get('/store_product', function () {
-        return view('dashboard.add_product');
-    })->name("add_product");
+    // Route::get('/store_product', function () {
+    //     return view('dashboard.add_product');
+    // })->name("add_product");
+
+    Route::resource("/product" , ProductController::class);
 });
 
 

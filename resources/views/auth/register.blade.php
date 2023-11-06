@@ -140,7 +140,7 @@
 
                                 <div class="login_assist">
                                     <p>Already have an account?
-                                        <a href="signup.html">Login</a>
+                                        <a href="{{route("login")}}">Login</a>
                                     </p>
                                 </div>
                             </div>
