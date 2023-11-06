@@ -11,11 +11,12 @@
     <meta name="keywords" content="marketplace, easy digital download, digital product, digital, html5">
 
 
-    <title>Marble Website</title>
+    <title>El Mass Marmar</title>
 
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}">
     <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('css/lnr-icon.css')}}">
@@ -24,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('css/trumbowyg.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('style.css')}}">
-    <link rel="stylesheet" href="{{asset('custom.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
         <!-- endinject -->
 
     <!-- Favicon -->

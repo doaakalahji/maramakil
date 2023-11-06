@@ -1,5 +1,5 @@
 <footer class="footer-area">
-    <div class="footer-big section--padding">
+    <div class="footer-big section--padding" style="background-image: url({{ asset('images/marble.png') }}); background-size: cover;">
         <!-- start .container -->
         <div class="container">
             <div class="row">
@@ -111,29 +111,22 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span class="fa fa-twitter"></span>
+                                        <span class="fa fa-whatsapp"></span>
                                     </a>
                                 </li>
+
                                 <li>
                                     <a href="#">
-                                        <span class="fa fa-google-plus"></span>
+                                        <span class="fa fa-instagram"></span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-pinterest"></span>
-                                    </a>
-                                </li>
+
                                 <li>
                                     <a href="#">
                                         <span class="fa fa-linkedin"></span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-dribbble"></span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </div>
                         <!-- end /.social -->
