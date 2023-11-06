@@ -1,40 +1,34 @@
 @extends('master.app')
 
 @section('content')
-<!--================================
-    START ABOUT HERO AREA
-=================================-->
-<section class="about_hero bgimage">
-    <div class="bg_image_holder">
-        <img src="images/about_hero.jpg" alt="">
-    </div>
-
-    <div class="container content_above">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="about_hero_contents">
-                    <h1>Welcome to MartPlace!</h1>
-                    <p>We Help Marketers
-                        <span>Build Products</span>
-                    </p>
-
-                    <div class="about_hero_btns">
-                        <a href="#" class="play_btn" data-toggle="modal" data-target="#myModal">
-                            <img src="images/play_btn.png" alt="PLay">Play Quick Video</a>
-                        <a href="#" class="btn btn--white btn--lg btn--round">Join Us Today</a>
+    <!--================================
+        START BREADCRUMB AREA
+    =================================-->
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb">
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">About Us</a>
+                            </li>
+                        </ul>
                     </div>
+                    <h1 class="page-title">About Us</h1>
                 </div>
-                <!-- end /.about_hero_contents -->
+                <!-- end /.col-md-12 -->
             </div>
-            <!-- end /.col-md-12 -->
+            <!-- end /.row -->
         </div>
-        <!-- end /.row-->
-    </div>
-    <!-- end /.container -->
-</section>
-<!--================================
-END ABOUT HERO AREA
-=================================-->
+        <!-- end /.container -->
+    </section>
+    <!--================================
+        END BREADCRUMB AREA
+    =================================-->
 
 <!--================================
 END ABOUT HERO AREA
@@ -46,13 +40,9 @@ END ABOUT HERO AREA
                 <div class="col-md-5 col-sm-12">
                     <div class="content_area">
                         <h1 class="content_area--title">About
-                            <span class="highlight">MartPlace</span>
+                            <span class="highlight">El Mass Marmar</span>
                         </h1>
-                        <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra justo ut sceler isque the mattis,
-                            leo quam aliquet congue this there placerat mi id nisi they interdum mollis. Praesent pharetra
-                            justo ut sceleris que the mattis, leo quam aliquet. Nunc placer atmi id nisi interdum mollis
-                            quam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt sanctus est Lorem ipsum dolor sit amet consetetur sadipscing.</p>
+                        <p style="font-size: 20px">At El Mass Marmar, we are passionate about the intricate beauty and timeless elegance of marble. Our journey in the marble industry spans years, driven by a commitment to excellence, innovation, and quality craftsmanship.</p>
                     </div>
                 </div>
                 <!-- end /.col-md-5 -->
@@ -63,7 +53,7 @@ END ABOUT HERO AREA
 
         <div class="content_image bgimage">
             <div class="bg_image_holder">
-                <img src="images/ab1.jpg" alt="">
+                <img src="{{ asset('images/about_us1.jpg') }}" alt="">
             </div>
         </div>
     </div>
@@ -74,14 +64,10 @@ END ABOUT HERO AREA
             <div class="row">
                 <div class="col-lg-5 col-md-6  offset-md-6 offset-lg-7">
                     <div class="content_area2">
-                        <h1 class="content_area2--title">MartPlace
+                        <h1 class="content_area2--title">El Mass Marmar
                             <span class="highlight">Mission</span>
                         </h1>
-                        <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra justo ut sceler isque the mattis,
-                            leo quam aliquet congue this there placerat mi id nisi they interdum mollis. Praesent pharetra
-                            justo ut sceleris que the mattis, leo quam aliquet. Nunc placer atmi id nisi interdum mollis
-                            quam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt sanctus est Lorem ipsum dolor sit amet consetetur sadipscing.</p>
+                        <p style="font-size: 20px">Established with a vision to redefine the marble industry, El Mass Marmar has been a cornerstone in providing premium quality marble solutions. We combine traditional expertise with modern technology to deliver superior products and services.</p>
                     </div>
                 </div>
                 <!-- end /.col-md-5 -->
@@ -92,7 +78,7 @@ END ABOUT HERO AREA
 
         <div class="content_image2 bgimage">
             <div class="bg_image_holder">
-                <img src="images/ab2.jpg" alt="">
+                <img src="{{ asset('images/about_us2.jpg') }}" alt="">
             </div>
         </div>
     </div>
@@ -102,6 +88,86 @@ END ABOUT HERO AREA
 END ABOUT HERO AREA
 =================================-->
 
+    <!--================================
+    START FEATURE AREA
+=================================-->
+<section class="features section--padding">
+    <!-- start container -->
+    <div class="container">
+        <!-- start row -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h1>Why
+                        <span class="highlighted"> Choose Us</span>
+                    </h1>
+                    <p></p>
+                </div>
+            </div>
+            <!-- end /.col-md-12 -->
+        </div>
+        <div class="row">
+            <!-- start search-area -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature">
+                    <div class="">
+                        <i aria-hidden="true" class="flaticon  flaticon-floor"></i>
+                    </div>
+                    <div class="feature__title">
+                        <h3>Quality Assurance</h3>
+                    </div>
+                    <div class="feature__desc">
+                        <p>We meticulously select and process our marble to guarantee top-notch quality</p>
+                    </div>
+                </div>
+                <!-- end /.feature -->
+            </div>
+            <!-- end /.col-lg-4 col-md-6 -->
+
+            <!-- start search-area -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature">
+                    <div class="">
+                        <i aria-hidden="true" class="flaticon   flaticon-tiles-2"></i>
+                    </div>
+                    <div class="feature__title">
+                        <h3>Craftsmanship</h3>
+                    </div>
+                    <div class="feature__desc">
+                        <p>Our skilled artisans and modern techniques ensure precision in every product.</p>
+                    </div>
+                </div>
+                <!-- end /.feature -->
+            </div>
+            <!-- end /.col-lg-4 col-md-6 -->
+
+            <!-- start search-area -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature">
+                    <div class="">
+                        <i aria-hidden="true" class="flaticon  flaticon-wood"></i>
+                    </div>
+                    <div class="feature__title">
+                        <h3>Customer Satisfaction</h3>
+                    </div>
+                    <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div>
+                </div>
+                <!-- end /.feature -->
+            </div>
+            <!-- end /.col-lg-4 col-md-6 -->
+        </div>
+        <!-- end /.row -->
+    </div>
+    <!-- end /.container -->
+</section>
+<!--================================
+END FEATURE AREA
+=================================-->
+<hr>
+
 <!--================================
 START TIMELINE AREA
 =================================-->
@@ -110,11 +176,10 @@ START TIMELINE AREA
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h1>MartPlace Milestone
+                    <h1>El Mass Marmar
                         <span class="highlighted"> Achievements</span>
                     </h1>
-                    <p>Laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats. Lid
-                        est laborum dolo rumes fugats untras.</p>
+                    <p></p>
                 </div>
             </div>
             <!-- end /.col-md-12 -->
@@ -240,33 +305,32 @@ END COUNTER UP AREA2
 <!--================================
 START MARTPLACE TEAM AREA
 =================================-->
-<section class="team_area section--padding">
+<section class="team_area section--padding" style="background-image: url({{ asset('images/features.jpg') }});">
     <div class="container">
         <!-- start row -->
         <div class="row">
             <!-- start col-md-12 -->
             <div class="col-md-12">
                 <div class="section-title">
-                    <h1>The Team at
-                        <span class="highlighted">MartPlace</span>
+                    <h1>El Mass Marmar
+                        <span class="highlighted">Owner</span>
                     </h1>
-                    <p>Laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats. Lid
-                        est laborum dolo rumes fugats untras.</p>
+                    <p>Feel free to contact us to learn more about our services, explore our exquisite marble collection, or discuss your specific requirements.</p>
                 </div>
             </div>
             <!-- end /.col-md-12 -->
         </div>
         <!-- end /.row -->
 
-        <div class="row">
-            <div class="col-lg-3 col-md-4">
+        <div class="row" style="justify-content: center;">
+            <div class="col-lg-3 col-md-4" >
                 <div class="single_team_member">
                     <figure>
                         <img src="images/team1.jpg" alt="Team Member">
                         <figcaption>
                             <div class="name_desig">
-                                <h4>Douglus Khundu</h4>
-                                <p>Software Engineer</p>
+                                <h4>Marwa AlMashhoud</h4>
+                                <p>El Mass Marmar Owner</p>
                             </div>
                             <!-- end /.name_desig -->
 
@@ -279,22 +343,17 @@ START MARTPLACE TEAM AREA
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <span class="fa fa-twitter"></span>
+                                            <span class="fa fa-whatsapp"></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
+                                            <span class="fa fa-instagram"></span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                            <!-- end /.social -->
+
                         </figcaption>
                         <!-- end /.figcaption -->
                     </figure>
@@ -304,320 +363,6 @@ START MARTPLACE TEAM AREA
             </div>
             <!-- end /.col-md-3 -->
 
-            <div class="col-lg-3 col-md-4">
-                <div class="single_team_member">
-                    <figure>
-                        <img src="images/team2.jpg" alt="Team Member">
-                        <figcaption>
-                            <div class="name_desig">
-                                <h4>Robert Jellybean</h4>
-                                <p>Application Developer</p>
-                            </div>
-                            <!-- end /.name_desig -->
-
-                            <div class="social">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end /.social -->
-                        </figcaption>
-                        <!-- end /.figcaption -->
-                    </figure>
-                    <!-- end /.figure -->
-                </div>
-                <!-- end /.single_team_member -->
-            </div>
-            <!-- end /.col-md-3 -->
-
-            <div class="col-lg-3 col-md-4">
-                <div class="single_team_member">
-                    <figure>
-                        <img src="images/team3.jpg" alt="Team Member">
-                        <figcaption>
-                            <div class="name_desig">
-                                <h4>Tomat Notfrut</h4>
-                                <p>Js Developer</p>
-                            </div>
-                            <!-- end /.name_desig -->
-
-                            <div class="social">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end /.social -->
-                        </figcaption>
-                        <!-- end /.figcaption -->
-                    </figure>
-                    <!-- end /.figure -->
-                </div>
-                <!-- end /.single_team_member -->
-            </div>
-            <!-- end /.col-md-3 -->
-
-            <div class="col-lg-3 col-md-4">
-                <div class="single_team_member">
-                    <figure>
-                        <img src="images/team4.jpg" alt="Team Member">
-                        <figcaption>
-                            <div class="name_desig">
-                                <h4>Naro Sundor</h4>
-                                <p>CTO</p>
-                            </div>
-                            <!-- end /.name_desig -->
-
-                            <div class="social">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end /.social -->
-                        </figcaption>
-                        <!-- end /.figcaption -->
-                    </figure>
-                    <!-- end /.figure -->
-                </div>
-                <!-- end /.single_team_member -->
-            </div>
-            <!-- end /.col-md-3 -->
-
-            <div class="col-lg-3 col-md-4">
-                <div class="single_team_member">
-                    <figure>
-                        <img src="images/team2.jpg" alt="Team Member">
-                        <figcaption>
-                            <div class="name_desig">
-                                <h4>Robert Jellybean</h4>
-                                <p>Application Developer</p>
-                            </div>
-                            <!-- end /.name_desig -->
-
-                            <div class="social">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end /.social -->
-                        </figcaption>
-                        <!-- end /.figcaption -->
-                    </figure>
-                    <!-- end /.figure -->
-                </div>
-                <!-- end /.single_team_member -->
-            </div>
-            <!-- end /.col-md-3 -->
-
-            <div class="col-lg-3 col-md-4">
-                <div class="single_team_member">
-                    <figure>
-                        <img src="images/team3.jpg" alt="Team Member">
-                        <figcaption>
-                            <div class="name_desig">
-                                <h4>Tomat Notfrut</h4>
-                                <p>Js Developer</p>
-                            </div>
-                            <!-- end /.name_desig -->
-
-                            <div class="social">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end /.social -->
-                        </figcaption>
-                        <!-- end /.figcaption -->
-                    </figure>
-                    <!-- end /.figure -->
-                </div>
-                <!-- end /.single_team_member -->
-            </div>
-            <!-- end /.col-md-3 -->
-
-            <div class="col-lg-3 col-md-4">
-                <div class="single_team_member">
-                    <figure>
-                        <img src="images/team4.jpg" alt="Team Member">
-                        <figcaption>
-                            <div class="name_desig">
-                                <h4>Naro Sundor</h4>
-                                <p>CTO</p>
-                            </div>
-                            <!-- end /.name_desig -->
-
-                            <div class="social">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end /.social -->
-                        </figcaption>
-                        <!-- end /.figcaption -->
-                    </figure>
-                    <!-- end /.figure -->
-                </div>
-                <!-- end /.single_team_member -->
-            </div>
-            <!-- end /.col-md-3 -->
-
-            <div class="col-lg-3 col-md-4">
-                <div class="single_team_member">
-                    <figure>
-                        <img src="images/team1.jpg" alt="Team Member">
-                        <figcaption>
-                            <div class="name_desig">
-                                <h4>Douglus Khundu</h4>
-                                <p>Software Engineer</p>
-                            </div>
-                            <!-- end /.name_desig -->
-
-                            <div class="social">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-google-plus"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-dribbble"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end /.social -->
-                        </figcaption>
-                        <!-- end /.figcaption -->
-                    </figure>
-                    <!-- end /.figure -->
-                </div>
-                <!-- end /.single_team_member -->
-            </div>
-            <!-- end /.col-md-3 -->
         </div>
         <!-- end /.row -->
     </div>
@@ -625,60 +370,6 @@ START MARTPLACE TEAM AREA
 </section>
 <!--================================
 END MARTPLACE TEAM AREA
-=================================-->
-
-<!--================================
-START PARTNER AREA
-=================================-->
-<section class="partner-area section--padding partner--area2 bgimage">
-    <div class="bg_image_holder">
-        <img src="images/fn.jpg" alt="">
-    </div>
-    <!-- start container -->
-    <div class="container">
-        <!-- start row -->
-        <div class="row">
-            <!-- start col-md-12 -->
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h1>We are
-                        <span class="highlighted">Featured on</span>
-                    </h1>
-                    <p>Laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats. Lid
-                        est laborum dolo rumes fugats untras.</p>
-                </div>
-            </div>
-            <!-- end /.col-md-12 -->
-        </div>
-        <!-- end /.row -->
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="partners">
-                    <div class="partner">
-                        <img src="images/cl1.png" alt="partner image">
-                    </div>
-                    <div class="partner">
-                        <img src="images/cl2.png" alt="partner image">
-                    </div>
-                    <div class="partner">
-                        <img src="images/cl3.png" alt="partner image">
-                    </div>
-                    <div class="partner">
-                        <img src="images/cl4.png" alt="partner image">
-                    </div>
-                    <div class="partner">
-                        <img src="images/cl2.png" alt="partner image">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end /.row -->
-    </div>
-    <!-- end /.container -->
-</section>
-<!--================================
-END PARTNER AREA
 =================================-->
 
 <!--================================
@@ -786,9 +477,9 @@ START TESTIMONIAL
                 </div>
                 <!-- end /.testimonial_slider -->
 
-                <div class="all-testimonial">
+                {{-- <div class="all-testimonial">
                     <a href="testimonial.html" class="btn btn--lg btn--round">View All Reviews</a>
-                </div>
+                </div> --}}
             </div>
             <!-- end /.col-md-12 -->
         </div>
@@ -800,55 +491,6 @@ START TESTIMONIAL
 END TESTIMONIAL
 =================================-->
 
-<!--================================
-START IMAGE GALLERY
-=================================-->
-<section class="gallery_area">
-    <div class="gallery_contents_wrapper bgimage">
-        <div class="bg_image_holder">
-            <img src="images/galbg.jpg" alt="">
-        </div>
-        <div class="container content_above">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="gallery_contents">
-                        <h3>Work Together</h3>
-                        <p>We love what we do and come to work every day hungry to change the world of work!</p>
-                    </div>
-                </div>
-            </div>
-            <!-- start /.row -->
-        </div>
-        <!-- start /.container -->
-    </div>
-    <!-- start /.gallery_contents_wrapper -->
-</section>
-<!--================================
-END IMAGE GALLERY
-=================================-->
 
-
-<!--================================
-START CALL TO ACTION AREA
-=================================-->
-<section class="call-to-action bgimage">
-    <div class="bg_image_holder">
-        <img src="images/calltobg.jpg" alt="">
-    </div>
-    <div class="container content_above">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="call-to-wrap">
-                    <h1 class="text--white">Ready to Join Our Marketplace!</h1>
-                    <h4 class="text--white">Over 25,000 designers and developers trust the MartPlace.</h4>
-                    <a href="#" class="btn btn--lg btn--round btn--white callto-action-btn">Join Us Today</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--================================
-END CALL TO ACTION AREA
-=================================-->
 
 @endsection
