@@ -29,6 +29,8 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
+    @yield("style")
+
 </head>
 
 <body class="preload home1 mutlti-vendor">
@@ -58,6 +60,8 @@
     <script src="{{asset('js/dashboard.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/map.js')}}"></script>
+
+    @yield("script")
     <!-- endinject -->
 </body>
 

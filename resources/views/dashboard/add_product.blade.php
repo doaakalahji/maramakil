@@ -1,5 +1,15 @@
 @extends("master.app")
 
+@section("style")
+ <style>
+    .cv_upload .up_icon {
+    float: right;
+    font-size: 16px;
+    color: #f1c33b;
+}
+ </style>
+@endsection
+
 @section("content")
 
 <section class="breadcrumb-area">
@@ -40,15 +50,19 @@
                         <h3>Add Product</h3>
                     </div>
                     <div class="modules__content">
-                        <form method="POST" action="{{route("save_product")}}">
+                        <form action="{{ isset($product) ? route('product.update',$product->id) : route('product.store') }}" method="POST"  id="form" enctype="multipart/form-data">
                            @csrf
+                           @if(isset($product))
+                             @method('PUT')
+                           @endif
                         <div class="row">
+                            <input type="hidden" name="_id" value="{{isset($product) ? $product->id : 0}}"/>
                             <div class="col-md-6 offset-md-1">
                                 <form action="#">
                                     <div class="form-group">
                                         <label for="f1">Product Name</label>
                                         <input type="text" id="f1" class="text_field"
-                                        name="name"
+                                        name="name" value="{{isset($product) ? $product->name :  ''}}"
                                          placeholder="Enter Product Name...">
                                     </div>
                                     <div class="form-group">
@@ -56,7 +70,7 @@
                                         <div class="input-group with--addon">
                                             <span class="input-group-addon">$</span>
                                             <input type="number" id="rlicense" class="text_field"
-                                             name="price"
+                                             name="price" value="{{isset($product) ? $product->price :  ''}}"
                                              placeholder="00.00">
                                         </div>
                                     </div>
@@ -65,15 +79,19 @@
                                     <div class="form-group">
                                         <label for="cv_upload">Product Image</label>
                                         <label for="cv_upload" class="cv_upload">
-                                            <span class="text">Upload your Product</span>
-                                            <span class="lnr lnr-upload up_icon"></span>
-                                            <input id="cv_upload" name="image" type="file">
+                                            <span class="text ">Upload Product Image</span>
+                                            <span class="lnr lnr-upload up_icon">{{isset($product) ? $product->image :  ''}}</span>
+                                            <input value="{{isset($product) ? $product->image :  ''}}"
+                                            id="cv_upload"  style="display:none;" name="image" type="file">
                                         </label>
                                     </div>
                               
                                     <div class="form-group">
                                         <label for="textarea1">Details</label>
-                                        <textarea class="text_field" name="details" id="textarea1" placeholder="Your text here"></textarea>
+                                        <textarea
+                                        class="text_field" name="details" id="textarea1" placeholder="Your text here">
+                                        "{{isset($product) ? $product->description :  ''}}
+                                    </textarea>
                                     </div>
 
                                 </form>
@@ -98,3 +116,17 @@
 </section>
 
 @endsection
+
+@section("script")
+<script>
+    console.log("test");
+$('#cv_upload').change(function() {
+  var i = $(this).prev('span').clone();
+  console.log("test" , i);
+  var file = $('#cv_upload')[0].files[0].name;
+  $(this).prev('span').text(file);
+});
+
+</script>
+@endsection
+

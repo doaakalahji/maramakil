@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -11,7 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::paginate(5);
+
+        return view("dashboard.dashboard" , ["products" => $products]);
     }
 
     /**
@@ -19,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view("dashboard.add_product");
     }
 
     /**
@@ -43,7 +46,9 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::where("id" , $id)->first();
+        // dd($product);
+        return view("dashboard.add_product" , ["product" => $product]);
     }
 
     /**
@@ -51,7 +56,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd($request->all());
     }
 
     /**

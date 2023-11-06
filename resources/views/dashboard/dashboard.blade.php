@@ -137,7 +137,7 @@
                         <div class="dashboard_title_area">
                             <div class="dashboard__title">
                                 <h3>Products</h3>
-                                <div class="date_area">
+                                {{-- <div class="date_area">
                                     <form action="#">
                                         <div class="input_with_icon">
                                             <input type="text" class="dattaPikkara" placeholder="From">
@@ -160,7 +160,7 @@
 
                                         <button type="submit" class="btn btn--sm btn--round btn--color1">Search</button>
                                     </form>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -234,7 +234,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-md-12">
-                         <a style="margin-left: 82%" class="btn btn--icon btn-md btn--round btn-info" href="{{route('add_product')}}">Add Product</a>
+                         <a style="margin-left: 82%" class="btn btn--icon btn-md btn--round btn-info" href="{{route('product.create')}}">Add Product</a>
                     </div>
                 </div>
 
@@ -254,219 +254,70 @@
                                
                                         {{-- <th>Earning</th> --}}
                                         <th>Action</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
+                                    @foreach ($products as $product)    
                                     <tr>
                                         <td>
-                                            <img src="images/pur1.jpg">
+                                            @if (File::exists(public_path("img/".$product->image)))
+                                              <img  width="250px" height="100px"
+                                              src="{{asset("img/".$product->image)}}" alt="{{asset("img/".$product->image)}}" 
+                                              />
+                                            @else 
+                                            {{-- {{dd("this")}} --}}
+                                              <img  width="250px" height="100px"
+                                              src="{{asset("img/product_default.jpg")}}" alt="{{asset("img/product_default.jpg")}}" />
+                                            @endif
+                                            {{-- <img src="{{asset("img/".$product->image)}} ?{{asset("img/".$product->image)}} :  {{asset("img/product_default.jpg")}}"> --}}
                                         </td>
-                                        <td>09 Jul 2019</td>
+                                        <td>{{date('Y-m-d',strtotime($product->created_at))}}</td>
                                         {{-- <td>MP810094</td> --}}
-                                        <td class="author">AazzTech</td>
+                                        <td class="author">{{$product->name}}</td>
                                         <td class="detail">
-                                            <a href="single-product.html">Visibility Manager Subscriptions 
-                                                	Visibility Manager Subscriptions
-                                                    Visibility Manager Subscriptions
-                                                    Visibility Manager Subscriptions
-                                                    
+                                            <a href="single-product.html">
+                                                {{-- {!! nl2br($product->description) !!} --}}
+                                              {{\Illuminate\Support\Str::limit($product->description, $limit = 150, $end = '...')}}
                                             </a>
                                         </td>
                                         <td class="type">
                                             <span class="sale">marble</span>
                                         </td>
-                                        <td>$49</td>
+                                        <td>{{$product->price}}$</td>
                                         {{-- <td class="earning">$24.50</td> --}}
                                         <td class="action">
-                                           <a href="#" style="padding: 0 10px ; color : green ; background-color : white"> <span class="lnr lnr-pencil"></span></a>
+                                           <a href="{{route('product.edit' , $product->id)}}" style="padding: 0 10px ; color : green ; background-color : white"> <span class="lnr lnr-pencil"></span></a>
                                            <a href="#" style="padding: 0 10px ; color : red ; background-color : white"
                                            data-target="#myModal2" data-toggle="modal">  <span class="lnr lnr-trash"></span></a>
                                             {{-- <a href="invoice.html">view</a> --}}
                                         </td>
                                     </tr>
-
-                                    <tr>
-                                        <td>
-                                            <img src="images/pur1.jpg">
-                                        </td>
-                                        <td>03 Jul 2019</td>
-                                        {{-- <td>MP810094</td> --}}
-                                        <td class="author">Markober</td>
-                                        <td class="detail">
-                                            <a href="single-product.html">Martplace Coffee Shop</a>
-                                        </td>
-                                        <td class="type">
-                                            <span class="sale">marble</span>
-                                        </td>
-                                        <td>$30</td>
-                                     
-                                        {{-- <td class="earning subtract">-$30</td> --}}
-                                        {{-- <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td> --}}
-                                        <td class="action">
-                                            <a href="#" style="padding: 0 10px ; color : green ; background-color : white"> <span class="lnr lnr-pencil"></span></a>
-                                            <a href="#" style="padding: 0 10px ; color : red ; background-color : white">  <span class="lnr lnr-trash"
-                                                data-target="#myModal2" data-toggle="modal"></span></a>
-                                             {{-- <a href="invoice.html">view</a> --}}
-                                         </td>
-                                    </tr>
-
-                                    {{-- <tr>
-                                        <td>09 Jul 2019</td>
-                                        <td>MP810094</td>
-                                        <td class="author">Themexylum</td>
-                                        <td class="detail">
-                                            <a href="single-product.html">MartPlace Extension Bundle</a>
-                                        </td>
-                                        <td class="type">
-                                            <span class="sale">Sale</span>
-                                        </td>
-                                        <td>$49</td>
-                                        <td class="earning">$24.50</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>05 Apr 2019</td>
-                                        <td>MP810094</td>
-                                        <td class="author">AazzTech</td>
-                                        <td class="detail">
-                                            <a href="single-product.html">Stack - Responsive Bootstrap 4 Admin Template</a>
-                                        </td>
-                                        <td class="type">
-                                            <span class="sale">Sale</span>
-                                        </td>
-                                        <td>$20</td>
-                                        <td class="earning">$10</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>25 Dec 2016</td>
-                                        <td>MP810394</td>
-                                        <td class="author text-center" colspan="2">Via Payoneer</td>
-                                        <td class="type">
-                                            <span class="credited">Credited</span>
-                                        </td>
-                                        <td>$49</td>
-                                        <td class="earning">$24.50</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>09 Jul 2019</td>
-                                        <td>MP810094</td>
-                                        <td class="author text-center" colspan="2">Via Paypal</td>
-                                        <td class="type">
-                                            <span class="withdrawal">Withdraw</span>
-                                        </td>
-                                        <td>$350</td>
-                                        <td class="earning subtract">-$350</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>0 Feb 2019</td>
-                                        <td>MP810094</td>
-                                        <td class="author">Artcorner</td>
-                                        <td class="detail">
-                                            <a href="single-product.html">Rida - Applanding Onepage </a>
-                                        </td>
-                                        <td class="type">
-                                            <span class="purchase">Purchase</span>
-                                        </td>
-                                        <td>$30</td>
-                                        <td class="earning subtract">-$30</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>26 May 2016</td>
-                                        <td>MP81024</td>
-                                        <td class="author">Awesomaiya</td>
-                                        <td class="detail">
-                                            <a href="single-product.html">Table Generator extension bundle</a>
-                                        </td>
-                                        <td class="type">
-                                            <span class="sale">Sale</span>
-                                        </td>
-                                        <td>$49</td>
-                                        <td class="earning">$24.50</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>26 Aug 2019</td>
-                                        <td>MP810654</td>
-                                        <td class="author">Codepoets</td>
-                                        <td class="detail">
-                                            <a href="single-product.html">Kamla One page portfolio</a>
-                                        </td>
-                                        <td class="type">
-                                            <span class="sale">Sale</span>
-                                        </td>
-                                        <td>$49</td>
-                                        <td class="earning">$24.50</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>09 Jul 2019</td>
-                                        <td>MP810094</td>
-                                        <td class="author">Designing</td>
-                                        <td class="detail">
-                                            <a href="single-product.html">Ajaxified karma loader</a>
-                                        </td>
-                                        <td class="type">
-                                            <span class="purchase">Purchased</span>
-                                        </td>
-                                        <td>$29</td>
-                                        <td class="earning">-$29</td>
-                                        <td class="action">
-                                            <a href="invoice.html">view</a>
-                                        </td>
-                                    </tr> --}}
+                                    @endforeach
+                 
                                 </tbody>
+                               
                             </table>
 
-                            <div class="pagination-area pagination-area2">
-                                <nav class="navigation pagination " role="navigation">
-                                    <div class="nav-links">
-                                        <a class="prev page-numbers" href="#">
-                                            <span class="lnr lnr-arrow-left"></span>
-                                        </a>
-                                        <a class="page-numbers current" href="#">1</a>
-                                        <a class="page-numbers" href="#">2</a>
-                                        <a class="page-numbers" href="#">3</a>
-                                        <a class="next page-numbers" href="#">
-                                            <span class="lnr lnr-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </div>
+
+            
+             
                         </div>
                     </div>
                 </div>
                 <!-- end /.row -->
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                         <div style="margin-left: 50%"> {!!  $products->links() !!}</div>
+                    </div>
+                </div>
             </div>
+         
             <!-- end /.container -->
         </div>
+        
         <!-- end /.dashboard_menu_area -->
     </section>
     <!--================================
