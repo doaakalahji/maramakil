@@ -47,8 +47,7 @@
                                 <h1>How can We
                                     <span class="highlighted">Help?</span>
                                 </h1>
-                                <p>Laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats.
-                                    Lid est laborum dolo rumes fugats untras.</p>
+                                <p>We are excited to embark on this marble journey with you. Whether you're an architect, designer, contractor, or homeowner, we are here to assist you in finding the perfect marble solutions for your projects.</p>
                             </div>
                         </div>
                         <!-- end /.col-md-12 -->
@@ -61,7 +60,7 @@
                                 <span class="tiles__icon lnr lnr-map-marker"></span>
                                 <h4 class="tiles__title">Office Address</h4>
                                 <div class="tiles__content">
-                                    <p>202 New Hampshire Avenue , Northwest #100, New York-2573</p>
+                                    <p>Emirbeyazıt Mah. Çaylılar Sok. Cücenoğlu No:8/11 0539 608 5441-0538 737 0230 - Menteşe/MUĞLA</p>
                                 </div>
                             </div>
                         </div>
@@ -72,8 +71,7 @@
                                 <span class="tiles__icon lnr lnr-phone"></span>
                                 <h4 class="tiles__title">Phone Number</h4>
                                 <div class="tiles__content">
-                                    <p>1-800-643-4500</p>
-                                    <p>1-800-643-4500</p>
+                                    <p>+90 536 954 06 16</p>
                                 </div>
                             </div>
                             <!-- end /.contact_tile -->
@@ -83,10 +81,9 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="contact_tile">
                                 <span class="tiles__icon lnr lnr-inbox"></span>
-                                <h4 class="tiles__title">Phone Number</h4>
+                                <h4 class="tiles__title">Emails</h4>
                                 <div class="tiles__content">
-                                    <p>support@aazztech.com</p>
-                                    <p>support@aazztech.com</p>
+                                    <p>masmermer@gmail.com Tic. Sic. No: 10824 Mersis No:0329181390000001</p>
                                 </div>
                             </div>
                             <!-- end /.contact_tile -->
@@ -103,20 +100,6 @@
                                     <div class="col-md-8 offset-md-2">
                                         <div class="contact_form--wrapper">
                                             <form action="#">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <input type="text" placeholder="Name">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <input type="text" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -162,7 +145,7 @@
     <!--================================
             START
     =================================-->
-    <div id="map"></div>
+    {{-- <div id="map"></div> --}}
     <!-- end /.map -->
     <!--================================
             END FAQ AREA
