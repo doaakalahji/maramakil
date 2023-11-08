@@ -17,7 +17,7 @@
                     <div class="col-md-12">
                         <div class="hero__content__title">
                             <h1>
-                                <span class="bold hero_img">El Mass Marmar</span>
+                                <span class="bold hero_img">@lang("app.mass")</span>
                             </h1>
                             {{-- <p class="tagline">MartPlace is the most powerful, & customizable template for Easy Digital Downloads Products</p> --}}
                         </div>

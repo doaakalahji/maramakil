@@ -11,10 +11,10 @@
                     <div class="breadcrumb">
                         <ul>
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="index.html">@lang("app.home")</a>
                             </li>
                             <li class="active">
-                                <a href="#">About Us</a>
+                                <a href="#">@lang("app.about_us")</a>
                             </li>
                         </ul>
                     </div>

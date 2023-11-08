@@ -61,6 +61,11 @@ Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
 
     Route::resource("/product" , ProductController::class);
 });
-
-
+// add multi lang 
+Route::get('/langconvert/{locale}', function ($locale) {
+    if(in_array("$locale",["en","ar","tr"])){
+        session()->put("locale" , $locale);
+    }
+    return redirect()->back();
+})->name('langconvert');
 

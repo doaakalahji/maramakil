@@ -344,6 +344,30 @@
                             </div>
                             <!-- /.navbar-collapse -->
                         </nav>
+
+                        <div class="has_dropdown">
+                            <button class="btn btn--light btn--bordered btn-md">@lang('app.lang')</button>
+                            <div class="dropdowns dropdown--author">
+                                <ul>
+                                    <li>
+                                        <a href="{{route('langconvert' , 'en')}}">
+                                            <span class="lnr lnr-user"></span>ENGLISH</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('langconvert' , 'ar')}}">
+                                            <span class="lnr lnr-user"></span>ARABIC</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('langconvert' , 'tr')}}">
+                                            <span class="lnr lnr-user"></span>Turki</a>
+                                    </li>
+                                    {{-- <li>
+                                        <a href="author.html">
+                                            <span class="lnr lnr-user"></span>Profile</a>
+                                    </li> --}}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <!-- end /.col-md-12 -->
                 </div>
