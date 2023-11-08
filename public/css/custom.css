@@ -171,13 +171,13 @@ color: #0ea429;
     border-radius: 50%;
     border: 3px solid #e6af5d;
 }
-.login .login--header{
+.login .login--header, .signup_form .login--header{
     border-bottom: 1px solid #e6af5d;
 }
 .text_field{
     background: #ffffff;
 }
-.login .login--form input{
+.login .login--form input,.signup_form .login--form input{
     border: 1px solid #e6af5d;
 }
 .custom_checkbox label .shadow_checkbox:before
