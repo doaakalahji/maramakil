@@ -49,6 +49,17 @@
                     <div class="modules__title">
                         <h3>Add Product</h3>
                     </div>
+                    @if(session()->has('message'))
+                        <div class="alert alert-success fade show">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
+            
+                    @if(session()->has('failed'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('failed') }}
+                    </div>
+                    @endif
                     <div class="modules__content">
                         <form action="{{ isset($product) ? route('product.update',$product->id) : route('product.store') }}" method="POST"  id="form" enctype="multipart/form-data">
                            @csrf
@@ -58,12 +69,16 @@
                         <div class="row">
                             <input type="hidden" name="_id" value="{{isset($product) ? $product->id : 0}}"/>
                             <div class="col-md-6 offset-md-1">
-                                <form action="#">
+                                {{-- <form action="#"> --}}
                                     <div class="form-group">
                                         <label for="f1">Product Name</label>
                                         <input type="text" id="f1" class="text_field"
                                         name="name" value="{{isset($product) ? $product->name :  ''}}"
                                          placeholder="Enter Product Name...">
+
+                                         @error('name')
+                                           <div class="alert alert-danger">{{ $message }}</div>
+                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="rlicense">Price</label>
@@ -72,6 +87,10 @@
                                             <input type="number" id="rlicense" class="text_field"
                                              name="price" value="{{isset($product) ? $product->price :  ''}}"
                                              placeholder="00.00">
+
+                                             @error('price')
+                                                 <div class="alert alert-danger">{{ $message }}</div>
+                                             @enderror
                                         </div>
                                     </div>
                                  
@@ -89,8 +108,8 @@
                                     <div class="form-group">
                                         <label for="textarea1">Details</label>
                                         <textarea
-                                        class="text_field" name="details" id="textarea1" placeholder="Your text here">
-                                        "{{isset($product) ? $product->description :  ''}}
+                                        class="text_field" name="description" id="textarea1" placeholder="Your text here">
+                                        {{isset($product) ? $product->description :  ''}}
                                     </textarea>
                                     </div>
 
@@ -104,7 +123,7 @@
                             </div>
                             
                         </div>
-                    </form>
+                    {{-- </form> --}}
                     </div>
                 </div>
             </div>

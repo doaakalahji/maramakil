@@ -25,9 +25,10 @@
     <link rel="stylesheet" href="{{asset('css/trumbowyg.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
     {{-- <link rel="stylesheet" href="{{asset('style.css')}}"> --}}
+    
      @if(session()->get("locale") == "en" || session()->get("locale") == 'tr' || session()->get("locale") == '')
        <link rel="stylesheet" href="{{asset('style.css')}}">
-       @elseif(session()->get("locale") == "ar")
+          @elseif(session()->get("locale") == "ar")
        <link rel="stylesheet" href="{{asset('style-rtl.css')}}">
      @endif
 
@@ -45,10 +46,10 @@
 
    @include("master.header")
        @yield("content")
+
    @include("master.footer")
 
-    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0C5etf1GVmL_ldVAichWwFFVcDfa1y_c"></script> --}}
-    <!-- inject:js -->
+
     <script src="{{asset('js/vendor/jquery/jquery-1.12.3.js')}}"></script>
     <script src="{{asset('js/vendor/jquery/popper.min.js')}}"></script>
     <script src="{{asset('js/vendor/jquery/uikit.min.js')}}"></script>
@@ -68,7 +69,14 @@
     <script src="{{asset('js/dashboard.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/map.js')}}"></script>
-
+   <script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    </script>
+    
     @yield("script")
     <!-- endinject -->
 </body>

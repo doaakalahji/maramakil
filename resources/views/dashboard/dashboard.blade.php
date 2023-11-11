@@ -21,7 +21,15 @@
 
 @section("content")
 
+@section('css') 
+    <!-- css -->
+    {{-- <link href="{{ asset('css/pagination_delete.css') }}" rel="stylesheet"> --}}
+    <!-- jquery  -->
+    {{-- <script src="{{ asset('js/deleteMessage.js') }}"></script> --}}
+    {{-- <title>Admin</title> --}}
+    {{-- <link href="{{asset('node_modules/sweetalert2/dist/sweetalert2.css')}}" rel="stylesheet">  --}}
 
+ @endsection
     <!--================================
         START BREADCRUMB AREA
     =================================-->
@@ -52,7 +60,7 @@
     </section>
 
         <!-- Modal 2 -->
-        <div class="modal fade rating_modal item_remove_modal" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2">
+        {{-- <div class="modal fade rating_modal item_remove_modal" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -71,7 +79,7 @@
                     <!-- end /.modal-body -->
                 </div>
             </div>
-        </div>
+        </div> --}}
     
     
     <!--================================
@@ -95,30 +103,6 @@
                                 <a href="dashboard-setting.html">
                                     <span class="lnr lnr-cog"></span>Setting</a>
                             </li>
-                            {{-- <li>
-                                <a href="dashboard-purchase.html">
-                                    <span class="lnr lnr-cart"></span>Purchase</a>
-                            </li> --}}
-                            {{-- <li>
-                                <a href="dashboard-add-credit.html">
-                                    <span class="lnr lnr-dice"></span>Add Credits</a>
-                            </li>
-                            <li>
-                                <a href="dashboard-statement.html">
-                                    <span class="lnr lnr-chart-bars"></span>Statements</a>
-                            </li> --}}
-                            {{-- <li>
-                                <a href="dashboard-upload.html">
-                                    <span class="lnr lnr-upload"></span>Upload Items</a>
-                            </li> --}}
-                            {{-- <li>
-                                <a href="dashboard-manage-item.html">
-                                    <span class="lnr lnr-briefcase"></span>Manage Items</a>
-                            </li> --}}
-                            {{-- <li>
-                                <a href="dashboard-withdrawal.html">
-                                    <span class="lnr lnr-briefcase"></span>Withdrawals</a>
-                            </li> --}}
                         </ul>
                         <!-- end /.dashboard_menu -->
                     </div>
@@ -237,7 +221,13 @@
                          <a style="margin-left: 82%" class="btn btn--icon btn-md btn--round btn-info" href="{{route('product.create')}}">Add Product</a>
                     </div>
                 </div>
-
+     
+                @if(session()->has('message'))
+                <br/>
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="statement_table table-responsive">
@@ -289,8 +279,17 @@
                                         {{-- <td class="earning">$24.50</td> --}}
                                         <td class="action">
                                            <a href="{{route('product.edit' , $product->id)}}" style="padding: 0 10px ; color : green ; background-color : white"> <span class="lnr lnr-pencil"></span></a>
-                                           <a href="#" style="padding: 0 10px ; color : red ; background-color : white"
-                                           data-target="#myModal2" data-toggle="modal">  <span class="lnr lnr-trash"></span></a>
+
+                                           <form action="" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                             <a style="color : red ; background-color : white">
+                                                <i class="lnr lnr-trash deletes del_id" data-id="{{$product->id}}"></i>
+                                             </a>
+                                          </form>
+
+                                           {{-- <a href="#" style="padding: 0 10px ; color : red ; background-color : white"
+                                           data-target="#myModal2" data-toggle="modal">  <span class="lnr lnr-trash"></span></a> --}}
                                             {{-- <a href="invoice.html">view</a> --}}
                                         </td>
                                     </tr>
@@ -324,4 +323,62 @@
             END DASHBOARD AREA
     =================================-->
 
+@endsection
+{{-- <script>
+        $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    </script> --}}
+@section('script')
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{-- <script src="{{asset('node_modules/sweetalert2/dist/sweetalert2.min.js')}}"></script> --}}
+<script>
+// import swal from 'sweetalert2';
+
+// window.swal = swal;
+    // const swal = window.swal = require('sweetalert2');
+    $(".del_id").on('click', function (e) {
+            var dataId = $(this).attr('data-id');
+            console.log('dataId' ,dataId);
+            e.preventDefault();
+            // console.log($('meta[name="csrf-token"]').attr('content'));
+            swal.fire({
+            title: "Are you sure from delete?",
+            icon: 'warning',
+            text: "You won't be able to revert this!",
+            type: "warning",
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            closeOnConfirm: true,
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'cancel',
+
+            }).then((result) => {
+                if(result.value){        
+                    $.ajax({
+                    type: "DELETE",
+                    url: "/product/"+dataId,     
+                    // contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                      _token: "{{csrf_token()}}",
+                    //   id : dataId
+                    },
+                 success: function (results) {
+                    
+                } //success
+                });
+                 location.reload();
+                }
+                else{
+                    location.reload();
+                }
+        });
+    });
+
+  </script>
 @endsection
