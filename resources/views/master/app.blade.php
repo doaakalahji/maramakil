@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -23,15 +23,17 @@
     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/trumbowyg.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
+
     {{-- <link rel="stylesheet" href="{{asset('style.css')}}"> --}}
      @if(session()->get("locale") == "en" || session()->get("locale") == 'tr' || session()->get("locale") == '')
-       <link rel="stylesheet" href="{{asset('style.css')}}">
+            <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{asset('style.css')}}">
        @elseif(session()->get("locale") == "ar")
-       <link rel="stylesheet" href="{{asset('style-rtl.css')}}">
+            <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap-rtl.min.css')}}">
+            <link rel="stylesheet" href="{{asset('style-rtl.css')}}">
      @endif
 
-   
+
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
         <!-- endinject -->
 
