@@ -1,7 +1,4 @@
-.header{
-    margin-right: -91px;
-    margin-left: -122px;
-}
+
 .top-menu-area
 {
     background: #30373f;
@@ -39,7 +36,7 @@
     color: #ffffff;
   }
   .author__notification_area ul li{
-    padding: 10px;
+    padding: 4px;
   }
     .hero_img{
     background-color: #e6af5d;
@@ -188,4 +185,23 @@ color: #0ea429;
 {
     color: #e6af5d;
 }
-
+.mainmenu__menu .navbar-nav > li > a{
+    line-height: 50px;
+}
+.dropdowns.dropdown--menu{
+    padding: 6px;
+}
+.has_dropdown:hover .dropdowns{
+    top: 75%;
+}
+.dropdown_lang{
+    min-width: 120px;
+    border-top: 1px solid #e6af5d;
+}
+.dropdowns.dropdown--menu ul li a:hover {
+    background: #e6af5d;
+    color: #30373f;
+  }
+  .navbar-nav li.has_dropdown:hover{
+    cursor: pointer;
+  }

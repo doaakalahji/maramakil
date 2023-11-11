@@ -87,7 +87,7 @@ NB: this file contains the list of components/scss partial along with the style.
   52. RESPONSIVE CSS
 ***************************/
 /* import fonts */
-@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
 /* import style css */
 /*****************************
 	-- THEME
@@ -97,9 +97,9 @@ NB: this file contains the list of components/scss partial along with the style.
 	-- RESET
 *****************************/
 body {
-  font-family: 'Quicksand', sans-serif;
+  /* font-family: 'Tajawal', sans-serif; */
   position: relative;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 15px;
 }
 
