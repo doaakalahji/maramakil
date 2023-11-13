@@ -13,4 +13,6 @@ return [
     'contact' => 'Contact Us',
     'search' => 'Search',
     'keyword_home' => 'Home Page , El Mass Marmar',
+    'profile' => 'Profile',
+    'logout' => 'Log out',
 ];

@@ -13,5 +13,6 @@ return [
     'contact' => 'اتصل بنا',
     'search' => 'ابحث',
     'keyword_home' => 'الصفحة الرئيسية , El Mass Marmar',
-
+    'profile' => 'الصفحة الشخصية',
+    'logout' => 'تسجيل الخروج',
 ];

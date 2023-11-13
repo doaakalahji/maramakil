@@ -7,6 +7,7 @@
     <!-- viewport meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{{  asset('images/mass_logo.png') }}">
     {{-- <meta name="description" content="MartPlace - Complete Online Multipurpose Marketplace HTML Template">
     <meta name="keywords" content="marketplace, easy digital download, digital product, digital, html5"> --}}
 
@@ -24,12 +25,12 @@
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/trumbowyg.min.css')}}">
 
-    
+
      @if(session()->get("locale") == "en" || session()->get("locale") == 'tr' || session()->get("locale") == '')
      <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
        <link rel="stylesheet" href="{{asset('style.css')}}">
           @elseif(session()->get("locale") == "ar")
-          <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap-rtl.min.css')}}">   
+          <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap-rtl.min.css')}}">
        <link rel="stylesheet" href="{{asset('style-rtl.css')}}">
     @endif
 
@@ -77,7 +78,7 @@
         }
     });
     </script>
-    
+
     @yield("script")
     <!-- endinject -->
 </body>

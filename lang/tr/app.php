@@ -13,4 +13,6 @@ return [
     'contact' => 'Bizi ara',
     'search' => 'Aramak',
     'keyword_home' => 'Ana Sayfa , El Mass Marmar',
+    'profile' => 'Profil',
+    'logout' => 'Çıkış Yap',
 ];

@@ -35,8 +35,8 @@
                             <div class="author__notification_area">
                                 <ul>
                                     <li>
-                                            <a href="https://wa.me/905369540616" class="contact_information">
-                                              <span class="lnr lnr-phone"></span> +90 536 954 06 16
+                                            <a href="https://wa.me/905362316258" class="contact_information">
+                                              <span class="lnr lnr-phone"></span> +90 536 231 62 58
                                             </a>
                                     </li>
 
@@ -119,7 +119,7 @@
                                         <a href="{{LaravelLocalization::localizeURL('/contact')}}">@lang('app.contact')</a>
                                     </li>
                                     <li class="has_dropdown">
-                                        <a class="fa fa-language"></a>
+                                        <a class="lnr lnr-earth"></a>
                                         <div class="dropdowns dropdown--menu  dropdown_lang">
                                             <ul>
                                                 <li>
@@ -134,6 +134,23 @@
                                             </ul>
                                         </div>
                                     </li>
+                                  @if (Auth::check() && Auth::user()->is_admin == 1)
+                                    <li class="has_dropdown">
+                                            <a class="lnr lnr-user"></a>
+                                            <div class="dropdowns dropdown--menu  dropdown_user">
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{LaravelLocalization::localizeURL('/profile')}}">@lang('app.profile')</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{LaravelLocalization::localizeURL('/logout')}}">@lang('app.logout')</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                    </li>
+                                  @endif
+
+
                                 </ul>
                             </div>
                             <!-- /.navbar-collapse -->

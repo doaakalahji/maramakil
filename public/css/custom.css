@@ -205,3 +205,7 @@ color: #0ea429;
   .navbar-nav li.has_dropdown:hover{
     cursor: pointer;
   }
+  .dropdown_user{
+    min-width: 180px;
+    border-top: 1px solid #e6af5d;
+}
