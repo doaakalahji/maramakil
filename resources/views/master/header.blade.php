@@ -107,29 +107,29 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('home') }}">@lang('app.home')</a>
+                                        <a href="{{LaravelLocalization::localizeURL('/')}}">@lang('app.home')</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('about-us') }}">@lang('app.about_us')</a>
+                                        <a href="{{LaravelLocalization::localizeURL('/about-us')}}">@lang('app.about_us')</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('products') }}">@lang('app.all_products')</a>
+                                        <a href="{{LaravelLocalization::localizeURL('/products')}}">@lang('app.all_products')</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('contact') }}">@lang('app.contact')</a>
+                                        <a href="{{LaravelLocalization::localizeURL('/contact')}}">@lang('app.contact')</a>
                                     </li>
                                     <li class="has_dropdown">
                                         <a class="fa fa-language"></a>
                                         <div class="dropdowns dropdown--menu  dropdown_lang">
                                             <ul>
                                                 <li>
-                                                    <a href="{{route('langconvert' , 'en')}}">@lang('app.english')</a>
+                                                    <a href="{{ LaravelLocalization::getLocalizedURL('en') }}">@lang('app.english')</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{route('langconvert' , 'ar')}}">@lang('app.arabic')</a>
+                                                    <a href="{{LaravelLocalization::getLocalizedURL('ar') }}">@lang('app.arabic')</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{route('langconvert' , 'tr')}}">@lang('app.turkish')</a>
+                                                    <a href="{{LaravelLocalization::getLocalizedURL('tr') }}">@lang('app.turkish')</a>
                                                 </li>
                                             </ul>
                                         </div>

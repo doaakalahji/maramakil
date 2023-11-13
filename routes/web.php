@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,57 +16,50 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
-
-Route::get('/about-us', function () {
-    return view('pages.aboutus');
-})->name('about-us');
-
-Route::get('/products', function () {
-    return view('pages.products');
-})->name('products');
-
-Route::get('/contact', function () {
-    return view('pages.contact');
-})->name('contact');
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard.dashboard');
-// })->middleware(['auth', 'verified' , 'admin'])->name('dashboard');
-
-Route::middleware(['auth' , 'admin'])->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    // Route::get('/store_product', function () {
-    //     return view('dashboard.add_product');
-    // })->middleware(['auth', 'verified' , 'admin'])
-    //   ->name("add_product");
-
-
-    Route::post('/save', [ProductController::class , "store"])->name("save_product");
-});
-
-require __DIR__.'/auth.php';
-
-Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
-    Route::get('/dashboard', [ProductController::class , "index"])->name('dashboard');
-
-    // Route::get('/store_product', function () {
-    //     return view('dashboard.add_product');
-    // })->name("add_product");
-
-    Route::resource("/product" , ProductController::class);
-});
 // add multi lang 
-Route::get('/langconvert/{locale}', function ($locale) {
-    if(in_array("$locale",["en","ar","tr"])){
-        session()->put("locale" , $locale);
-    }
-    return redirect()->back();
-})->name('langconvert');
+// Route::get('/langconvert/{locale}', function ($locale) {
+//     if(in_array("$locale",["en","ar","tr"])){
+//         session()->put("locale" , $locale);
+//     }
+//     return redirect()->back();
+// })->name('langconvert');
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){ 
+
+        Route::get('/', function () {
+            return view('pages.home');
+        })->name('home');
+        
+        Route::get('/about-us', function () {
+            return view('pages.aboutus');
+        })->name('about-us');
+        
+        Route::get('/products', function () {
+            return view('pages.products');
+        })->name('products');
+        
+        Route::get('/contact', function () {
+            return view('pages.contact');
+        })->name('contact');
+        
+        Route::middleware(['auth' , 'admin'])->group(function () {
+            Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+            Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+            Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+            Route::post('/save', [ProductController::class , "store"])->name("save_product");
+        });
+        
+        require __DIR__.'/auth.php';
+        
+        Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
+            Route::get('/dashboard', [ProductController::class , "index"])->name('dashboard');
+        
+            Route::resource("/product" , ProductController::class);
+        });
+
+    });
 
