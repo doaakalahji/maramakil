@@ -11,5 +11,6 @@ return [
     'home' => 'Ana sayfa',
     'all_products' => 'Tüm ürünler',
     'contact' => 'Bizi ara',
-    'search' => 'Aramak'
+    'search' => 'Aramak',
+    'keyword_home' => 'Ana Sayfa , El Mass Marmar',
 ];

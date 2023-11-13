@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -39,7 +40,8 @@ Route::group(
         })->name('about-us');
         
         Route::get('/products', function () {
-            return view('pages.products');
+            $products = Product::all();
+            return view('pages.products' , ["products" => $products]);
         })->name('products');
         
         Route::get('/contact', function () {

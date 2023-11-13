@@ -7,10 +7,10 @@
     <!-- viewport meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MartPlace - Complete Online Multipurpose Marketplace HTML Template">
-    <meta name="keywords" content="marketplace, easy digital download, digital product, digital, html5">
+    {{-- <meta name="description" content="MartPlace - Complete Online Multipurpose Marketplace HTML Template">
+    <meta name="keywords" content="marketplace, easy digital download, digital product, digital, html5"> --}}
 
-
+     @yield('meta')
     <title>El Mass Marmar</title>
 
     <!-- inject:css -->

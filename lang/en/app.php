@@ -11,5 +11,6 @@ return [
     'home' => 'Home',
     'all_products' => 'All Products',
     'contact' => 'Contact Us',
-    'search' => 'Search'
+    'search' => 'Search',
+    'keyword_home' => 'Home Page , El Mass Marmar',
 ];

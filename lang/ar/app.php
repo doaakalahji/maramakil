@@ -12,5 +12,6 @@ return [
     'all_products' => 'كل المنتجات',
     'contact' => 'اتصل بنا',
     'search' => 'ابحث',
+    'keyword_home' => 'الصفحة الرئيسية , El Mass Marmar',
 
 ];

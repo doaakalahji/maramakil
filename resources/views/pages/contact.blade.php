@@ -1,5 +1,30 @@
 @extends('master.app')
 
+@section('meta')
+ <meta property="keywords" content="@lang('app.keyword_contact')">
+ <meta property="description" content="@lang('app.description_contact')">
+
+ <meta property="og:site_name" content="elmassmarmar.com">
+ <meta property="og:url" content="{{ url()->current() }}">
+ <meta property="og:image" itemprop="image" content="">
+ <meta property="og:image:secure_url" itemprop="image" content="">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="@lang('meta_home.keyword_contact_graph')">
+ <meta property="og:description" content="{!! strip_tags("test") !!}">
+ <meta property="fb:app_id" content="1359039120781731">
+
+
+ <meta name="twitter:card" content="summary"/>
+ <meta name="twitter:site" content="@solarorex" />
+ <meta name="twitter:title" content="@lang('meta_home.keyword_contact_twitter')"/>
+ <meta name="twitter:description" content="{!! strip_tags("test") !!}"/>
+ <meta name="twitter:image" content="@lang('meta_home.keyword')"/>
+
+
+ @endsection
+
+
 @section('content')
     <!--================================
         START BREADCRUMB AREA
