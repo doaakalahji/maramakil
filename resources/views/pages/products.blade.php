@@ -182,7 +182,7 @@
                         </div>
                         <!-- end /.filter__option -->
 
-                        <div class="filter__option filter--layout">
+                        {{-- <div class="filter__option filter--layout">
                             <a href="all-products.html">
                                 <div class="svg-icon">
                                     <img class="svg" src="images/svg/grid.svg" alt="it's just a layout control folks!">
@@ -193,7 +193,7 @@
                                     <img class="svg" src="images/svg/list.svg" alt="it's just a layout control folks!">
                                 </div>
                             </a>
-                        </div>
+                        </div> --}}
                         <!-- end /.filter__option -->
                     </div>
                     <!-- end /.filter-bar -->
@@ -226,7 +226,7 @@
                         <div class="product__thumbnail">
                             <img src="{{asset('img/'.$product->image)}}" alt="Product Image">
                             <div class="prod_btn">
-                                <a href="single-product.html" class="transparent btn--sm btn--round">More Info</a>
+                                <a href="{{route("product_detail" , $product->id)}}" class="transparent btn--sm btn--round">More Info</a>
                                 <a href="single-product.html" class="transparent btn--sm btn--round">Live Demo</a>
                             </div>
                             <!-- end /.prod_btn -->
@@ -239,15 +239,15 @@
                             </a>
                             <ul class="titlebtm">
                                 <li>
-                                    <img class="auth-img" src="images/auth.jpg" alt="author image">
+                                    {{-- <img class="auth-img" src="images/auth.jpg" alt="author image"> --}}
                                     <p>
-                                        <a href="#">{{$product->description}}</a>
+                                        <a href="#">{{\Illuminate\Support\Str::limit($product->description, $limit = 50, $end = '...')}}</a>
                                     </p>
                                 </li>
-                                <li class="product_cat">
+                                {{-- <li class="product_cat">
                                     <a href="#">
                                         <span class="lnr lnr-book"></span>Plugin</a>
-                                </li>
+                                </li> --}}
                             </ul>
 
                             <p>{{$product->description}}</p>
@@ -278,8 +278,9 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="pagination-area">
-                        <nav class="navigation pagination" role="navigation">
+                    <div style="margin-left: 50%">
+                        {!! $products->links() !!}
+                        {{-- <nav class="navigation pagination" role="navigation">
                             <div class="nav-links">
                                 <a class="prev page-numbers" href="#">
                                     <span class="lnr lnr-arrow-left"></span>
@@ -291,7 +292,7 @@
                                     <span class="lnr lnr-arrow-right"></span>
                                 </a>
                             </div>
-                        </nav>
+                        </nav> --}}
                     </div>
                 </div>
             </div>

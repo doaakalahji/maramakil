@@ -1,5 +1,29 @@
 @extends('master.app')
 
+@section('meta')
+ <meta property="keywords" content="{{$product->name}}">
+ <meta property="description" content="{!! strip_tags($product->description) !!}">
+
+ <meta property="og:site_name" content="Orex.co">
+ <meta property="og:url" content="{{ url()->current() }}">
+ <meta property="og:image" itemprop="image" content="">
+ <meta property="og:image:secure_url" itemprop="image" content="{{$product->image}}">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="{{$product->name}}">
+ <meta property="og:description" content="{!! strip_tags($product->description) !!}">
+ <meta property="fb:app_id" content="1359039120781731">
+
+
+ <meta name="twitter:card" content="summary"/>
+ <meta name="twitter:site" content="@solarorex" />
+ <meta name="twitter:title" content="{{$product->name}}"/>
+ <meta name="twitter:description" content="{!! strip_tags($product->description) !!}"/>
+ <meta name="twitter:image" content="{{$product->image}}"/>
+
+
+ @endsection
+
 @section('content')
    <!--================================
         START BREADCRUMB AREA
@@ -11,17 +35,19 @@
                     <div class="breadcrumb">
                         <ul>
                             <li>
-                                <a href="#">Home</a>
+                                <a href="#">
+                                   Product
+                                </a>
                             </li>
                             <li>
-                                <a href="#">Wordpress</a>
+                                <a href="#">Details</a>
                             </li>
-                            <li class="active">
+                            {{-- <li class="active">
                                 <a href="#">Corporate & Business</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
-                    <h1 class="page-title">Beborn - Multipurpose WordPress Landing Page</h1>
+                    <h1 class="page-title">{{$product->name}}</h1>
                 </div>
                 <!-- end /.col-md-12 -->
             </div>
@@ -143,17 +169,17 @@
                                 <li>
                                     <a href="#product-comment" aria-controls="product-comment" role="tab" data-toggle="tab">Comments </a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#product-review" aria-controls="product-review" role="tab" data-toggle="tab">Reviews
                                         <span>(35)</span>
                                     </a>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="#product-support" aria-controls="product-support" role="tab" data-toggle="tab">Support</a>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="#product-faq" aria-controls="product-faq" role="tab" data-toggle="tab">item FAQ</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         <!-- end /.item-navigation -->
@@ -161,11 +187,8 @@
                         <div class="tab-content">
                             <div class="fade show tab-pane product-tab active" id="product-details">
                                 <div class="tab-content-wrapper">
-                                    <h1>Landing Page Details</h1>
-                                    <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut scelerisque the
-                                        mattis, leo quam aliquet congue placerat mi id nisi interdum mollis. Praesent pharetra,
-                                        justo ut scel erisque the mattis, leo quam aliquet congue justo ut scelerisque. Praesent
-                                        pharetra, justo ut scelerisque the mattis, leo quam aliquet congue justo ut scelerisque.</p>
+                                    <h1>{{$product->name}}</h1>
+                                    <p>{{$product->description}}</p>
                                     <h2>Features With Image:</h2>
                                     <img src="images/prodesc.jpg" alt="This is product description thumbnail">
 
@@ -1298,8 +1321,7 @@
                         <div class="sidebar-card card-pricing">
                             <div class="price">
                                 <h1>
-                                    <sup>$</sup>20 -
-                                    <sup>$</sup>60</h1>
+                                    <sup>$</sup>{{$product->price}}</h1>
                             </div>
                             <ul class="pricing-options">
                                 <li>
@@ -1508,7 +1530,7 @@
     <!--============================================
         START MORE PRODUCT ARE
     ==============================================-->
-    <section class="more_product_area section--padding">
+    {{-- <section class="more_product_area section--padding">
         <div class="container">
             <div class="row">
                 <!-- start col-md-12 -->
@@ -1756,7 +1778,7 @@
             <!-- end /.container -->
         </div>
         <!-- end /.container -->
-    </section>
+    </section> --}}
     <!--============================================
         END MORE PRODUCT AREA
     ==============================================-->
@@ -1765,7 +1787,7 @@
     <!--================================
         START CALL TO ACTION AREA
     =================================-->
-    <section class="call-to-action bgimage">
+    {{-- <section class="call-to-action bgimage">
         <div class="bg_image_holder">
             <img src="images/calltobg.jpg" alt="">
         </div>
@@ -1780,7 +1802,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--================================
         END CALL TO ACTION AREA
     =================================-->

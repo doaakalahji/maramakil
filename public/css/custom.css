@@ -205,3 +205,6 @@ color: #0ea429;
   .navbar-nav li.has_dropdown:hover{
     cursor: pointer;
   }
+  .text_field {
+    background: #f5f4f3;
+}
