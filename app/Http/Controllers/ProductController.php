@@ -32,14 +32,17 @@ class ProductController extends Controller
     {
         // dd($request->all());
         $data = $request->validate([
-            'name' => 'required|min:2|max:100',
+            'name_en' => 'required|min:2|max:100',
+            'name_ar' => 'required|min:2|max:100',
+            'name_tr' => 'required|min:2|max:100',
             'price' => 'required',
             // 'description'=> 'required',
             // 'image'=> 'required',
         ]);
         if ($request->hasFile('image')) {
             $image          = $request->file('image');
-            $imageName   = uniqid().'-'.$request->name.'.'.$image->getClientOriginalExtension();
+            $imageName      =   uniqid().'.'.$image->getClientOriginalExtension();
+            // $imageName   = uniqid().'-'.$request->name.'.'.$image->getClientOriginalExtension();
             // $location       = public_path('/img');
             $image->move(\public_path("img/"),$imageName);
       
@@ -52,9 +55,13 @@ class ProductController extends Controller
     //      $name = $request->file('img_path')->getClientOriginalName();
     //      $path = $request->file('img_path')->store('public/images');
           $product = new Product([
-              "name" =>$request->name,
+              "name_en" =>$request->name_en,
+              "name_ar" =>$request->name_ar,
+              "name_tr" =>$request->name_tr,
               "price" =>$request->price,
-              "description" =>$request->description,
+              "description_en" =>$request->description_en,
+              "description_ar" =>$request->description_ar,
+              "description_tr" =>$request->description_tr,
               "image" => $imageName ?? "",
           ]);
           
@@ -95,12 +102,14 @@ class ProductController extends Controller
     {
         // dd($request->all());
         $validated = $request->validate([
-            'name' => 'required|min:2|max:100',
+            'name_en' => 'required|min:2|max:100',
+            'name_ar' => 'required|min:2|max:100',
+            'name_tr' => 'required|min:2|max:100',
             'price' => 'required',
         ]);
         if ($request->hasFile('image')) {
             $image          = $request->file('image');
-            $newImageName   = uniqid().'-'.$request->name.'.'.$image->getClientOriginalExtension();
+            $newImageName   = uniqid().'.'.$image->getClientOriginalExtension();
             $location       = public_path('/img');
             $OldImage       = public_path('img/'.$product->image); #new
             $image->move($location, $newImageName);
@@ -116,9 +125,13 @@ class ProductController extends Controller
     
         $product->fill(
             [
-                "name" =>$request->name,
+                "name_en" =>$request->name_en,
+                "name_ar" =>$request->name_ar,
+                "name_tr" =>$request->name_tr,
                 "price" =>$request->price,
-                "description" =>$request->description,
+                "description_en" =>$request->description_en,
+                "description_ar" =>$request->description_ar,
+                "description_tr" =>$request->description_tr,
                 "image" => $newImageName,
             ]
         );

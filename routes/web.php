@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductSiteController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -39,10 +40,9 @@ Route::group(
             return view('pages.aboutus');
         })->name('about-us');
         
-        Route::get('/products', function () {
-            $products = Product::all();
-            return view('pages.products' , ["products" => $products]);
-        })->name('products');
+        Route::get('/products', [ProductSiteController::class , "getAllProducts"])->name('products');
+
+        Route::get('/product_info/{id}', [ProductSiteController::class , "showProduct"])->name('product_detail');
         
         Route::get('/contact', function () {
             return view('pages.contact');

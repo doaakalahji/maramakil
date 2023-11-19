@@ -68,53 +68,111 @@
                            @endif
                         <div class="row">
                             <input type="hidden" name="_id" value="{{isset($product) ? $product->id : 0}}"/>
-                            <div class="col-md-6 offset-md-1">
-                                {{-- <form action="#"> --}}
-                                    <div class="form-group">
-                                        <label for="f1">Product Name</label>
-                                        <input type="text" id="f1" class="text_field"
-                                        name="name" value="{{isset($product) ? $product->name :  ''}}"
-                                         placeholder="Enter Product Name...">
-
-                                         @error('name')
-                                           <div class="alert alert-danger">{{ $message }}</div>
-                                         @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="rlicense">Price</label>
-                                        <div class="input-group with--addon">
-                                            <span class="input-group-addon">$</span>
-                                            <input type="number" id="rlicense" class="text_field"
-                                             name="price" value="{{isset($product) ? $product->price :  ''}}"
-                                             placeholder="00.00">
-
-                                             @error('price')
-                                                 <div class="alert alert-danger">{{ $message }}</div>
-                                             @enderror
-                                        </div>
-                                    </div>
-                                 
                             
-                                    <div class="form-group">
-                                        <label for="cv_upload">Product Image</label>
-                                        <label for="cv_upload" class="cv_upload">
-                                            <span class="text ">Upload Product Image</span>
-                                            <span class="lnr lnr-upload up_icon">{{isset($product) ? $product->image :  ''}}</span>
-                                            <input value="{{isset($product) ? $product->image :  ''}}"
-                                            id="cv_upload"  style="display:none;" name="image" type="file">
-                                        </label>
-                                    </div>
-                              
-                                    <div class="form-group">
-                                        <label for="textarea1">Details</label>
-                                        <textarea
-                                        class="text_field" name="description" id="textarea1" placeholder="Your text here">
-                                        {{isset($product) ? $product->description :  ''}}
-                                    </textarea>
-                                    </div>
+                            {{-- <div class="col-md-6 offset-md-1"> --}}
+
+                           <div class="row col-md-12">
+                            <div class="form-group col-md-6 col-lg-6 col-xs-6">
+                                <label for="f1">Product Name EN</label>
+                                <input type="text" id="f1" class="text_field"
+                                name="name_en" value="{{isset($product) ? $product->name_en :  ''}}"
+                                 placeholder="Enter Product Name (EN)...">
+
+                                 @error('name_en')
+                                   <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+
+                           
+                            <div class="form-group ol-md-6 col-lg-6 col-xs-6">
+                                <label for="textarea1">Details EN</label>
+                                <textarea
+                                class="text_field" name="description_en" id="textarea1" placeholder="Your text here">
+                                {{isset($product) ? $product->description_en :  ''}}
+                            </textarea>
+
+                           </div>
+
+                           
+
+                           <div class="row col-md-12">
+                            <div class="form-group col-md-6 col-lg-6 col-xs-6">
+                                <label for="f1">Product Name AR</label>
+                                <input type="text" id="f1" class="text_field"
+                                name="name_ar" value="{{isset($product) ? $product->name_ar :  ''}}"
+                                 placeholder="Enter Product Name (AR)...">
+
+                                 @error('name_ar')
+                                   <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+
+                           
+                            <div class="form-group ol-md-6 col-lg-6 col-xs-6">
+                                <label for="textarea1">Details AR</label>
+                                <textarea
+                                class="text_field" name="description_ar" id="textarea1" placeholder="Your text here">
+                                {{isset($product) ? $product->description_ar :  ''}}
+                            </textarea>
+
+                           </div>
+
+                           
+                           <div class="row col-md-12">
+                            <div class="form-group col-md-6 col-lg-6 col-xs-6">
+                                <label for="f1">Product Name TR</label>
+                                <input type="text" id="f1" class="text_field"
+                                name="name_tr" value="{{isset($product) ? $product->name_tr :  ''}}"
+                                 placeholder="Enter Product Name (TR)...">
+
+                                 @error('name_tr')
+                                   <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+
+                           
+                            <div class="form-group ol-md-6 col-lg-6 col-xs-6">
+                                <label for="textarea1">Details TR</label>
+                                <textarea
+                                class="text_field" name="description_tr" id="textarea1" placeholder="Your text here">
+                                {{isset($product) ? $product->description_tr :  ''}}
+                            </textarea>
+
+                           </div>
+                           <div class="row col-md-12">
+                           <div class="form-group col-md-6 col-lg-6 col-xs-6">
+                            <label for="rlicense">Price</label>
+                            <div class="input-group with--addon">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" id="rlicense" class="text_field"
+                                 name="price" value="{{isset($product) ? $product->price :  ''}}"
+                                 placeholder="00.00">
+
+                                 @error('price')
+                                     <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+                           </div>
+                     
+                
+                        <div class="form-group col-md-6 col-lg-6 col-xs-6">
+                            <label for="cv_upload">Product Image</label>
+                            <label for="cv_upload" class="cv_upload">
+                                <span class="text ">Upload Product Image</span>
+                                <span class="lnr lnr-upload up_icon">{{isset($product) ? $product->image :  ''}}</span>
+                                <input value="{{isset($product) ? $product->image :  ''}}"
+                                id="cv_upload"  style="display:none;" name="image" type="file">
+                            </label>
+                        </div>
+                        </div>
+
+
+                 </div> 
+
+                          
 
                                 </form>
-                            </div>
+                            {{-- </div> --}}
 
                             <div class="col-md-12">
                                 <div class="dashboard_setting_btn">
