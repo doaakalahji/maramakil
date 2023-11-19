@@ -1,12 +1,7 @@
-    <!-- start menu-area -->
-    <div class="menu-area">
-        <!-- start .top-menu-area -->
+<div class="menu-area">
         <div class="top-menu-area">
-            <!-- start .container -->
             <div class="container">
-                <!-- start .row -->
                 <div class="row header">
-                    <!-- start .col-md-3 -->
                     <div class="col-lg-3 col-md-3 col-6 v_middle">
                         <div class="author__notification_area">
                             <ul>
@@ -23,20 +18,15 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
-                    <!-- end /.col-md-3 -->
 
-                    <!-- start .col-md-5 -->
                     <div class="col-lg-8 offset-lg-1 col-md-9 col-6 v_middle">
-                        <!-- start .author-area -->
                         <div class="author-area">
-
                             <div class="author__notification_area">
                                 <ul>
                                     <li>
-                                            <a href="https://wa.me/905369540616" class="contact_information">
-                                              <span class="lnr lnr-phone"></span> +90 536 954 06 16
+                                            <a href="https://wa.me/905362316258" class="contact_information">
+                                              <span class="lnr lnr-phone"></span> +90 536 231 62 58
                                             </a>
                                     </li>
 
@@ -73,14 +63,10 @@
 
 
         <div class="mainmenu">
-
             <div class="container">
-
                 <div class="row">
-
                     <div class="col-md-12">
                         <div class="navbar-header">
-
                             <div class="mainmenu__search">
                                 <form action="#">
                                     <div class="searc-wrap">
@@ -103,7 +89,7 @@
                                 <ul class="navbar-nav">
                                     <li>
                                         <a href="{{ route('home') }}">
-                                            <img src="{{ asset('images/mass_logo.png') }}" alt="" style="width: 50px">
+                                            <img src="{{ asset('images/logo.png') }}" alt="" style="width: 50px">
                                         </a>
                                     </li>
                                     <li>
@@ -119,7 +105,7 @@
                                         <a href="{{LaravelLocalization::localizeURL('/contact')}}">@lang('app.contact')</a>
                                     </li>
                                     <li class="has_dropdown">
-                                        <a class="fa fa-language"></a>
+                                        <a class="lnr lnr-earth"></a>
                                         <div class="dropdowns dropdown--menu  dropdown_lang">
                                             <ul>
                                                 <li>
@@ -134,16 +120,30 @@
                                             </ul>
                                         </div>
                                     </li>
+                                  @if (Auth::check() && Auth::user()->is_admin == 1)
+                                    <li class="has_dropdown">
+                                            <a class="lnr lnr-user"></a>
+                                            <div class="dropdowns dropdown--menu  dropdown_user">
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{LaravelLocalization::localizeURL('/profile')}}">@lang('app.profile')</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{LaravelLocalization::localizeURL('/logout')}}">@lang('app.logout')</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                    </li>
+                                  @endif
+
+
                                 </ul>
                             </div>
                             <!-- /.navbar-collapse -->
                         </nav>
                     </div>
-                    <!-- end /.col-md-12 -->
                 </div>
-                <!-- end /.row-->
             </div>
-            <!-- start .container -->
         </div>
 
     </div>

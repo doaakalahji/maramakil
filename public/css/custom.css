@@ -205,6 +205,65 @@ color: #0ea429;
   .navbar-nav li.has_dropdown:hover{
     cursor: pointer;
   }
+  .dropdown_user{
+    min-width: 180px;
+    border-top: 1px solid #e6af5d;
+}
+.marble_type {
+    border-radius: 50%;
+    border: 3px solid #e6af5d;
+    max-width: 50%;
+}
+.option_title{
+    color: #ffffff;
+}
+.option_paragraph{
+    color: #e6af5d;
+    font-size: 15px;
+}
+.section--footer{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.feature__img
+{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.product .product__thumbnail:before {
+    background-image: -webkit-gradient(linear, right top, left top, from(#e6af5d), to(#aa9278));
+    background-image: -webkit-linear-gradient(right, #e6af5d 0%, #aa9278 100%);
+    background-image: -o-linear-gradient(right, #e6af5d 0%, #aa9278 100%);
+    background-image: linear-gradient(to left, #e6af5d 0%, #aa9278 100%);
+    /* Fallback (could use .jpg/.png alternatively) */
+    background-color: #e6af5d;
+    /* SVG fallback for IE 9 (could be data URI, or could use filter) */
+    background: #aa9278;
+    /* Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0 */
+    background-image: -webkit-gradient(linear, left top, right top, from(#e6af5d), to(#aa9278));
+    /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+    background-image: -webkit-linear-gradient(left, #e6af5d, #aa9278);
+    /* Firefox 3.6 - 15 */
+    /* Opera 11.1 - 12 */
+    background-image: -o-linear-gradient(left, #e6af5d, #aa9278);
+    /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+    background-image: linear-gradient(to right, #e6af5d, #aa9278);
+    left: 0;
+  }
+  .product .prod_btn a:hover{
+    color: #30373f;
+}
+.product-purchase .price_love > span{
+    background: rgb(230 175 93);
+    color: rgb(255, 255, 255);
+}
+.product-desc .product_title h4:hover{
+    color: #e6af5d;
+   
+}
+.product-desc ul.titlebtm > li a:hover{
+    color: #30373f;
+}
   .text_field {
     background: #f5f4f3;
 }
+

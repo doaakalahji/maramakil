@@ -1,4 +1,4 @@
-/* 
+/*
  *  Owl Carousel - Animate Plugin
  */
  .owl-carousel .animated {
@@ -17,12 +17,12 @@
     -webkit-animation-name: fadeOut;
     animation-name: fadeOut;
   }
-  
+
   @-webkit-keyframes fadeOut {
     0% {
       opacity: 1;
     }
-  
+
     100% {
       opacity: 0;
     }
@@ -31,13 +31,13 @@
     0% {
       opacity: 1;
     }
-  
+
     100% {
       opacity: 0;
     }
   }
-  
-  /* 
+
+  /*
    * 	Owl Carousel - Auto Height Plugin
    */
   .owl-height {
@@ -47,8 +47,8 @@
     -o-transition: height 500ms ease-in-out;
     transition: height 500ms ease-in-out;
   }
-  
-  /* 
+
+  /*
    *  Core Owl Carousel CSS File
    */
   .owl-carousel {
@@ -76,6 +76,7 @@
     overflow: hidden;
     /* fix for flashing background */
     -webkit-transform: translate3d(0px, 0px, 0px);
+    direction: ltr;
   }
   .owl-carousel .owl-controls .owl-nav .owl-prev,
   .owl-carousel .owl-controls .owl-nav .owl-next,
@@ -137,13 +138,13 @@
   .owl-carousel.owl-rtl .owl-item {
     float: left;
   }
-  
+
   /* No Js */
   .no-js .owl-carousel {
     display: block;
   }
-  
-  /* 
+
+  /*
    * 	Owl Carousel - Lazy Load Plugin
    */
   .owl-carousel .owl-item .owl-lazy {
@@ -157,8 +158,8 @@
   .owl-carousel .owl-item img {
     transform-style: preserve-3d;
   }
-  
-  /* 
+
+  /*
    * 	Owl Carousel - Video Plugin
    */
   .owl-carousel .owl-video-wrapper {
@@ -214,4 +215,3 @@
     position: relative;
     z-index: 1;
   }
-  

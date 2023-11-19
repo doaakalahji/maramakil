@@ -26,9 +26,6 @@
  @endsection
 
 @section('content')
-    <!--================================
-        START BREADCRUMB AREA
-    =================================-->
     <section class="breadcrumb-area">
         <div class="container">
             <div class="row">
@@ -43,38 +40,27 @@
                             </li>
                         </ul>
                     </div>
-                    <h1 class="page-title">About Us</h1>
+                    <h1 class="page-title">@lang("app.about_us")</h1>
                 </div>
-                <!-- end /.col-md-12 -->
             </div>
-            <!-- end /.row -->
         </div>
-        <!-- end /.container -->
     </section>
-    <!--================================
-        END BREADCRUMB AREA
-    =================================-->
 
-<!--================================
-END ABOUT HERO AREA
-=================================-->
+
 <section class="about_mission">
     <div class="content_block1">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-12">
                     <div class="content_area">
-                        <h1 class="content_area--title">About
+                        <h1 class="content_area--title">@lang("app.about")
                             <span class="highlight">El Mass Marmar</span>
                         </h1>
-                        <p style="font-size: 20px">At El Mass Marmar, we are passionate about the intricate beauty and timeless elegance of marble. Our journey in the marble industry spans years, driven by a commitment to excellence, innovation, and quality craftsmanship.</p>
+                        <p style="font-size: 20px">@lang('app.about_us_descrption')</p>
                     </div>
                 </div>
-                <!-- end /.col-md-5 -->
             </div>
-            <!-- end /.row -->
         </div>
-        <!-- end /.container -->
 
         <div class="content_image bgimage">
             <div class="bg_image_holder">
@@ -82,7 +68,6 @@ END ABOUT HERO AREA
             </div>
         </div>
     </div>
-    <!-- end /.about -->
 
     <div class="content_block2">
         <div class="container">
@@ -90,16 +75,13 @@ END ABOUT HERO AREA
                 <div class="col-lg-5 col-md-6  offset-md-6 offset-lg-7">
                     <div class="content_area2">
                         <h1 class="content_area2--title">El Mass Marmar
-                            <span class="highlight">Mission</span>
+                            <span class="highlight">@lang('app.mission')</span>
                         </h1>
-                        <p style="font-size: 20px">Established with a vision to redefine the marble industry, El Mass Marmar has been a cornerstone in providing premium quality marble solutions. We combine traditional expertise with modern technology to deliver superior products and services.</p>
+                        <p style="font-size: 20px">@lang('app.mission_descrption')</p>
                     </div>
                 </div>
-                <!-- end /.col-md-5 -->
             </div>
-            <!-- end /.row -->
         </div>
-        <!-- end /.container -->
 
         <div class="content_image2 bgimage">
             <div class="bg_image_holder">
@@ -107,96 +89,70 @@ END ABOUT HERO AREA
             </div>
         </div>
     </div>
-    <!-- end /.mission-->
+
 </section>
-<!--================================
-END ABOUT HERO AREA
-=================================-->
 
-    <!--================================
-    START FEATURE AREA
-=================================-->
 <section class="features section--padding">
-    <!-- start container -->
     <div class="container">
-        <!-- start row -->
-
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h1>Why
-                        <span class="highlighted"> Choose Us</span>
-                    </h1>
+                    <h1>@lang('app.why_choose_us')</h1>
                     <p></p>
                 </div>
             </div>
-            <!-- end /.col-md-12 -->
         </div>
         <div class="row">
-            <!-- start search-area -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" >
                 <div class="feature">
                     <div class="">
                         <i aria-hidden="true" class="flaticon  flaticon-floor"></i>
                     </div>
                     <div class="feature__title">
-                        <h3>Quality Assurance</h3>
+                        <h3>@lang('app.quality_assurance')</h3>
                     </div>
                     <div class="feature__desc">
-                        <p>We meticulously select and process our marble to guarantee top-notch quality</p>
+                        <p>@lang('quality_assurance_description')</p>
                     </div>
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <!-- start search-area -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                 <div class="feature">
                     <div class="">
                         <i aria-hidden="true" class="flaticon   flaticon-tiles-2"></i>
                     </div>
                     <div class="feature__title">
-                        <h3>Craftsmanship</h3>
+                        <h3>@lang('app.craftsmanship')</h3>
                     </div>
                     <div class="feature__desc">
-                        <p>Our skilled artisans and modern techniques ensure precision in every product.</p>
+                        <p>@lang('app.craftsmanship_descrption')</p>
                     </div>
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <!-- start search-area -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                 <div class="feature">
                     <div class="">
                         <i aria-hidden="true" class="flaticon  flaticon-wood"></i>
                     </div>
                     <div class="feature__title">
-                        <h3>Customer Satisfaction</h3>
+                        <h3>@lang('app.customer_satisfaction')</h3>
                     </div>
                     <div class="feature__desc">
-                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                        <p>@lang('app.customer_satisfaction_descrption')</p>
                     </div>
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
         </div>
-        <!-- end /.row -->
     </div>
-    <!-- end /.container -->
 </section>
-<!--================================
-END FEATURE AREA
-=================================-->
-<hr>
+
 
 <!--================================
 START TIMELINE AREA
 =================================-->
-<section class="timeline_area section--padding">
+{{-- <section class="timeline_area section--padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -277,24 +233,19 @@ START TIMELINE AREA
         <!-- end /.row -->
     </div>
     <!-- end /.container -->
-</section>
+</section> --}}
 <!--================================
 END TIMELINE AREA
 =================================-->
 
 
-<!--================================
-START COUNTER UP AREA2
-=================================-->
-<section class="counter-up-area counter-up--area2">
-    <!-- start .container -->
+{{-- <section class="counter-up-area counter-up--area2">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2>Today We are in Here</h2>
+                <h2>@lang('app.today_we_are_in_here')</h2>
             </div>
         </div>
-        <!-- start .col-md-12 -->
         <div class="col-md-12">
             <div class="counter-up">
                 <div class="counter mcolor2">
@@ -319,45 +270,32 @@ START COUNTER UP AREA2
                 </div>
             </div>
         </div>
-        <!-- end /.col-md-12 -->
     </div>
-    <!-- end /.container -->
-</section>
-<!--================================
-END COUNTER UP AREA2
-=================================-->
+</section> --}}
 
-<!--================================
-START MARTPLACE TEAM AREA
-=================================-->
 <section class="team_area section--padding" style="background-image: url({{ asset('images/features.jpg') }});">
     <div class="container">
-        <!-- start row -->
         <div class="row">
-            <!-- start col-md-12 -->
             <div class="col-md-12">
                 <div class="section-title">
                     <h1>El Mass Marmar
-                        <span class="highlighted">Owner</span>
+                        <span class="highlighted">@lang('app.owner')</span>
                     </h1>
-                    <p>Feel free to contact us to learn more about our services, explore our exquisite marble collection, or discuss your specific requirements.</p>
+                    <p>@lang('app.owner_title')</p>
                 </div>
             </div>
-            <!-- end /.col-md-12 -->
         </div>
-        <!-- end /.row -->
 
         <div class="row" style="justify-content: center;">
             <div class="col-lg-3 col-md-4" >
                 <div class="single_team_member">
                     <figure>
-                        <img src="images/team1.jpg" alt="Team Member">
+                        <img src="{{ asset('images/avatar_person.png') }}" alt="Team Member">
                         <figcaption>
                             <div class="name_desig">
                                 <h4>Marwa AlMashhoud</h4>
                                 <p>El Mass Marmar Owner</p>
                             </div>
-                            <!-- end /.name_desig -->
 
                             <div class="social">
                                 <ul>
@@ -389,23 +327,12 @@ START MARTPLACE TEAM AREA
             <!-- end /.col-md-3 -->
 
         </div>
-        <!-- end /.row -->
     </div>
-    <!-- end /.container -->
 </section>
-<!--================================
-END MARTPLACE TEAM AREA
-=================================-->
 
-<!--================================
-START TESTIMONIAL
-=================================-->
-<section class="testimonial-area testimonial--2 section--padding">
-    <!-- start .container -->
+{{-- <section class="testimonial-area testimonial--2 section--padding">
     <div class="container">
-        <!-- start row -->
         <div class="row">
-            <!-- start col-md-12 -->
             <div class="col-md-12">
                 <div class="section-title">
                     <h1>Our Clients
@@ -415,13 +342,9 @@ START TESTIMONIAL
                         est laborum dolo rumes fugats untras.</p>
                 </div>
             </div>
-            <!-- end /.col-md-12 -->
         </div>
-        <!-- end /.row -->
 
-        <!-- start row -->
         <div class="row">
-            <!-- start .col-md-12 -->
             <div class="col-md-12">
                 <div class="testimonial-slider">
                     <div class="testimonial">
@@ -441,7 +364,6 @@ START TESTIMONIAL
                                 is mollis. Praesent the pharetra, justo ut scelerisque.</p>
                         </div>
                     </div>
-                    <!-- end /.testimonial -->
 
                     <div class="testimonial">
                         <div class="testimonial__about">
@@ -460,7 +382,6 @@ START TESTIMONIAL
                                 is mollis. Praesent the pharetra, justo ut scelerisque.</p>
                         </div>
                     </div>
-                    <!-- end /.testimonial -->
 
                     <div class="testimonial">
                         <div class="testimonial__about">
@@ -479,43 +400,10 @@ START TESTIMONIAL
                                 is mollis. Praesent the pharetra, justo ut scelerisque.</p>
                         </div>
                     </div>
-                    <!-- end /.testimonial -->
-
-                    <div class="testimonial">
-                        <div class="testimonial__about">
-                            <div class="avatar v_middle">
-                                <img src="images/test2.jpg" alt="Testimonial Avatar">
-                            </div>
-                            <div class="name-designation v_middle">
-                                <h4 class="name">Tarashi Hamada</h4>
-                                <span class="desig">Quality Ninja</span>
-                            </div>
-                            <span class="lnr lnr-bubble quote-icon"></span>
-                        </div>
-                        <div class="testimonial__text">
-                            <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut scelerisque the mattis,
-                                leo quam aliquet diam congue is the laoreet elit metus. Nunc placerat mi is id nisi interdum
-                                is mollis. Praesent the pharetra, justo ut scelerisque.</p>
-                        </div>
-                    </div>
-                    <!-- end /.testimonial -->
                 </div>
-                <!-- end /.testimonial_slider -->
-
-                {{-- <div class="all-testimonial">
-                    <a href="testimonial.html" class="btn btn--lg btn--round">View All Reviews</a>
-                </div> --}}
             </div>
-            <!-- end /.col-md-12 -->
         </div>
-        <!-- end /.row -->
     </div>
-    <!-- end container -->
-</section>
-<!--================================
-END TESTIMONIAL
-=================================-->
-
-
+</section> --}}
 
 @endsection
