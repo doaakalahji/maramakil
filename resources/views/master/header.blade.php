@@ -1,12 +1,7 @@
-    <!-- start menu-area -->
-    <div class="menu-area">
-        <!-- start .top-menu-area -->
+<div class="menu-area">
         <div class="top-menu-area">
-            <!-- start .container -->
             <div class="container">
-                <!-- start .row -->
                 <div class="row header">
-                    <!-- start .col-md-3 -->
                     <div class="col-lg-3 col-md-3 col-6 v_middle">
                         <div class="author__notification_area">
                             <ul>
@@ -23,15 +18,10 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
-                    <!-- end /.col-md-3 -->
 
-                    <!-- start .col-md-5 -->
                     <div class="col-lg-8 offset-lg-1 col-md-9 col-6 v_middle">
-                        <!-- start .author-area -->
                         <div class="author-area">
-
                             <div class="author__notification_area">
                                 <ul>
                                     <li>
@@ -73,14 +63,10 @@
 
 
         <div class="mainmenu">
-
             <div class="container">
-
                 <div class="row">
-
                     <div class="col-md-12">
                         <div class="navbar-header">
-
                             <div class="mainmenu__search">
                                 <form action="#">
                                     <div class="searc-wrap">
@@ -103,7 +89,7 @@
                                 <ul class="navbar-nav">
                                     <li>
                                         <a href="{{ route('home') }}">
-                                            <img src="{{ asset('images/mass_logo.png') }}" alt="" style="width: 50px">
+                                            <img src="{{ asset('images/logo.png') }}" alt="" style="width: 50px">
                                         </a>
                                     </li>
                                     <li>
@@ -156,11 +142,8 @@
                             <!-- /.navbar-collapse -->
                         </nav>
                     </div>
-                    <!-- end /.col-md-12 -->
                 </div>
-                <!-- end /.row-->
             </div>
-            <!-- start .container -->
         </div>
 
     </div>

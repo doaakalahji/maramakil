@@ -1,16 +1,15 @@
 <footer class="footer-area">
-    <div class="footer-big section--padding" style="background-image: url({{ asset('images/marble.png') }}); background-size: cover;">
-        <!-- start .container -->
+    <div class="footer-big section--footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="info-footer">
                         <div class="info__logo">
-                            <img src="images/flogo.png" alt="footer logo">
+                            <img src="{{ asset('images/logo.png') }}" alt="footer logo">
                         </div>
-                        <p class="info--text">Nunc placerat mi id nisi interdum they mollis. Praesent pharetra, justo ut scel erisque the mattis,
-                            leo quam.</p>
-                        <ul class="info-contact">
+                        {{-- <p class="info--text">Nunc placerat mi id nisi interdum they mollis. Praesent pharetra, justo ut scel erisque the mattis,
+                            leo quam.</p> --}}
+                        {{-- <ul class="info-contact">
                             <li>
                                 <span class="lnr lnr-phone info-icon"></span>
                                 <span class="info">Phone: +6789-875-2235</span>
@@ -23,85 +22,67 @@
                                 <span class="lnr lnr-map-marker info-icon"></span>
                                 <span class="info">202 New Hampshire Avenue Northwest #100, New York-2573</span>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
-                    <!-- end /.info-footer -->
                 </div>
-                <!-- end /.col-md-3 -->
 
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-menu">
-                        <h4 class="footer-widget-title text--white">Our Company</h4>
+                        {{-- <h4 class="footer-widget-title text--white">@lang('app.links')</h4> --}}
                         <ul>
                             <li>
-                                <a href="#">How to Join Us</a>
+                                <a href="{{LaravelLocalization::localizeURL('/')}}">@lang('app.home')</a>
                             </li>
                             <li>
-                                <a href="#">How It Work</a>
+                                <a href="{{LaravelLocalization::localizeURL('/products')}}">@lang('app.all_products')</a>
                             </li>
                             <li>
-                                <a href="#">Buying and Selling</a>
+                                <a href="{{LaravelLocalization::localizeURL('/about-us')}}">@lang('app.about_us')</a>
                             </li>
                             <li>
-                                <a href="#">Testimonials</a>
-                            </li>
-                            <li>
-                                <a href="#">Copyright Notice</a>
-                            </li>
-                            <li>
-                                <a href="#">Refund Policy</a>
-                            </li>
-                            <li>
-                                <a href="#">Affiliates</a>
+                                <a href="{{LaravelLocalization::localizeURL('/contact')}}">@lang('app.contact')</a>
                             </li>
                         </ul>
                     </div>
-                    <!-- end /.footer-menu -->
-
-                    <div class="footer-menu">
-                        <h4 class="footer-widget-title text--white">Help and FAQs</h4>
-                        <ul>
-                            <li>
-                                <a href="#">How to Join Us</a>
-                            </li>
-                            <li>
-                                <a href="#">How It Work</a>
-                            </li>
-                            <li>
-                                <a href="#">Buying and Selling</a>
-                            </li>
-                            <li>
-                                <a href="#">Testimonials</a>
-                            </li>
-                            <li>
-                                <a href="#">Copyright Notice</a>
-                            </li>
-                            <li>
-                                <a href="#">Refund Policy</a>
-                            </li>
-                            <li>
-                                <a href="#">Affiliates</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- end /.footer-menu -->
                 </div>
-                <!-- end /.col-md-5 -->
 
                 <div class="col-lg-4 col-md-12">
                     <div class="newsletter">
-                        <h4 class="footer-widget-title text--white">Newsletter</h4>
-                        <p>Subscribe to get the latest news, update and offer information. Don't worry, we won't send spam!</p>
-                        <div class="newsletter__form">
+                        {{-- <h4 class="footer-widget-title text--white">Newsletter</h4>
+                        <p>Subscribe to get the latest news, update and offer information. Don't worry, we won't send spam!</p> --}}
+                        {{-- <div class="newsletter__form">
                             <form action="#">
                                 <div class="field-wrapper">
                                     <input class="relative-field rounded" type="text" placeholder="Enter email">
-                                    <button class="btn btn--round" type="submit">Submit</button>
+                                    <button class="btn btn--round" type="submit">@lang('app.contact_send')</button>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
+                        <ul class="info-contact">
+                            <li>
+                                <a href="https://wa.me/905369540616" class="contact_information">
+                                    <span class="lnr lnr-phone info-icon"></span>
+                                    <span class="info"> +90 536 954 06 16</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/905362316258" class="contact_information">
+                                    <span class="lnr lnr-phone info-icon"></span>
+                                    <span class="info"> +90 536 231 62 58</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:mervealmashhud@gmail.com" class="contact_information">
+                                    <span class="lnr lnr-envelope info-icon"></span>
+                                    <span class="info">mervealmashhud@gmail.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <span class="lnr lnr-map-marker info-icon"></span>
+                                <span class="info">Emirbeyazıt Mah</span>
+                            </li>
+                        </ul>
 
-                        <!-- start .social -->
                         <div class="social social--color--filled">
                             <ul>
                                 <li>
@@ -129,26 +110,20 @@
 
                             </ul>
                         </div>
-                        <!-- end /.social -->
                     </div>
-                    <!-- end /.newsletter -->
                 </div>
-                <!-- end /.col-md-4 -->
             </div>
-            <!-- end /.row -->
         </div>
-        <!-- end /.container -->
     </div>
-    <!-- end /.footer-big -->
 
     <div class="mini-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright-text">
-                        <p>&copy; 2019
-                            <a href="#">MartPlace</a>. All rights reserved. Created by
-                            <a href="#">AazzTech</a>
+                        <p>&copy; 2023
+                            <a href="#">El Mass Marmar</a>. All rights reserved.
+                            {{-- <a href="#">AazzTech</a> --}}
                         </p>
                     </div>
 

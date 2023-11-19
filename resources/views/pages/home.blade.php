@@ -25,9 +25,11 @@
  @endsection
 
 @section("content")
+
+
 <section class="hero-area bgimage">
-    <div class="bg_image_holder">
-        <img src="{{ asset('images/header.jpg') }}" alt="background-image">
+    <div class="bg_image_holder" >
+        <img src="{{ asset('images/header9.png') }}" alt="images/hero_area_bg1.jpg">
     </div>
     <!-- start hero-content -->
     <div class="hero-content content_above">
@@ -39,32 +41,18 @@
                 <div class="row">
                     <!-- start col-md-12 -->
                     <div class="col-md-12">
-                        <div class="hero__content__title">
+                        {{-- <div class="hero__content__title">
                             <h1>
                                 <span class="bold hero_img">@lang("app.mass")</span>
                             </h1>
-                            {{-- <p class="tagline">MartPlace is the most powerful, & customizable template for Easy Digital Downloads Products</p> --}}
-                        </div>
-
-                        <!-- start .hero__btn-area-->
-                        {{-- <div class="hero__btn-area">
-                            <a href="all-products.html" class="btn btn--round btn--lg">View All Products</a>
-                            <a href="all-products.html" class="btn btn--round btn--lg">Popular Products</a>
                         </div> --}}
-                        <!-- end .hero__btn-area-->
                     </div>
-                    <!-- end /.col-md-12 -->
                 </div>
-                <!-- end /.row -->
             </div>
-            <!-- end /.container -->
         </div>
-        <!-- end .contact_wrapper -->
     </div>
-    <!-- end hero-content -->
 
-    <!--start search-area -->
-    <div class="search-area">
+    {{-- <div class="search-area">
         <!-- start .container -->
         <div class="container">
             <!-- start .container -->
@@ -95,608 +83,368 @@
             <!-- end /.row -->
         </div>
         <!-- end /.container -->
-    </div>
-    <!--start /.search-area -->
+    </div> --}}
+
 </section>
 
-
-<section class="features section--padding">
-    <!-- start container -->
+<section style="padding-top: 130px;">
     <div class="container">
-        <!-- start row -->
+        <div class="row" style="justify-content: space-evenly;">
+            <div class="col-lg-5 col-md-6 v_middle" >
+                <div>
+                    {{-- <h3 class="promotion__subtitle">Big Extension Bundle</h3> --}}
+                    <h1 class="promotion__title">@lang('app.marble')</h1>
+                    <hr>
+                    <p>@lang('app.marble_description1')</p>
+                    <br>
+                    <p>@lang('app.marble_description2')</p>
+                </div>
+            </div>
 
+            <div class="col-md-6 v_middle aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
+                <div class="promotion-img">
+                    <img src="{{ asset('images/marble-caption.jpg') }}" alt="Promotion image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 70px 0px;">
+    <div class="container">
+        <div class="row" style="justify-content: space-evenly;">
+            <div class="col-md-6 v_middle aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
+                <div class="promotion-img">
+                    <img src="{{ asset('images/marble-caption2.jpg') }}" alt="Promotion image">
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-6 v_middle">
+                <div>
+
+                    <p>@lang('app.marble_description3')</p>
+
+                    <p>@lang('app.marble_description4')</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section--padding2" style="background-image: url({{ asset('images/features.jpg') }}); padding:70px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="feature__content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                    <i class="flaticon  flaticon-tiles-2"></i>
+                    <p>@lang('app.marble_description5')</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 ">
+                    <div class="feature__content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                        <i class="flaticon  flaticon-wood"></i>
+                        <p>@lang('app.marble_description6')</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- style="background-image: url({{ asset('images/types/stone-floor-texture.jpg') }});" --}}
+<section class="features section--padding" style="background-image: url({{ asset('images/header2.jpg') }});">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h1> Choose Your Color What You Want For Your Home </h1>
-                    <p>There are many variations of Marble.
+                    <h1> @lang('app.marble_types_tilte') </h1>
                     </p>
                 </div>
             </div>
-            <!-- end /.col-md-12 -->
         </div>
+
         <div class="row">
-            <!-- start search-area -->
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
-                        <img src="{{ asset('images/types/granite.png') }}" alt="feature">
+                        <img src="{{ asset('images/types/crema-nuova.png') }}" alt="feature">
                     </div>
                     <div class="feature__title">
-                        <h3>Granite</h3>
+                        <h3>Crema Nuova</h3>
                     </div>
-                    <div class="feature__desc">
+                    {{-- <div class="feature__desc">
                         <p>We meticulously select and process our marble to guarantee top-notch quality</p>
-                    </div>
+                    </div> --}}
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <!-- start search-area -->
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
-                        <img src="{{ asset('images/types/limestone.png') }}" alt="feature">
+                        <img src="{{ asset('images/types/burdur-beige.png') }}" alt="feature">
                     </div>
                     <div class="feature__title">
-                        <h3>Limestone</h3>
+                        <h3>Burdur Beige</h3>
                     </div>
-                    <div class="feature__desc">
+                    {{-- <div class="feature__desc">
                         <p>Our skilled artisans and modern techniques ensure precision in every product.</p>
-                    </div>
+                    </div> --}}
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <!-- start search-area -->
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
-                        <img src="{{ asset('images/types/marble.png') }}" alt="feature">
+                        <img src="{{ asset('images/types/mugla-marble.png') }}" alt="feature">
                     </div>
                     <div class="feature__title">
-                        <h3>Marble</h3>
+                        <h3>Mugla Marble</h3>
                     </div>
-                    <div class="feature__desc">
+                    {{-- <div class="feature__desc">
                         <p>Your needs are our priority, and we aim to exceed your expectations.</p>
-                    </div>
+                    </div> --}}
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
-                        <img src="{{ asset('images/types/onyx.png') }}" alt="feature">
+                        <img src="{{ asset('images/types/emperador-marble.png') }}" alt="feature">
                     </div>
                     <div class="feature__title">
-                        <h3>Onyx</h3>
+                        <h3>Emperador Marble</h3>
                     </div>
-                    <div class="feature__desc">
+                    {{-- <div class="feature__desc">
                         <p>Your needs are our priority, and we aim to exceed your expectations.</p>
-                    </div>
+                    </div> --}}
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
-                        <img src="{{ asset('images/types/quartz.png') }}" alt="feature">
+                        <img src="{{ asset('images/types/piazza-bianco.png') }}" alt="feature">
                     </div>
                     <div class="feature__title">
-                        <h3>Quartz</h3>
+                        <h3>Piazza Bianco</h3>
                     </div>
-                    <div class="feature__desc">
+                    {{-- <div class="feature__desc">
                         <p>Your needs are our priority, and we aim to exceed your expectations.</p>
-                    </div>
+                    </div> --}}
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
-                        <img src="{{ asset('images/types/travertine.png') }}" alt="feature">
+                        <img src="{{ asset('images/types/afyon-violet.png') }}" alt="feature">
                     </div>
                     <div class="feature__title">
-                        <h3>Travertine</h3>
+                        <h3>Afyon Violet</h3>
                     </div>
-                    <div class="feature__desc">
+                    {{-- <div class="feature__desc">
                         <p>Your needs are our priority, and we aim to exceed your expectations.</p>
-                    </div>
+                    </div> --}}
                 </div>
-                <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
 
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
-                        <img src="{{ asset('images/types/travertine2.png') }}" alt="feature">
+                        <img src="{{ asset('images/types/lilac-marble.png') }}" alt="feature">
                     </div>
                     <div class="feature__title">
-                        <h3>Travertine2</h3>
+                        <h3>Lilac Marble</h3>
                     </div>
-                    <div class="feature__desc">
+                    {{-- <div class="feature__desc">
                         <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/moonstone.png') }}" alt="feature">
                     </div>
+                    <div class="feature__title">
+                        <h3>Moonstone</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
                 </div>
                 <!-- end /.feature -->
             </div>
-            <!-- end /.col-lg-4 col-md-6 -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/moonstone-sliver.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Moonstone Gray</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/dolomite-marble.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Dolomite Marble</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/turkish-emperador.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Turkish Emperador</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/limra-stone-turkey.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Limra Stone Turkey</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+                <!-- end /.feature -->
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/gray-marble.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Gray Marble</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/kemalpaşa-marble.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Kemalpaşa Marble</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/black-marble.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Black Marble</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/rosso-levanto.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Rosso Levanto</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
+                    <div class="feature__img">
+                        <img src="{{ asset('images/types/streaky-belvedere.png') }}" alt="feature">
+                    </div>
+                    <div class="feature__title">
+                        <h3>Streaky Belvedere</h3>
+                    </div>
+                    {{-- <div class="feature__desc">
+                        <p>Your needs are our priority, and we aim to exceed your expectations.</p>
+                    </div> --}}
+                </div>
+            </div>
+
         </div>
-        <!-- end /.row -->
     </div>
-    <!-- end /.container -->
 </section>
 
-
-    <!--================================
-            START SIGNUP AREA
-    =================================-->
-    <section class="section--padding2" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="testimonial-slider">
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider1.jpg') }}" alt="">
-                        </div>
-                        <!-- end /.testimonial -->
-
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider2.jpg') }}" alt="">
-                        </div>
-                        <!-- end /.testimonial -->
-
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider3.jpg') }}" alt="">
-                        </div>
-                        <!-- end /.testimonial -->
-
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider4.jpg') }}" alt="">
-                        </div>
-                        <!-- end /.testimonial -->
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider5.jpg') }}" alt="">
-                        </div>
-
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider6.jpg') }}" alt="">
-                        </div>
-
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider7.jpg') }}" alt="">
-                        </div>
-
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider8.jpg') }}" alt="">
-                        </div>
-
-                        <div class="testimonial">
-                            <img src="{{ asset('images/slider9.jpg') }}" alt="">
-                        </div>
-                    </div>
-                    <!-- end /.testimonial_slider -->
-                </div>
+    <section class="game-section">
+        <h2 class="line-title">@lang('app.marble_options')</h2>
+        <br>
+        <p>@lang('app.marble_options_descrption')</p>
+        <div class="owl-carousel custom-carousel owl-theme">
+          <div class="item active" style="background-image: url({{ asset('images/5.jpg') }});">
+            <div class="item-desc">
+              <h5 class="option_title">@lang('app.marble_option1')</h5>
+              <p class="option_paragraph">@lang('app.marble_option1_descrption')</p>
             </div>
-            <!-- end .row -->
-        </div>
-        <!-- end .container -->
-    </section>
-    <!--================================
-            END SIGNUP AREA
-    =================================-->
-
-        <!--================================
-    START FEATURED PRODUCT AREA
-=================================-->
-{{-- <section class="featured-products  section--padding" style="background: #f6f4f5">
-    <!-- start /.container -->
-    <div class="container">
-        <!-- start row -->
-        <div class="row">
-            <!-- start col-md-12 -->
-            <div class="col-md-12">
-                <div class="product-title-area ">
-                    <div class="product__title">
-                        <h2>Featured Products</h2>
-                    </div>
-
-                    <div class="product__slider-nav rounded">
-                        <span class="lnr lnr-chevron-left nav_left"></span>
-                        <span class="lnr lnr-chevron-right nav_right"></span>
-                    </div>
-                </div>
+          </div>
+          <div class="item" style="background-image: url({{ asset('images/4.jpg') }});">
+            <div class="item-desc">
+              <h5 class="option_title">@lang('app.marble_option2')</h5>
+              <p class="option_paragraph">@lang('app.marble_option2_descrption')</p>
             </div>
-            <!-- end /.col-md-12 -->
-        </div>
-        <!-- end /.row -->
-    </div>
-
-    <!-- start .featured-product-slider -->
-
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 no0-padding">
-                <div class="featured-product-slider prod-slider1">
-                    <div class="featured__single-slider">
-                        <div class="featured__preview-img">
-                            <img src="images/featprod.jpg" alt="Featured products">
-                            <div class="prod_btn">
-                                <a href="single-product.html" class="transparent btn--sm btn--round">More Info</a>
-                                <a href="single-product.html" class="transparent btn--sm btn--round">Live Demo</a>
-                            </div>
-                        </div>
-                        <!-- end /.featured__preview-img -->
-
-                        <div class="featured__product-description">
-                            <div class="product-desc desc--featured">
-                                <a href="single-product.html" class="product_title">
-                                    <h4>Rida - vCard, Portfolio / Resume Template</h4>
-                                </a>
-                                <ul class="titlebtm">
-                                    <li>
-                                        <img class="auth-img" src="images/auth.jpg" alt="author image">
-                                        <p>
-                                            <a href="#">AazzTech</a>
-                                        </p>
-                                    </li>
-                                    <li class="product_cat">
-                                        <a href="#">
-                                            <span class="lnr lnr-book"></span> WordPress</a>
-                                    </li>
-                                </ul>
-                                <!-- end /.titlebtm -->
-
-                                <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut scelerisque the
-                                    mattis, leo quam aliquet congue placerat mi id nisi interdum mollis. Praesent pharetra,
-                                    justo ut scelerisque the mattis, leo quam aliquet congue justo ut scelerisque.</p>
-                            </div>
-                            <!-- end /.product-desc -->
-
-                            <div class="product_data">
-                                <div class="tags tags--round">
-                                    <ul>
-                                        <li>
-                                            <a href="#">website</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">plugin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">landing page</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- end /.tags -->
-                                <div class="product-purchase featured--product-purchase">
-                                    <div class="price_love">
-                                        <span>$10 - $50</span>
-                                        <p>
-                                            <span class="lnr lnr-heart"></span> 90</p>
-                                    </div>
-                                    <div class="sell">
-                                        <p>
-                                            <span class="lnr lnr-cart"></span>
-                                            <span>16</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="rating product--rating">
-                                        <ul>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- end /.product-purchase -->
-                            </div>
-                        </div>
-                        <!-- end /.featured__product-description -->
-                    </div>
-                    <!--end /.featured__single-slider-->
-
-                    <div class="featured__single-slider">
-                        <div class="featured__preview-img">
-                            <img src="images/featprod.jpg" alt="Featured products">
-                            <div class="prod_btn">
-                                <a href="single-product.html" class="transparent btn--sm btn--round">More Info</a>
-                                <a href="single-product.html" class="transparent btn--sm btn--round">Live Demo</a>
-                            </div>
-                        </div>
-                        <!-- end /.featured__preview-img -->
-
-                        <div class="featured__product-description">
-                            <div class="product-desc desc--featured">
-                                <a href="single-product.html" class="product_title">
-                                    <h4>One Page Resume Template</h4>
-                                </a>
-                                <ul class="titlebtm">
-                                    <li>
-                                        <img class="auth-img" src="images/auth.jpg" alt="author image">
-                                        <p>
-                                            <a href="#">AazzTech</a>
-                                        </p>
-                                    </li>
-                                    <li class="product_cat">
-                                        <a href="#">
-                                            <span class="lnr lnr-book"></span> WordPress</a>
-                                    </li>
-                                </ul>
-                                <!-- end /.titlebtm -->
-
-                                <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut scelerisque the
-                                    mattis, leo quam aliquet congue placerat mi id nisi interdum mollis. Praesent pharetra,
-                                    justo ut scelerisque the mattis, leo quam aliquet congue justo ut scelerisque.</p>
-                            </div>
-                            <!-- end /.product-desc -->
-
-                            <div class="product_data">
-                                <div class="tags tags--round">
-                                    <ul>
-                                        <li>
-                                            <a href="#">website</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">plugin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">landing page</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- end /.tags -->
-                                <div class="product-purchase featured--product-purchase">
-                                    <div class="price_love">
-                                        <span>$10 - $50</span>
-                                        <p>
-                                            <span class="lnr lnr-heart"></span> 90</p>
-                                    </div>
-                                    <div class="sell">
-                                        <p>
-                                            <span class="lnr lnr-cart"></span>
-                                            <span>16</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="rating product--rating">
-                                        <ul>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- end /.product-purchase -->
-                            </div>
-                        </div>
-                        <!-- end /.featured__product-description -->
-                    </div>
-                    <!--end /.featured__single-slider-->
-
-                    <div class="featured__single-slider">
-                        <div class="featured__preview-img">
-                            <img src="images/featprod.jpg" alt="Featured products">
-                            <div class="prod_btn">
-                                <a href="single-product.html" class="transparent btn--sm btn--round">More Info</a>
-                                <a href="single-product.html" class="transparent btn--sm btn--round">Live Demo</a>
-                            </div>
-                        </div>
-                        <!-- end /.featured__preview-img -->
-
-                        <div class="featured__product-description">
-                            <div class="product-desc desc--featured">
-                                <a href="single-product.html" class="product_title">
-                                    <h4>AppsPress App Landing</h4>
-                                </a>
-                                <ul class="titlebtm">
-                                    <li>
-                                        <img class="auth-img" src="images/auth.jpg" alt="author image">
-                                        <p>
-                                            <a href="#">AazzTech</a>
-                                        </p>
-                                    </li>
-                                    <li class="product_cat">
-                                        <a href="#">
-                                            <span class="lnr lnr-book"></span> WordPress</a>
-                                    </li>
-                                </ul>
-                                <!-- end /.titlebtm -->
-
-                                <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut scelerisque the
-                                    mattis, leo quam aliquet congue placerat mi id nisi interdum mollis. Praesent pharetra,
-                                    justo ut scelerisque the mattis, leo quam aliquet congue justo ut scelerisque.</p>
-                            </div>
-                            <!-- end /.product-desc -->
-
-                            <div class="product_data">
-                                <div class="tags tags--round">
-                                    <ul>
-                                        <li>
-                                            <a href="#">website</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">plugin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">landing page</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- end /.tags -->
-                                <div class="product-purchase featured--product-purchase">
-                                    <div class="price_love">
-                                        <span>$10 - $50</span>
-                                        <p>
-                                            <span class="lnr lnr-heart"></span> 90</p>
-                                    </div>
-                                    <div class="sell">
-                                        <p>
-                                            <span class="lnr lnr-cart"></span>
-                                            <span>16</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="rating product--rating">
-                                        <ul>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- end /.product-purchase -->
-                            </div>
-                        </div>
-                        <!-- end /.featured__product-description -->
-                    </div>
-                    <!--end /.featured__single-slider-->
-
-                    <div class="featured__single-slider">
-                        <div class="featured__preview-img">
-                            <img src="images/featprod.jpg" alt="Featured products">
-                            <div class="prod_btn">
-                                <a href="single-product.html" class="transparent btn--sm btn--round">More Info</a>
-                                <a href="single-product.html" class="transparent btn--sm btn--round">Live Demo</a>
-                            </div>
-                        </div>
-                        <!-- end /.featured__preview-img -->
-
-                        <div class="featured__product-description">
-                            <div class="product-desc desc--featured">
-                                <a href="single-product.html" class="product_title">
-                                    <h4>MartPlace - Digital Marketplace</h4>
-                                </a>
-                                <ul class="titlebtm">
-                                    <li>
-                                        <img class="auth-img" src="images/auth.jpg" alt="author image">
-                                        <p>
-                                            <a href="#">AazzTech</a>
-                                        </p>
-                                    </li>
-                                    <li class="product_cat">
-                                        <a href="#">
-                                            <span class="lnr lnr-book"></span> WordPress</a>
-                                    </li>
-                                </ul>
-                                <!-- end /.titlebtm -->
-
-                                <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut scelerisque the
-                                    mattis, leo quam aliquet congue placerat mi id nisi interdum mollis. Praesent pharetra,
-                                    justo ut scelerisque the mattis, leo quam aliquet congue justo ut scelerisque.</p>
-                            </div>
-                            <!-- end /.product-desc -->
-
-                            <div class="product_data">
-                                <div class="tags tags--round">
-                                    <ul>
-                                        <li>
-                                            <a href="#">website</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">plugin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">landing page</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- end /.tags -->
-                                <div class="product-purchase featured--product-purchase">
-                                    <div class="price_love">
-                                        <span>$10 - $50</span>
-                                        <p>
-                                            <span class="lnr lnr-heart"></span> 90</p>
-                                    </div>
-                                    <div class="sell">
-                                        <p>
-                                            <span class="lnr lnr-cart"></span>
-                                            <span>16</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="rating product--rating">
-                                        <ul>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                            <li>
-                                                <span class="fa fa-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- end /.product-purchase -->
-                            </div>
-                        </div>
-                        <!-- end /.featured__product-description -->
-                    </div>
-                    <!--end /.featured__single-slider-->
-                </div>
+          </div>
+          <div class="item" style="background-image: url({{ asset('images/7.jpg') }});">
+            <div class="item-desc">
+              <h5 class="option_title">@lang('app.marble_option3')</h5>
+              <p class="option_paragraph">@lang('app.marble_option3_descrption')</p>
             </div>
+          </div>
+          <div class="item" style="background-image: url({{ asset('images/10.jpg') }});">
+            <div class="item-desc">
+              <h5 class="option_title">@lang('app.marble_option4')</h5>
+              <p class="option_paragraph">@lang('app.marble_option4_descrption')</p>
+            </div>
+          </div>
+          <div class="item" style="background-image: url({{ asset('images/2.jpg') }});">
+            <div class="item-desc">
+              <h5 class="option_title">@lang('app.marble_option5')</h5>
+              <p class="option_paragraph">@lang('app.marble_option5_descrption')</p>
+            </div>
+          </div>
         </div>
-        <!-- end /.featured__preview-img -->
-    </div>
-    <!-- end /.featured-product-slider -->
-</section> --}}
-<!--================================
-END FEATURED PRODUCT AREA
-=================================-->
-
+        </div>
+      </section>
 @endsection
