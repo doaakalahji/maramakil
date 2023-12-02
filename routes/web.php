@@ -50,6 +50,11 @@ Route::group(
             return view('pages.gallery');
         })->name('gallery');
 
+
+        Route::get('/products', [ProductSiteController::class , "getAllProducts"])->name('products');
+
+        Route::get('/product_info/{id}', [ProductSiteController::class , "showProduct"])->name('product_detail');
+
         Route::get('/contact', function () {
             return view('pages.contact');
         })->name('contact');

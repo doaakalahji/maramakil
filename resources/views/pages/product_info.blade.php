@@ -89,7 +89,6 @@
                                 <!-- end /.prev-nav -->
                             </div>
 
-
                             <!-- end /.item__action -->
                         </div>
                         <!-- end /.item__preview-thumb-->
