@@ -69,5 +69,19 @@ return [
     'marble_types_tilte' => 'Choose Your Color What You Want For Your Home',
     'keyword_home' => 'Home Page , El Mass Marmar',
     'search_about_your_product' => 'Search Your Product',
+    'more_info' =>  'More Info',
+    'gallery'=>'Gallery',
+    'add_comment' => 'Add Comment',
+    'product_details' => 'Product Details',
+    'comments' => 'Comments',
+    'product_released' => 'Product release date',
+    'product_updated' => 'Product update date',
+    'product_category' => 'Category',
+    'product_owner' => 'Product Owner',
+    'newest_products' => 'Newest Products',
+    'show_all' => 'Show All',
+    'contact_with_product_owner' => 'Contact With Product Owner',
+
+
 
 ];

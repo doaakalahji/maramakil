@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!-- viewport meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{{  asset('images/logo.png') }}">
@@ -13,6 +12,10 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
     @if(session()->get("locale") == "en" || session()->get("locale") == 'tr' || session()->get("locale") == '')
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}">
@@ -65,7 +68,11 @@
     <script src="{{asset('js/map.js')}}"></script>
     <script src="{{asset('js/custom.js')}}"></script>
     <script src="{{asset('js/aos.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script type="text/javascript">
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        //
+      });
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

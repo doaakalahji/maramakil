@@ -35,10 +35,10 @@
                     <div class="breadcrumb">
                         <ul>
                             <li>
-                                <a href="index.html">@lang('app.home')</a>
+                                <a href="{{LaravelLocalization::localizeURL('/')}}">@lang('app.home')</a>
                             </li>
                             <li class="active">
-                                <a href="#">@lang('app.contact')</a>
+                                <a href="{{LaravelLocalization::localizeURL('/contact')}}">@lang('app.contact')</a>
                             </li>
                         </ul>
                     </div>
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                        <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
                             <div class="contact_tile" >
                                 <span class="tiles__icon lnr lnr-map-marker"></span>
                                 <h4 class="tiles__title">@lang('app.office_address')</h4>
@@ -78,12 +78,13 @@
                                 <h4 class="tiles__title">@lang('app.phone_number')</h4>
                                 <div class="tiles__content">
                                     <p>+90 536 954 06 16</p>
+                                    <p>+90 536 231 62 58</p>
                                 </div>
                             </div>
                             <!-- end /.contact_tile -->
                         </div>
 
-                        <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
+                        <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
                             <div class="contact_tile">
                                 <span class="tiles__icon lnr lnr-inbox"></span>
                                 <h4 class="tiles__title">@lang('app.email')</h4>
@@ -108,13 +109,13 @@
                                                 <div class="row">
                                                     <div class="col-md-6" data-aos="zoom-in">
                                                         <div class="form-group">
-                                                            <input type="text" placeholder="@lang('app.contact_name')">
+                                                            <input type="text" placeholder="@lang('app.contact_name')" required>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6" data-aos="zoom-in">
                                                         <div class="form-group">
-                                                            <input type="text" placeholder="@lang('app.email')">
+                                                            <input type="email" placeholder="@lang('app.email')" required>
                                                         </div>
                                                     </div>
                                                 </div>

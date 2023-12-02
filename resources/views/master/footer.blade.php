@@ -1,11 +1,11 @@
-<footer class="footer-area">
+<footer class="footer-area" >
     <div class="footer-big section--footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="info-footer">
                         <div class="info__logo">
-                            <img src="{{ asset('images/logo.png') }}" alt="footer logo">
+                            <img src="{{ asset('images/logo5.png') }}" alt="footer logo">
                         </div>
                         {{-- <p class="info--text">Nunc placerat mi id nisi interdum they mollis. Praesent pharetra, justo ut scel erisque the mattis,
                             leo quam.</p> --}}
