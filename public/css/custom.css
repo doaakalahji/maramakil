@@ -1,4 +1,18 @@
-
+.hero-area + section{
+    padding-top: 0px;
+}
+.product{
+    border: 1.7px solid #e6af5d;
+}
+.product__thumbnail{
+    border-bottom: 1.7px solid #e6af5d;
+}
+.product-purchase{
+    border-top: 1.7px solid #e6af5d;
+}
+.overview-title{
+    margin-bottom: 13px;
+}
 .top-menu-area
 {
     background: #30373f;
@@ -48,9 +62,9 @@
 .search_box .search-btn:hover,.btn {
     background: #e6af5d;
   }
-  .feature:hover {
+  /* .feature:hover {
     background: #ffffff;
-  }
+  } */
 
  .flaticon{
     color: #e6af5d;
@@ -166,7 +180,7 @@ color: #0ea429;
 .feature__img
 {
     border-radius: 50%;
-    border: 3px solid #e6af5d;
+    border: 3px solid #be852f;
 }
 .login .login--header, .signup_form .login--header{
     border-bottom: 1px solid #e6af5d;
@@ -215,15 +229,15 @@ color: #0ea429;
     max-width: 50%;
 }
 .option_title{
-    color: #ffffff;
+    color: #e6af5d;
 }
 .option_paragraph{
-    color: #e6af5d;
-    font-size: 15px;
+    color: #ffffff;
+    font-size: 13px;
 }
 .section--footer{
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .feature__img
 {
@@ -248,8 +262,8 @@ color: #0ea429;
     /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
     background-image: linear-gradient(to right, #e6af5d, #aa9278);
     left: 0;
-  }
-  .product .prod_btn a:hover{
+}
+.product .prod_btn a:hover{
     color: #30373f;
 }
 .product-purchase .price_love > span{
@@ -258,12 +272,40 @@ color: #0ea429;
 }
 .product-desc .product_title h4:hover{
     color: #e6af5d;
-   
+
 }
 .product-desc ul.titlebtm > li a:hover{
     color: #30373f;
 }
   .text_field {
     background: #f5f4f3;
+}
+.gallery_image {
+    margin-bottom: 30px;
+}
+.pagination-area .prev.page-numbers:hover, .pagination-area .next.page-numbers:hover {
+    color: #fff;
+    background: #30373f8f;
+  }
+.pagination-area .page-numbers.current, .pagination-area .page-numbers:hover
+{
+    background: #e6af5d;
+}
+.item-preview .item-action a:hover,.item-preview .prev-nav span:hover
+{
+    background: #30373f8f;
+}
+.item-preview .prev-nav span{
+    background: #e6af5d;
+}
+.sidebar--single-product .card--product-infos ul.infos li p.data-label, .sidebar--single-product .card--product-infos ul.infos li p.info{
+    width: 50%;
+}
+.author-card .author-infos .author-btn .btn:hover {
+    background: #30373f8f;
+    color: #fff;
+  }
+.text_field {
+    border: 1px solid #e6af5d;
 }
 

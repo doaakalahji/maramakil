@@ -18,7 +18,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-// add multi lang 
+// add multi lang
 // Route::get('/langconvert/{locale}', function ($locale) {
 //     if(in_array("$locale",["en","ar","tr"])){
 //         session()->put("locale" , $locale);
@@ -30,36 +30,47 @@ Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){ 
+    ], function(){
 
         Route::get('/', function () {
             return view('pages.home');
         })->name('home');
-        
+
         Route::get('/about-us', function () {
             return view('pages.aboutus');
         })->name('about-us');
-        
+
+        Route::get('/products', [ProductSiteController::class , "getAllProducts"])->name('products');
+
+        Route::get('/product-owner-profile', [ProductSiteController::class , "newestProducts"])->name('product-owner-profile');
+
+        Route::get('/product_info/{id}', [ProductSiteController::class , "showProduct"])->name('product_detail');
+
+        Route::get('/gallery', function () {
+            return view('pages.gallery');
+        })->name('gallery');
+
+
         Route::get('/products', [ProductSiteController::class , "getAllProducts"])->name('products');
 
         Route::get('/product_info/{id}', [ProductSiteController::class , "showProduct"])->name('product_detail');
-        
+
         Route::get('/contact', function () {
             return view('pages.contact');
         })->name('contact');
-        
+
         Route::middleware(['auth' , 'admin'])->group(function () {
             Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
             Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
             Route::post('/save', [ProductController::class , "store"])->name("save_product");
         });
-        
+
         require __DIR__.'/auth.php';
-        
+
         Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
             Route::get('/dashboard', [ProductController::class , "index"])->name('dashboard');
-        
+
             Route::resource("/product" , ProductController::class);
         });
 

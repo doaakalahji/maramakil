@@ -87,52 +87,37 @@
 
 </section>
 
-<section style="padding-top: 130px;">
-    <div class="container">
-        <div class="row" style="justify-content: space-evenly;">
-            <div class="col-lg-5 col-md-6 v_middle" >
-                <div>
-                    {{-- <h3 class="promotion__subtitle">Big Extension Bundle</h3> --}}
-                    <h1 class="promotion__title">@lang('app.marble')</h1>
-                    <hr>
-                    <p>@lang('app.marble_description1')</p>
-                    <br>
-                    <p>@lang('app.marble_description2')</p>
-                </div>
+<section class="overview">
+    <div class="single-feature">
+        <div class="container">
+            <div class="col-md-6 v_middle aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
+                <img src="{{ asset('images/marble-caption.png') }}" alt="This overview image">
+            </div>
+
+            <div class="col-md-6 v_middle">
+                <h2 class="overview-title">@lang('app.marble')</h2>
+                <p>@lang('app.marble_description1')</p>
+                <p>@lang('app.marble_description2')</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="single-feature bgcolor">
+        <div class="container">
+            <div class="col-md-6 v_middle">
+                {{-- <h2 class="overview-title">Template Features</h2> --}}
+                <p>@lang('app.marble_description3')</p>
+                <p>@lang('app.marble_description4')</p>
             </div>
 
             <div class="col-md-6 v_middle aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
-                <div class="promotion-img">
-                    <img src="{{ asset('images/marble-caption.jpg') }}" alt="Promotion image">
-                </div>
+                <img src="{{ asset('images/marble-caption2.png') }}" alt="This overview image" >
             </div>
         </div>
     </div>
 </section>
-
-<section style="padding: 70px 0px;">
-    <div class="container">
-        <div class="row" style="justify-content: space-evenly;">
-            <div class="col-md-6 v_middle aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
-                <div class="promotion-img">
-                    <img src="{{ asset('images/marble-caption2.jpg') }}" alt="Promotion image">
-                </div>
-            </div>
-
-            <div class="col-lg-5 col-md-6 v_middle">
-                <div>
-
-                    <p>@lang('app.marble_description3')</p>
-
-                    <p>@lang('app.marble_description4')</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section--padding2" style="background-image: url({{ asset('images/features.jpg') }}); padding:70px;">
+{{-- style="background-image: url({{ asset('images/features.jpg') }}); padding:70px;" --}}
+<section class="section--padding2" >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
@@ -153,7 +138,7 @@
 </section>
 
 {{-- style="background-image: url({{ asset('images/types/stone-floor-texture.jpg') }});" --}}
-<section class="features section--padding" style="background-image: url({{ asset('images/header2.jpg') }});">
+<section class="features section--padding" style="background-image: url({{ asset('images/types/stone-floor-texture.jpg') }});">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -165,7 +150,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
                         <img src="{{ asset('images/types/crema-nuova.png') }}" alt="feature">
@@ -179,7 +164,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
                         <img src="{{ asset('images/types/burdur-beige.png') }}" alt="feature">
@@ -193,7 +178,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
                         <img src="{{ asset('images/types/mugla-marble.png') }}" alt="feature">
@@ -207,7 +192,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200" >
                     <div class="feature__img">
                         <img src="{{ asset('images/types/emperador-marble.png') }}" alt="feature">
@@ -221,7 +206,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/piazza-bianco.png') }}" alt="feature">
@@ -235,7 +220,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/afyon-violet.png') }}" alt="feature">
@@ -249,7 +234,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/lilac-marble.png') }}" alt="feature">
@@ -263,7 +248,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/moonstone.png') }}" alt="feature">
@@ -278,7 +263,7 @@
                 <!-- end /.feature -->
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/moonstone-sliver.png') }}" alt="feature">
@@ -292,7 +277,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/dolomite-marble.png') }}" alt="feature">
@@ -306,7 +291,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/turkish-emperador.png') }}" alt="feature">
@@ -320,7 +305,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/limra-stone-turkey.png') }}" alt="feature">
@@ -335,7 +320,7 @@
                 <!-- end /.feature -->
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/gray-marble.png') }}" alt="feature">
@@ -349,7 +334,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/kemalpaşa-marble.png') }}" alt="feature">
@@ -363,7 +348,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/black-marble.png') }}" alt="feature">
@@ -377,7 +362,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/rosso-levanto.png') }}" alt="feature">
@@ -391,7 +376,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="feature aos-init aos-animate" data-aos="flip-left"  data-aos-duration="1200">
                     <div class="feature__img">
                         <img src="{{ asset('images/types/streaky-belvedere.png') }}" alt="feature">
@@ -404,7 +389,6 @@
                     </div> --}}
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -416,7 +400,7 @@
         <div class="owl-carousel custom-carousel owl-theme">
           <div class="item active" style="background-image: url({{ asset('images/5.jpg') }});">
             <div class="item-desc">
-              <h5 class="option_title">@lang('app.marble_option1')</h5>
+              <h6 class="option_title">@lang('app.marble_option1')</h6>
               <p class="option_paragraph">@lang('app.marble_option1_descrption')</p>
             </div>
           </div>

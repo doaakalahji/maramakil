@@ -47,10 +47,10 @@
                             <div class="breadcrumb">
                                 <ul>
                                     <li>
-                                        <a href="#">@lang('app.home')</a>
+                                        <a href="{{LaravelLocalization::localizeURL('/')}}">@lang('app.home')</a>
                                     </li>
                                     <li class="active">
-                                        <a href="#">@lang('app.all_products')</a>
+                                        <a href="{{LaravelLocalization::localizeURL('/products')}}">@lang('app.all_products')</a>
                                     </li>
                                 </ul>
                             </div>
@@ -212,43 +212,36 @@
                         <div class="product__thumbnail">
                             <img src="{{asset('img/'.$product->image)}}" alt="Product Image">
                             <div class="prod_btn">
-
-                                <a href="single-product.html" class="transparent btn--sm btn--round">@lang('app.more_info')</a>
-
-                                <a href="{{route("product_detail" , $product->id)}}" class="transparent btn--sm btn--round">More Info</a>
-                                <a href="single-product.html" class="transparent btn--sm btn--round">Live Demo</a>
-
+                                <a href="{{route("product_detail" , $product->id)}}" class="transparent btn--sm btn--round">@lang('app.more_info')</a>
+                                {{-- <a href="single-product.html" class="transparent btn--sm btn--round">Live Demo</a> --}}
                             </div>
                         </div>
 
                         <div class="product-desc">
-                            <a href="#" class="product_title">
+                            <a href="{{route("product_detail" , $product->id)}}" class="product_title">
                                 <h4>{{$product->name}}</h4>
                             </a>
                             <ul class="titlebtm">
                                 <li>
 
                                     <p>
-                                        {{-- <a href="#">{{$product->description}}</a> --}}
-
+                                    {{-- <a href="#">{{$product->description}}</a> --}}
                                     {{-- <img class="auth-img" src="images/auth.jpg" alt="author image"> --}}
                                     <p>
-                                        <a href="#">{{\Illuminate\Support\Str::limit($product->description, $limit = 50, $end = '...')}}</a>
-
+                                        <a href="{{route("product_detail" , $product->id)}}">{{\Illuminate\Support\Str::limit($product->description, $limit = 200, $end = '...')}}</a>
                                     </p>
                                 </li>
                                 {{-- <li class="product_cat">
                                     <a href="#">
 
                                         {{-- <span class="lnr lnr-book"></span>Plugin</a> --}}
+                                {{-- </li> --}}
+                                        {{-- <span class="lnr lnr-book"></span>Plugin</a> --}}
                                 </li>
-
-                                        <span class="lnr lnr-book"></span>Plugin</a>
-                                </li> --}}
 
                             </ul>
 
-                            <p>{{$product->description}}</p>
+                            {{-- <p>{{$product->description}}</p> --}}
                         </div>
 
                         <div class="product-purchase">
@@ -265,29 +258,12 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div style="margin-left: 50%">
+                    <div class="pagination-area">
                         {!! $products->links() !!}
-                        {{-- <nav class="navigation pagination" role="navigation">
-                            <div class="nav-links">
-                                <a class="prev page-numbers" href="#">
-                                    <span class="lnr lnr-arrow-left"></span>
-                                </a>
-                                <a class="page-numbers current" href="#">1</a>
-                                <a class="page-numbers" href="#">2</a>
-                                <a class="page-numbers" href="#">3</a>
-                                <a class="next page-numbers" href="#">
-                                    <span class="lnr lnr-arrow-right"></span>
-                                </a>
-                            </div>
-                        </nav> --}}
                     </div>
                 </div>
             </div>
-            <!-- end /.row -->
         </div>
-        <!-- end /.container -->
     </section>
-    <!--================================
-        END PRODUCTS AREA
-    =================================-->
+
 @endsection

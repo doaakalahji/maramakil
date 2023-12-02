@@ -75,6 +75,17 @@ return [
     'keyword_home' => 'الصفحة الرئيسية , El Mass Marmar',
     'search_about_your_product' => 'ابحث عن منتجك',
     'more_info' =>  'قراءة المزيد',
-    
+    'gallery'=>'معرض الصور',
+    'add_comment'=> 'إضافة تعليق',
+    'product_details' => 'تفاصيل المنتج',
+    'comments' => 'التعليقات',
+    'product_released' => 'تاريخ إصدار المنتج',
+    'product_updated' => 'تاريخ تعديل المنتج',
+    'product_category' => 'تصنيف المنتج',
+    'product_owner' => 'مالك المنتج',
+    'newest_products' => 'أحدث المنتجات',
+    'show_all' => 'عرض الكل',
+    'contact_with_product_owner' => 'التواصل مع مالك المنتج',
+
 
 ];

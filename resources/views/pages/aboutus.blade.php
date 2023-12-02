@@ -33,10 +33,10 @@
                     <div class="breadcrumb">
                         <ul>
                             <li>
-                                <a href="index.html">@lang("app.home")</a>
+                                <a href="{{LaravelLocalization::localizeURL('/')}}">@lang("app.home")</a>
                             </li>
                             <li class="active">
-                                <a href="#">@lang("app.about_us")</a>
+                                <a href="{{LaravelLocalization::localizeURL('/about-us')}}">@lang("app.about_us")</a>
                             </li>
                         </ul>
                     </div>
@@ -112,7 +112,7 @@
                         <h3>@lang('app.quality_assurance')</h3>
                     </div>
                     <div class="feature__desc">
-                        <p>@lang('quality_assurance_description')</p>
+                        <p>@lang('app.quality_assurance_description')</p>
                     </div>
                 </div>
             </div>

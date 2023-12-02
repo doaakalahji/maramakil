@@ -71,5 +71,18 @@ Bunları fayanslarla kaplayabilir veya duş zeminlerinize benzer eğime sahip ge
     'keyword_home' => 'Ana Sayfa , El Mass Marmar',
     'search_about_your_product' => 'Ürününüzü Arayın',
     'more_info' => 'Daha fazla bilgi',
+    'gallery'=>'Galeri',
+    'add_comment' => 'Yorum ekle',
+    'product_details' => 'Ürün Detayları',
+    'comments' => 'Yorumlar',
+    'product_released' => 'Ürün çıkış tarihi',
+    'product_updated' => 'Ürün güncelleme tarihi',
+    'product_category' => 'Kategori',
+    'product_owner' => 'Ürün sahibi',
+    'newest_products' => 'En Yeni Ürünler',
+    'show_all' => 'Hepsini Göster',
+    'contact_with_product_owner' => 'Ürün Sahibiyle İletişime Geçin',
+
+
 
 ];

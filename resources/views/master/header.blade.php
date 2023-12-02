@@ -2,7 +2,7 @@
         <div class="top-menu-area">
             <div class="container">
                 <div class="row header">
-                    <div class="col-lg-3 col-md-3 col-6 v_middle">
+                    <div class="col-lg-3 col-md-3 col-sm-1  v_middle">
                         <div class="author__notification_area">
                             <ul>
                                 <li>
@@ -20,8 +20,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-8 offset-lg-1 col-md-9 col-6 v_middle">
-                        <div class="author-area">
+                    <div class="col-lg-8 col-md-9 col-sm-11 v_middle">
+                        <div>
                             <div class="author__notification_area">
                                 <ul>
                                     <li>
@@ -49,18 +49,12 @@
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
 
-
                       </div>
-                    <!-- end /.col-md-5 -->
                 </div>
-                <!-- end /.row -->
             </div>
-            <!-- end /.container -->
         </div>
-
 
         <div class="mainmenu">
             <div class="container">
@@ -77,7 +71,6 @@
                                     </div>
                                 </form>
                             </div>
-
                         </div>
 
                         <nav class="navbar navbar-expand-md navbar-light mainmenu__menu">
@@ -100,6 +93,9 @@
                                     </li>
                                     <li>
                                         <a href="{{LaravelLocalization::localizeURL('/products')}}">@lang('app.all_products')</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{LaravelLocalization::localizeURL('/gallery')}}">@lang('app.gallery')</a>
                                     </li>
                                     <li>
                                         <a href="{{LaravelLocalization::localizeURL('/contact')}}">@lang('app.contact')</a>
@@ -135,15 +131,11 @@
                                             </div>
                                     </li>
                                   @endif
-
-
                                 </ul>
                             </div>
-                            <!-- /.navbar-collapse -->
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>

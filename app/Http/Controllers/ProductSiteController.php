@@ -15,4 +15,9 @@ class ProductSiteController extends Controller
         $product = Product::where("id" , $id)->first();
         return view("pages.product_info" , ["product" => $product]);
     }
+
+    public function newestProducts(){
+        $products = Product::orderBy('created_at','DESC')->get()->take(4);
+        return view("pages.product_owner_profile" , ["products" => $products]);
+    }
 }
