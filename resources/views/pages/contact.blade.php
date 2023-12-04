@@ -105,27 +105,37 @@
                                 <div class="row">
                                     <div class="col-md-8 offset-md-2">
                                         <div class="contact_form--wrapper">
-                                            <form action="#">
+                                            <form action="{{route('contact')}}" method="POST">
+                                                @csrf
                                                 <div class="row">
                                                     <div class="col-md-6" data-aos="zoom-in">
                                                         <div class="form-group">
-                                                            <input type="text" placeholder="@lang('app.contact_name')" required>
+                                                            <input type="text" name="name" placeholder="@lang('app.contact_name')">
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6" data-aos="zoom-in">
                                                         <div class="form-group">
-                                                            <input type="email" placeholder="@lang('app.email')" required>
+                                                            <input type="email" name="email"  placeholder="@lang('app.email')">
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <textarea cols="30" rows="10" placeholder="@lang('app.contact_message')" data-aos="zoom-in"></textarea>
+                                                <textarea cols="30" rows="10" name="message"  placeholder="@lang('app.contact_message')" data-aos="zoom-in"></textarea>
 
                                                 <div class="sub_btn">
-                                                    <button type="button" class="btn btn--round btn--default" data-aos="zoom-in">@lang('app.contact_send')</button>
+                                                    <button type="submit" class="btn btn--round btn--default" data-aos="zoom-in">@lang('app.contact_send')</button>
                                                 </div>
+                                              
+
                                             </form>
+
+                                            @if(session()->has('message'))
+                                            <br/>
+                                            <div class="alert alert-success fade-message">
+                                                {{ session()->get('message') }}
+                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                     <!-- end /.col-md-8 -->
@@ -150,4 +160,19 @@
 
     {{-- <div id="map"></div> --}}
     <!-- end /.map -->
+@endsection
+
+@section("script")
+
+<script>
+     // message 
+     $(function(){
+        setTimeout(function() {
+            $('.fade-message').slideUp();
+        }, 5000);
+    });
+
+</script>
+
+
 @endsection

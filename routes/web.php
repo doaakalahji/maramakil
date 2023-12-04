@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSiteController;
 use App\Http\Controllers\ProfileController;
@@ -58,6 +59,12 @@ Route::group(
         Route::get('/contact', function () {
             return view('pages.contact');
         })->name('contact');
+
+        // comments
+        Route::post('/comment', [ProductSiteController::class , "saveComment"])->name("comments");
+        Route::put('/reply/{product_id}/{comment_id}', [ProductSiteController::class , "saveReplyComment"])->name("reply");
+        // contact
+        Route::post('/contact', [ContactController::class , "store"])->name("contact");
 
         Route::middleware(['auth' , 'admin'])->group(function () {
             Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

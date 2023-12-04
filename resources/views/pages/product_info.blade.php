@@ -67,9 +67,9 @@
                             <div class="prev-slide">
                                 <img src="{{asset('img/'.$product->image)}}" alt="">
                             </div>
-                            <div class="prev-slide">
+                            {{-- <div class="prev-slide">
                                 <img src="images/itprv.jpg" alt="Keep calm this isn't the end of the world, the preview is just missing.">
-                            </div>
+                            </div> --}}
                         </div>
                         <!-- end /.item--preview-slider -->
 
@@ -77,7 +77,8 @@
                             <div class="prev-thumb">
                                 <div class="thumb-slider">
                                     <div class="item-thumb">
-                                        <img src="images/thumb1.jpg" alt="This is the thumbnail of the item">
+                                        <h3>{{$product->name}}</h3>
+                                        {{-- <img src="images/thumb1.jpg" alt="This is the thumbnail of the item"> --}}
                                     </div>
                                 </div>
                                 <!-- end /.thumb-slider -->
@@ -154,46 +155,77 @@
                             <div class="fade tab-pane product-tab" id="product-comment">
                                 <div class="thread">
                                     <ul class="media-list thread-list">
+                                  @foreach($comments as $comment)
+                                  <li class="single-thread">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img class="media-object" src="{{ asset('images/avtar-small.png') }}" alt="Commentator Avatar" style="width: 70px;">
+                                        </div>
+                                        <div class="media-body">
+                                            <div>
+                                                <div class="media-heading">
+                                                        <h4>{{$comment->name}}</h4>
+                                                       <span>{{$comment->created_at}}</span>
+                                                </div>
+                                                @if (Auth::check() && Auth::user()->is_admin == 1)
+                                                <a href="#" class="reply-link">Reply</a>
+                                                @endif
+                                            </div>
+                                            <p>{{$comment->comment}}</p>
+                                           </div>
+                                         </div>
 
+                                    <!-- comment reply -->
 
-
-                                        <li class="single-thread">
+                                    
+                                    <ul class="children">
+                                        @if($comment->reply)
+                                        <li class="single-thread depth-2">
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <img class="media-object" src="{{ asset('images/avtar-small.png') }}" alt="Commentator Avatar" style="width: 70px;">
-                                                </div>
-                                                <div class="media-body">
-                                                    <div>
-                                                        <div class="media-heading">
-                                                                <h4>Themexylum</h4>
-                                                            <span>9 Hours Ago</span>
-                                                        </div>
-                                                        @if (Auth::check() && Auth::user()->is_admin == 1)
-                                                        <a href="#" class="reply-link">Reply</a>
-                                                        @endif
-                                                    </div>
-                                                    <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut
-                                                        sceleris que the mattis, leo quam aliquet congue placerat mi id nisi
-                                                        interdum mollis. </p>
-                                                </div>
-                                            </div>
-
-                                            <!-- comment reply -->
-                                            <div class="media depth-2 reply-comment">
-                                                <div class="media-left">
                                                     <a href="#">
-                                                        <img class="media-object" src="images/m2.png" alt="Commentator Avatar">
+                                                        <img class="media-object" src="{{asset('images/avtar-small.png')}}" alt="Commentator Avatar">
                                                     </a>
                                                 </div>
+                                        
                                                 <div class="media-body">
-                                                    <form action="#" class="comment-reply-form">
-                                                        <textarea name="reply-comment" placeholder="Write your comment..."></textarea>
-                                                        <button class="btn btn--sm btn--round">Post Comment</button>
-                                                    </form>
+                                                    <div class="media-heading">
+                                                        <h4>{{Auth::user()->name}}</h4>
+                                                        {{-- <span>6 Hours Ago</span> --}}
+                                                    </div>
+                                                    <span class="comment-tag author">Author</span>
+                                                    <p> {{$comment->reply}}</p>
                                                 </div>
+                                    
                                             </div>
-                                            <!-- comment reply -->
+                                            @endif
                                         </li>
+                                    </ul>
+                                    
+                                    <div class="media depth-2 reply-comment">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img class="media-object" src="{{asset('images/avtar-small.png')}}" alt="Commentator Avatar">
+                                            </a>
+                                        </div>
+
+
+
+                                        <div class="media-body">
+                                            <form method="POST" action="{{route('reply' , ['product_id'=> $comment->product_id ,'comment_id'=> $comment->id])}}" class="comment-reply-form">
+                                                @csrf
+                                                @method('PUT')
+                                                <textarea name="reply" placeholder="Write your reply...">
+                                                    {{$comment->reply}}
+                                                </textarea>
+                                                <button type="submit" class="btn btn--sm btn--round">Save</button>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                    <!-- comment reply -->
+                                </li>
+                                  @endforeach
 
 
                                     </ul>
@@ -209,22 +241,41 @@
 
 
                                     <div class="message-form" id="form_comment" style="display: none">
-                                        <form action="#">
+                                        <form action="{{route('comments')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{$product->id}}"/>
                                             <div class="form-group">
-                                                <input type="text" name="name" class="text_field" id="author-message" placeholder="الاسم" required="">
+                                                <input type="text" name="name" class="text_field" id="author-message" placeholder="Name">
+                                                
+                                                @error('name')
+                                                    <div style="color: red">{{ $message }}</div>
+                                                @enderror
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="email" name="email" class="text_field" id="author-message" placeholder="البريد الالكتروني" required="">
+                                                <input type="email" name="email" class="text_field" id="author-message" placeholder="Email">
+                                                @error('email')
+                                                <div style="color: red">{{ $message }}</div>
+                                                @enderror
                                             </div>
 
                                             <div class="form-group">
-                                                <textarea name="message" class="text_field" id="author-message" placeholder="الرسالة"></textarea>
+                                                <textarea name="comment" class="text_field" id="author-message" placeholder="Comment"></textarea>
+                                                @error('comment')
+                                                <div style="color: red">{{ $message }}</div>
+                                                @enderror
                                             </div>
 
                                             <div class="msg_submit">
-                                                <button type="submit" class="btn btn--md btn--round">إرسال</button>
+                                                <button type="submit" class="btn btn--md btn--round">Send</button>
                                             </div>
+
+                                            @if(session()->has('message'))
+                                            <br/>
+                                            <div class="alert alert-success fade-message">
+                                                {{ session()->get('message') }}
+                                            </div>
+                                            @endif
                                         </form>
                                     </div>
 
@@ -232,7 +283,15 @@
 
 
                                             <div class="pagination-area pagination-area2">
-                                        <nav class="navigation pagination" role="navigation">
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="pagination-area">
+                                                            {!! $comments->links() !!}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             {{-- <nav class="navigation pagination" role="navigation">
                                             <div class="nav-links">
                                                 <a class="page-numbers current" href="#">1</a>
                                                 <a class="page-numbers" href="#">2</a>
@@ -241,8 +300,8 @@
                                                     <span class="lnr lnr-arrow-right"></span>
                                                 </a>
                                             </div>
-                                        </nav>
-                                    </div>
+                                             </nav> --}}
+                                            </div>
                                     <!-- end /.comment pagination area -->
                                     <!-- end /.comment-form-area -->
                                 </div>
@@ -265,7 +324,7 @@
                                 <li>
                                     <p>
                                         <span class="lnr lnr-bubble mcolor3"></span>@lang('app.comments')</p>
-                                    <span>35</span>
+                                    <span>{{$comments_count}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -302,24 +361,24 @@
                                 </div>
 
                                 <div class="author">
-                                    <h4>Merve AlMashhoud</h4>
+                                    <h4>{{$profile->username}}</h4>
                                     <p>ElMass Marmar Owner</p>
                                 </div>
 
                                 <div class="social social--color--filled">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{$profile->facebook}}">
                                                 <span class="fa fa-facebook"></span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{$profile->whatsup}}">
                                                 <span class="fa fa-whatsapp"></span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{$profile->instagram}}">
                                                 <span class="fa fa-instagram"></span>
                                             </a>
                                         </li>
@@ -346,7 +405,16 @@
     $("#add_comment").click(function()
     {
         $("#form_comment").toggle();
-    })
+    });
+
+     // message 
+     $(function(){
+        setTimeout(function() {
+            $('.fade-message').slideUp();
+        }, 5000);
+    });
+
 </script>
+
 
 @endsection
