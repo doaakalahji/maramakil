@@ -83,10 +83,10 @@
                                 </div>
                                 <!-- end /.thumb-slider -->
 
-                                <div class="prev-nav thumb-nav">
+                                {{-- <div class="prev-nav thumb-nav">
                                     <span class="lnr nav-{{(App::isLocale('ar') ? 'right' : 'left')}} lnr-arrow-{{(App::isLocale('ar') ? 'right' : 'left')}}"></span>
                                     <span class="lnr nav-{{(App::isLocale('ar') ? 'left' : 'right')}} lnr-arrow-{{(App::isLocale('ar') ? 'left' : 'right')}}"></span>
-                                </div>
+                                </div> --}}
                                 <!-- end /.prev-nav -->
                             </div>
 
@@ -190,7 +190,9 @@
                                         
                                                 <div class="media-body">
                                                     <div class="media-heading">
-                                                        <h4>{{Auth::user()->name}}</h4>
+                                                       @if(Auth::check())
+                                                       <h4>{{Auth::user()->name}}</h4>
+                                                       @endif
                                                         {{-- <span>6 Hours Ago</span> --}}
                                                     </div>
                                                     <span class="comment-tag author">Author</span>
