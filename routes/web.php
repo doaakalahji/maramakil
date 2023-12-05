@@ -77,7 +77,8 @@ Route::group(
 
         Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
             Route::get('/dashboard', [ProductController::class , "index"])->name('dashboard');
-
+            Route::get('/manage_products', [ProductController::class , "manageProducts"])->name('manage_products');
+            // Route::get('/manage_gallery', [GalleryController::class , "manageGallery"])->name('manage_gallery');
             Route::resource("/product" , ProductController::class);
         });
 

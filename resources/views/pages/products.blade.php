@@ -196,7 +196,7 @@
             </div>
             <!-- end filter-bar -->
         </div>
-    </div> --}}
+    </div> 
     <!-- end /.filter-area -->
     <!--================================
         END FILTER AREA

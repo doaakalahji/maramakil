@@ -45,7 +45,7 @@ class ProductController extends Controller
             // $imageName   = uniqid().'-'.$request->name.'.'.$image->getClientOriginalExtension();
             // $location       = public_path('/img');
             $image->move(\public_path("img/"),$imageName);
-      
+
         }
     //    if($request->hasFile("image")){
     //       $file=$request->file("image");
@@ -64,16 +64,16 @@ class ProductController extends Controller
               "description_tr" =>$request->description_tr,
               "image" => $imageName ?? "",
           ]);
-          
+
          if($product->save()){
             return redirect()->back()->with('message',"Save Successfully");
          }
-          
+
         else {
           return redirect()->back()->with('failed',"Failed Save");
           }
         //   return json_encode(['res'=>'success']);
-    
+
 
     }
 
@@ -85,6 +85,12 @@ class ProductController extends Controller
         //
     }
 
+    public function manageProducts(){
+        $countProducts = Product::count();
+        $products = Product::paginate(6);
+        return view("dashboard/manage_products" , ["products" => $products, "countProducts" => $countProducts]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -92,7 +98,7 @@ class ProductController extends Controller
     {
         $product = Product::where("id" , $id)->first();
         // dd($product);
-        return view("dashboard.add_product" , ["product" => $product]);
+        return view("dashboard.edit_product" , ["product" => $product]);
     }
 
     /**
@@ -111,9 +117,9 @@ class ProductController extends Controller
             $image          = $request->file('image');
             $newImageName   = uniqid().'.'.$image->getClientOriginalExtension();
             $location       = public_path('/img');
-            $OldImage       = public_path('img/'.$product->image); #new
+            $OldImage       = public_path('img/'.$product->image); //new
             $image->move($location, $newImageName);
-            unlink($OldImage); #new
+            unlink($OldImage); //new
         }else {
             $newImageName   = $request->image;
         }
@@ -122,7 +128,7 @@ class ProductController extends Controller
         // $file=$request->file("image");
         // $imageName=$file->getClientOriginalName();
         // $file->move(\public_path("img/"),$imageName);
-    
+
         $product->fill(
             [
                 "name_en" =>$request->name_en,
@@ -135,9 +141,9 @@ class ProductController extends Controller
                 "image" => $newImageName,
             ]
         );
-    
+
         // $product->lecturers()->sync($request->lecturer_id);
-    
+
         $product->save();
 
         return redirect()->back()->with('message',"Updated Successfully");
