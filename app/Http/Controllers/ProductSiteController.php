@@ -11,6 +11,7 @@ class ProductSiteController extends Controller
         $products = Product::paginate(6);
         return view("pages.products" , ["products" => $products]);
     }
+
     public function showProduct($id) {
         $product = Product::where("id" , $id)->first();
         return view("pages.product_info" , ["product" => $product]);
@@ -20,4 +21,5 @@ class ProductSiteController extends Controller
         $products = Product::orderBy('created_at','DESC')->get()->take(4);
         return view("pages.product_owner_profile" , ["products" => $products]);
     }
+
 }
