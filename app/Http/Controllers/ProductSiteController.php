@@ -13,6 +13,7 @@ class ProductSiteController extends Controller
         $products = Product::paginate(6);
         return view("pages.products" , ["products" => $products]);
     }
+
     public function showProduct($id) {
         $product = Product::where("id" , $id)->first();
         $comments = Comment::where("product_id" , $id)->orderByDesc("created_at")->paginate(2);
@@ -69,4 +70,5 @@ class ProductSiteController extends Controller
 
     return redirect()->back()->with('message',"Updated Successfully");    
     }
+
 }

@@ -3,7 +3,7 @@
 return [
 
     'lang' => 'Diller',
-    'arabic' => 'Arap',
+    'arabic' => 'Arapça',
     'english' => 'İngilizce',
     'turkish' => 'Türkçe',
     'about_us' => 'Biz Kimiz',
@@ -82,6 +82,44 @@ Bunları fayanslarla kaplayabilir veya duş zeminlerinize benzer eğime sahip ge
     'newest_products' => 'En Yeni Ürünler',
     'show_all' => 'Hepsini Göster',
     'contact_with_product_owner' => 'Ürün Sahibiyle İletişime Geçin',
+    'dashboard' => 'Gösterge Paneli',
+    'settings' => 'Ayarlar',
+    'add_products' => 'ürün ekle',
+    'manage_products' => 'Ürünleri Yönet',
+    'edit' => 'düzenlemek',
+    'edit_products' => 'Ürünü Düzenle',
+    'delete' => 'Silmek',
+    'delete_modal_title' => 'Bu ürünü sildiğinizden emin misiniz',
+    'cancel' => 'İptal etmek',
+    'manage_gallery' => 'Galeriyi Yönet',
+    'product' => 'Ürün',
+    'profile_settings' => 'Profil ayarları',
+    'personal_information' => 'Kişisel bilgi',
+    'profile_name' => 'İsim',
+    'profile_email' => 'E-posta',
+    'current_password' => 'Mevcut Şifre',
+    'new_password' => 'Yeni Şifre',
+    'confirm_password' => 'Şifreyi Onayla',
+    'bio' => 'biyo',
+    'save_changes' => 'Değişiklikleri Kaydet',
+    'profile_image' => 'Profil Resmi',
+    'upload_image' => 'Fotoğraf yükleniyor',
+    'social_profiles' => 'Sosyal Profiller',
+    'product_name_en' => 'Ürün Adı ingilizce',
+    'product_name_ar' => 'Ürün Adı Arapça',
+    'product_name_tr' => 'Ürün Adı Türkçe',
+    'product_details_en' =>'Ürün Detayları ingilizce',
+    'product_details_ar' =>'Ürün Detayları Arapça',
+    'product_details_tr' =>'Ürün Detayları Türkçe',
+    'price' => 'fiyat',
+    'product_image' => 'Ürün resmi',
+    'show_comments' => 'Yorumları Göster',
+
+
+
+
+
+
 
 
 

@@ -82,7 +82,7 @@
                                 <ul class="navbar-nav">
                                     <li>
                                         <a href="{{ route('home') }}">
-                                            <img src="{{ asset('images/logo.png') }}" alt="" style="width: 50px">
+                                            <img src="{{ asset('images/nav-logo.png') }}" alt="" style="width: 50px">
                                         </a>
                                     </li>
                                     <li>
