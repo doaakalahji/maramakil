@@ -97,6 +97,7 @@
                         <div class="dashboard__content">
                             <div class="thread">
                                 <ul class="media-list thread-list">
+                                     @foreach($comments as $comment)
                                     <li class="single-thread">
                                         <div class="media">
                                             <div class="media-left">
@@ -108,20 +109,23 @@
                                                 <div>
                                                     <div class="media-heading">
                                                         <a href="author.html">
-                                                            <h4>Themexylum</h4>
+                                                            <h4>{{$comment->name}}</h4>
                                                         </a>
-                                                        <span>9 Hours Ago</span>
+                                                        <span>{{$comment->created_at}}</span>
                                                     </div>
-                                                    <span class="comment-tag buyer">Purchased</span>
-                                                    <a href="#" class="reply-link">Reply</a>
+                                                  
+                                                     <a  style="margin-left: 70%;" href="#" data-toggle="modal" data-target="#deleteComment" class="delete" onclick="loadDeleteModal({{ $comment->id }})">
+                                             
+                                                        <span class="lnr lnr-trash"></span>@lang('app.delete')</a>
+                                                    {{-- <span class="comment-tag buyer">Purchased</span> --}}
+                                                    {{-- <a href="" class="reply-link">delete</a> --}}
                                                 </div>
-                                                <p>Nunc placerat mi id nisi interdum mollis. Praesent there pharetra, justo
-                                                    ut sceleris que the mattis.</p>
+                                                <p>{{$comment->comment}}</p>
                                             </div>
                                         </div>
 
                                         <!-- comment reply -->
-                                        <div class="media depth-2 reply-comment" style="display: none;">
+                                        {{-- <div class="media depth-2 reply-comment" style="display: none;">
                                             <div class="media-left">
                                                 <a href="#">
                                                     <img class="media-object" src="images/m2.png" alt="Commentator Avatar">
@@ -133,48 +137,10 @@
                                                     <button class="btn btn--md btn--round">Post Comment</button>
                                                 </form>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!-- comment reply -->
                                     </li>
-                                    <!-- end single comment thread /.comment-->
-
-                                    <li class="single-thread">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img class="media-object" src="images/m3.png" alt="Commentator Avatar">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <div>
-                                                    <div class="media-heading">
-                                                        <a href="author.html">
-                                                            <h4>Fierce Coder</h4>
-                                                        </a>
-                                                        <span>9 Hours Ago</span>
-                                                    </div>
-                                                    <a href="#" class="reply-link">Reply</a>
-                                                </div>
-                                                <p>Nunc placerat mi id nisi interdum mollis. Praesent phare tra, justo ut
-                                                    sceleris que the mattis, leo quam.</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- comment reply -->
-                                        <div class="media depth-2 reply-comment" style="display: none;">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img class="media-object" src="images/m2.png" alt="Commentator Avatar">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <form action="#" class="comment-reply-form">
-                                                    <textarea name="reply-comment" placeholder="Write your comment..."></textarea>
-                                                    <button class="btn btn--sm btn--round">Post Comment</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </li>
+                                     @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -184,12 +150,51 @@
         </div>
     </div>
 </section>
+<!-- Modal 2 -->
+<div class="modal fade rating_modal item_remove_modal" id="deleteComment" tabindex="-1" role="dialog" aria-labelledby="deleteComment">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">@lang('app.delete_modal_title')  <span id="modal-comment"></span> ? </h3>
+                <input type="hidden" id="comment" name="id">
+                {{-- <p>You will not be able to recover this file!</p> --}}
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
+            <div class="modal-body">
+                <button  type="button"  class="btn btn--round btn-danger btn--default" id="modal-confirm_delete">@lang('app.delete')</button>
+                <button class="btn btn--round modal_close" data-dismiss="modal">@lang('app.cancel')</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
-@section("script")
-<script>
+@section('script')
+    <script>
+        function loadDeleteModal(id) {
+            $('#modal-confirm_delete').attr('onclick', `confirmDelete(${id})`);
+            $('#deleteComment').modal('show');
+        }
 
-</script>
+        function confirmDelete(id) {
+            $.ajax({
+                    type: "DELETE",
+                    url: "/comment/"+id,
+                    // contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                      _token: "{{csrf_token()}}",
+                    },
+                 success: function (results) {
+                                  } //success
+                });
+                $('#deleteComment').modal('hide');
+                location.reload();
+
+        }
+    </script>
 @endsection
 

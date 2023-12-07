@@ -29,7 +29,15 @@
 </x-app-layout> --}}
 
 @extends("master.app")
-
+@section("style")
+ <style>
+    .cover_photo {
+    float: right;
+    font-size: 16px;
+    color: #f1c33b;
+}
+ </style>
+@endsection
 @section("content")
 
 <section class="breadcrumb-area">
@@ -100,7 +108,9 @@
                 </div>
             </div>
 
-            <form action="#" class="setting_form">
+            <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data" class="setting_form">
+                @csrf
+                @method('put')
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="information_module">
@@ -115,38 +125,67 @@
                                     <div class="form-group">
                                         {{-- <p>Update your account's profile information and email address.</p> --}}
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="acname">@lang('app.profile_name')
+                                    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+                                        @csrf
+                                    </form>
+                            
+                                       
+                                   <div class="form-group">
+                                        <label for="name">@lang('app.profile_name')
                                             <sup>*</sup>
                                         </label>
-                                        <input type="text" id="acname" class="text_field" placeholder="First Name" value="Aazz Tech">
+                                        <input id="name" required autofocus autocomplete="name" 
+                                        value="{{isset($user) ? $user->name :  ''}}"
+                                         type="text" class="text_field" name="name" placeholder="First Name">
+                                        <x-input-error class="mt-2" :messages="$errors->get('name')" />
                                     </div>
 
                                     <div class="form-group">
                                         <label for="emailad">@lang('app.profile_email')
                                             <sup>*</sup>
                                         </label>
-                                        <input type="text" id="emailad" class="text_field" placeholder="Email address" value="contact@aazztech.com">
-                                    </div>
+                                        <input id="email" required autocomplete="username"  type="email" id="emailad" class="text_field" name="email" placeholder="Email address"
+                                        value="{{isset($user) ? $user->email :  ''}}">
+                                        <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
+                                            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
+                                            <div>
+                                                <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
+                                                    {{ __('Your email address is unverified.') }}
+                            
+                                                    <button form="send-verification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                                        {{ __('Click here to re-send the verification email.') }}
+                                                    </button>
+                                                </p>
+                            
+                                                @if (session('status') === 'verification-link-sent')
+                                                    <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
+                                                        {{ __('A new verification link has been sent to your email address.') }}
+                                                    </p>
+                                                @endif
+                                            </div>
+                                        @endif
+
+                                    </div>
+                                   
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="password">@lang('app.current_password')
                                                     <sup>*</sup>
                                                 </label>
-                                                <input type="password" id="password" class="text_field" placeholder="">
+                                                <input name="current_password" type="password" id="current_password" class="text_field" placeholder="">
+                                                <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="conpassword">@lang('app.new_password')
-
                                                     <sup>*</sup>
                                                 </label>
-                                                <input type="password" id="conpassword" class="text_field" placeholder="re-enter password">
+                                                <input type="password"  name="password" id="password" class="text_field" placeholder="re-enter password">
+                                                <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
                                             </div>
                                         </div>
                                     </div>
@@ -155,12 +194,15 @@
                                         <label for="website">@lang('app.confirm_password')
                                             <sup>*</sup>
                                         </label>
-                                        <input type="password" id="website" class="text_field" placeholder="Website">
+                                        <input id="password_confirmation" type="password" name="password_confirmation" id="website" class="text_field" placeholder="Website">
+                                        <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
                                     </div>
 
                                     <div class="form-group">
                                         <label for="authbio">@lang('app.bio')</label>
-                                        <textarea name="author_bio" id="authbio" class="text_field" placeholder="Short brief about yourself or your account..."></textarea>
+                                        <textarea name="bio" id="authbio" class="text_field" placeholder="Short brief about yourself or your account...">
+                                            {{isset($user->profile) ? $user->profile->bio :  ''}}
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -181,15 +223,29 @@
                             <div class="information__set profile_images toggle_module collapse" id="collapse3">
                                 <div class="information_wrapper">
                                     <div class="profile_image_area">
-                                        <img src="{{ asset('images/avatar_person.png') }}" alt="Author profile area" width="100px">
+                                        <img src="{{isset($user->profie->image) ? asset('img/'.$user->profie->image) : asset('images/avatar_person.png') }}" alt="Author profile area" width="100px">
                                         <div class="img_info">
                                             <p class="bold">@lang('app.profile_image')</p>
                                             <p class="subtitle">JPG, GIF or PNG 100x100 px</p>
                                         </div>
 
-                                        <label for="cover_photo" class="upload_btn">
-                                            <input type="file" id="cover_photo">
-                                            <span class="btn btn--sm btn--round" aria-hidden="true">@lang('app.upload_image')</span>
+                                        {{-- <div class="form-group ">
+                                            <label for="cover_photo">@lang('app.product_image')</label>
+                                            <label for="cover_photo" class="cover_photo">
+                                                <span class="text ">@lang('app.upload_image')</span>
+                                                <span class="lnr lnr-upload up_icon">{{isset($user) ? $user->image :  ''}}</span>
+                                                <input value="{{isset($user) ? $user->image :  ''}}"
+                                                id="cover_photo" name="image" type="file">
+                                            </label>
+                                        </div> --}}
+
+                                        <label for="cover_photo" class="cover_photo">
+                                         {{-- <span class="">{{isset($user->profile) ? $user->profile->image :  ''}}</span> --}}
+                                         <span class="btn btn--sm btn--round" aria-hidden="true">
+                                            {{isset($user->profile->image) ? $user->profile->image : 'Upload image'}}
+                                           </span>
+                                         <input 
+                                         id="cover_photo" style="display:none;" name="image" type="file">
                                         </label>
                                     </div>
                                 </div>
@@ -211,7 +267,8 @@
                                         </div>
 
                                         <div class="link_field">
-                                            <input type="text" class="text_field" placeholder="ex: www.facebook.com/aazztech">
+                                            <input name="facebook" type="text" class="text_field" placeholder="facebook"
+                                            value="{{isset($user->profile) ? $user->profile->facebook :  ''}}">
                                         </div>
                                     </div>
                                     <!-- end /.social__single -->
@@ -222,7 +279,8 @@
                                         </div>
 
                                         <div class="link_field">
-                                            <input type="text" class="text_field" placeholder="ex: www.twitter.com/aazztech">
+                                            <input name="instagram" type="text" class="text_field" placeholder="instagram"
+                                            value="{{isset($user->profile) ? $user->profile->instagram :  ''}}">
                                         </div>
                                     </div>
                                     <!-- end /.social__single -->
@@ -233,7 +291,8 @@
                                         </div>
 
                                         <div class="link_field">
-                                            <input type="text" class="text_field" placeholder="ex: www.google.com/aazztech">
+                                            <input name="whatsup" type="text" class="text_field" placeholder="phone"
+                                            value="{{isset($user->profile) ? $user->profile->whatsup :  ''}}">
                                         </div>
                                     </div>
                                 </div>
@@ -346,4 +405,22 @@
         </div>
     </div>
 </section>
+
+
 @endsection
+
+@section("script")
+<script>
+    console.log("test");
+$('#cover_photo').change(function() {
+    console.log("testrrrr");
+  var i = $(this).prev('span').clone();
+  console.log("test" , i);
+  var file = $('#cover_photo')[0].files[0].name;
+  console.log(file);
+  $(this).prev('span').text(file);
+});
+</script>
+@endsection
+
+
