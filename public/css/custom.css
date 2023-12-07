@@ -266,8 +266,13 @@ color: #0ea429;
     background-image: linear-gradient(to right, #e6af5d, #aa9278);
     left: 0;
 }
+.product .prod_btn a{
+    background: #e6af5d;
+}
 .product .prod_btn a:hover{
     color: #30373f;
+    background: #e6af5d;
+
 }
 .product-purchase .price_love > span{
     background: rgb(230 175 93);
@@ -332,4 +337,27 @@ color: #0ea429;
     border-radius: 200px;
     cursor: pointer;
 }
+ul.nav-tabs li a.active{
+    color: #e6af5d;
+}
+.thread .thread-list .single-thread .media-body .comment-tag.author{
+    background: #1f1d1c;
+}
+.dashboard_menu_area .dashboard_menu li.active a, .dashboard_menu_area .dashboard_menu li a:hover{
+    color: #e6af5d;
+}
+.sidebar--single-product .card--metadata ul.data > li{
+    padding: 0px 0 0px;
+}
 
+.pagination-area.pagination-area2 .page-numbers{
+    color: #000000;
+}
+.pagination-area.pagination-area2 .page-numbers:hover,.pagination-area.pagination-area2 .page-numbers.prev:hover, .pagination-area.pagination-area2 .page-numbers.next:hover {
+    background: #e6af5d;
+    color: #fff;
+  }
+
+  .thread .thread-list .single-thread .media-body a.reply-link{
+    color: #e6af5d;
+  }

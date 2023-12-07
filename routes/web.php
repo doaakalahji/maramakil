@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSiteController;
 use App\Http\Controllers\ProfileController;
@@ -76,8 +77,9 @@ Route::group(
         require __DIR__.'/auth.php';
 
         Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
-            Route::get('/dashboard', [ProductController::class , "index"])->name('dashboard');
+            Route::get('/dashboard', [DashboardController::class , "getDataDashboard"])->name('dashboard');
             Route::get('/manage_products', [ProductController::class , "manageProducts"])->name('manage_products');
+            Route::get('/show_messages', [DashboardController::class , "showMessages"])->name('show_messages');
             // Route::get('/manage_gallery', [GalleryController::class , "manageGallery"])->name('manage_gallery');
             Route::resource("/product" , ProductController::class);
         });

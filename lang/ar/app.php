@@ -118,7 +118,17 @@ return [
     'price' => 'السعر',
     'product_image' => 'صورة المنتج',
     'show_comments' => 'عرض التعليقات',
-
+    'total_products' => 'عدد المنتجات الكلية',
+    'total_comments' => 'عدد التعليقات الكلية',
+    'total_messages' => 'عدد الرسائل الكلية',
+    'recent_comments' => 'أحدث التعليقات',
+    'recent_messages' => 'أحدث الرسائل',
+    'all_messages' => 'كل الرسائل',
+    'message' => 'رسالة',
+    'view_profile' => 'عرض الصفحة الشخصية',
+    'reply' => 'رد',
+    'update' => 'تعديل',
+    
 
 
 

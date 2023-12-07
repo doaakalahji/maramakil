@@ -248,7 +248,7 @@
                             <div class="price_love">
                                 <span>{{$product->price}}</span>
                                 <p>
-                                    <span class="lnr lnr-heart"></span> 90</p>
+                                    <span class="lnr lnr-bubble"></span> 90</p>
                             </div>
                         </div>
                     </div>
