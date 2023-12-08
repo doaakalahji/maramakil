@@ -29,10 +29,10 @@
 
 <section class="hero-area bgimage">
     <div class="bg_image_holder" >
-        <img src="{{ asset('images/header9.png') }}" alt="images/hero_area_bg1.jpg">
+        <img src="{{ asset('images/h12.png') }}" alt="images/hero_area_bg1.jpg" width="100%">
     </div>
     <!-- start hero-content -->
-    <div class="hero-content content_above">
+    {{-- <div class="hero-content content_above"> --}}
         <!-- start .contact_wrapper -->
         <div class="content-wrapper">
             <!-- start .container -->

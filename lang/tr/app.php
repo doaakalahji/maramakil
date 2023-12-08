@@ -114,6 +114,17 @@ Bunları fayanslarla kaplayabilir veya duş zeminlerinize benzer eğime sahip ge
     'price' => 'fiyat',
     'product_image' => 'Ürün resmi',
     'show_comments' => 'Yorumları Göster',
+    'total_products' => 'Toplam Ürünler',
+    'total_comments' => 'Toplam Yorumlar',
+    'total_messages' => 'Toplam Mesajlar',
+    'recent_comments' => 'Son Yorumlar',
+    'recent_messages' => 'Son Mesajlar',
+    'all_messages' => 'Tüm mesajlar',
+    'message' => 'İleti',
+    'view_profile' => 'Profili Görüntüle',
+    'reply' => 'cevap vermek',
+    'update' => 'Güncelleme',
+
 
 
 

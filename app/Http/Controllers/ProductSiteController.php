@@ -19,8 +19,8 @@ class ProductSiteController extends Controller
         $comments = Comment::where("product_id" , $id)->orderByDesc("created_at")->paginate(2);
         $comments_count = Comment::where("product_id" , $id)->count();
         $profile = Profile::first();
-    
-        return view("pages.product_info" , 
+
+        return view("pages.product_info" ,
          ["product" => $product , "comments" => $comments ,
           "comments_count" => $comments_count , "profile" => $profile]);
     }
@@ -43,11 +43,11 @@ class ProductSiteController extends Controller
               "email" =>$request->email,
               "comment" =>$request->comment,
           ]);
-          
+
          if($comment->save()){
             return redirect()->back()->with('message',"Save Successfully");
          }
-          
+
         else {
           return redirect()->back()->with('failed',"Failed Save");
           }
@@ -68,7 +68,7 @@ class ProductSiteController extends Controller
 
     $comment->save();
 
-    return redirect()->back()->with('message',"Updated Successfully");    
+    return redirect()->back()->with('message',"Updated Successfully");
     }
 
 }

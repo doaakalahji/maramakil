@@ -30,12 +30,12 @@
                     <div class="breadcrumb">
                         <ul>
                             <li>
-                                <a href="#">
-                                   Product
+                                <a href="{{LaravelLocalization::localizeURL('/')}}">
+                                   @lang('app.home')
                                 </a>
                             </li>
                             <li>
-                                <a href="#">Details</a>
+                                <a href="#">@lang('app.product_details')</a>
                             </li>
                             {{-- <li class="active">
                                 <a href="#">Corporate & Business</a>
@@ -62,267 +62,164 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="item-preview">
-                        <div class="item__preview-slider">
-                            <div class="prev-slide">
-                                <img src="{{asset('img/'.$product->image)}}" alt="">
-                            </div>
-                            {{-- <div class="prev-slide">
-                                <img src="images/itprv.jpg" alt="Keep calm this isn't the end of the world, the preview is just missing.">
-                            </div> --}}
-                        </div>
-                        <!-- end /.item--preview-slider -->
+                        <div class="card_style1">
+                            <figure class="card_style1__info">
+                                <img src="{{asset('img/'.$product->image)}}" alt="Product Picture">
 
-                        <div class="item__preview-thumb">
-                            <div class="prev-thumb">
-                                <div class="thumb-slider">
-                                    <div class="item-thumb">
-                                        <h3>{{$product->name}}</h3>
-                                        {{-- <img src="images/thumb1.jpg" alt="This is the thumbnail of the item"> --}}
-                                    </div>
-                                </div>
-                                <!-- end /.thumb-slider -->
-
-                                {{-- <div class="prev-nav thumb-nav">
-                                    <span class="lnr nav-{{(App::isLocale('ar') ? 'right' : 'left')}} lnr-arrow-{{(App::isLocale('ar') ? 'right' : 'left')}}"></span>
-                                    <span class="lnr nav-{{(App::isLocale('ar') ? 'left' : 'right')}} lnr-arrow-{{(App::isLocale('ar') ? 'left' : 'right')}}"></span>
-                                </div> --}}
-                                <!-- end /.prev-nav -->
-                            </div>
-
-                            <!-- end /.item__action -->
-                        </div>
-                        <!-- end /.item__preview-thumb-->
-
-
-                    </div>
-                    <!-- end /.item-preview-->
-
-                    <div class="item-info">
-                        <div class="item-navigation">
-                            <ul class="nav nav-tabs">
-                                <li>
-                                    <a href="#product-details" class="active" aria-controls="product-details" role="tab" data-toggle="tab">@lang('app.product_details')</a>
-                                </li>
-                                <li>
-                                    <a href="#product-comment" aria-controls="product-comment" role="tab" data-toggle="tab">@lang('app.comments')</a>
-                                </li>
-                                {{-- <li>
-                                    <a href="#product-review" aria-controls="product-review" role="tab" data-toggle="tab">Reviews
-                                        <span>(35)</span>
+                                <figcaption>
+                                    <a href="event-detail.html">
+                                        <h3>{{ $product->name }}</h3>
                                     </a>
-                                </li> --}}
-                                {{-- <li>
-                                    <a href="#product-support" aria-controls="product-support" role="tab" data-toggle="tab">Support</a>
-                                </li> --}}
-                                {{-- <li>
-                                    <a href="#product-faq" aria-controls="product-faq" role="tab" data-toggle="tab">item FAQ</a>
-                                </li> --}}
-                            </ul>
+                                    <p>{{  $product->description }}</p>
+                                </figcaption>
+                            </figure>
                         </div>
-                        <!-- end /.item-navigation -->
 
-                        <div class="tab-content">
-                            <div class="fade show tab-pane product-tab active" id="product-details">
-                                <div class="tab-content-wrapper">
-                                    <h1>{{$product->name}}</h1>
-                                    <p>{{$product->description}}</p>
-                                    {{-- <h2>Features With Image:</h2>
-                                    <img src="images/prodesc.jpg" alt="This is product description thumbnail"> --}}
-
-                                    {{-- <h2>Features With HTML List Unordered:</h2>
-                                    <ul>
-                                        <li>Six different themes for product slider</li>
-                                        <li>Featured products slider form selected categories.</li>
-                                        <li>Product slider form specific categories of products. Include or exclude categories.</li>
-                                        <li>Product slider form specific tags of products. Include or exclude tags. New</li>
-                                    </ul> --}}
-
-                                    {{-- <h2>Features With HTML List Ordered:</h2>
-                                    <ol>
-                                        <li>Six different themes for product slider</li>
-                                        <li>Featured products slider form selected categories.</li>
-                                        <li>Product slider form specific categories of products. Include or exclude categories.</li>
-                                        <li>Product slider form specific tags of products. Include or exclude tags. New</li>
-                                    </ol> --}}
-
-                                    {{-- <h2>Features With HTML List Ordered:</h2>
-                                    <iframe width="100" height="400" src="https://www.youtube.com/embed/w2zIUJrglR4" allowfullscreen></iframe> --}}
+                        <div class="dashboard_module recent_message">
+                            <div class="dashboard__title">
+                                <h4>@lang('app.comments')</h4>
+                                <div class="loading">
+                                    <button id="add_comment" class="btn btn--round btn--sm">@lang('app.add_comment')</button>   
                                 </div>
                             </div>
-                            <!-- end /.tab-content -->
 
-                            <div class="fade tab-pane product-tab" id="product-comment">
+                            <div class="dashboard__content">
                                 <div class="thread">
                                     <ul class="media-list thread-list">
-                                  @foreach($comments as $comment)
-                                  <li class="single-thread">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img class="media-object" src="{{ asset('images/avtar-small.png') }}" alt="Commentator Avatar" style="width: 70px;">
-                                        </div>
-                                        <div class="media-body">
-                                            <div>
-                                                <div class="media-heading">
-                                                        <h4>{{$comment->name}}</h4>
-                                                       <span>{{$comment->created_at}}</span>
-                                                </div>
-                                                @if (Auth::check() && Auth::user()->is_admin == 1)
-                                                <a href="#" class="reply-link">Reply</a>
-                                                @endif
-                                            </div>
-                                            <p>{{$comment->comment}}</p>
-                                           </div>
-                                         </div>
-
-                                    <!-- comment reply -->
-
-                                    
-                                    <ul class="children">
-                                        @if($comment->reply)
-                                        <li class="single-thread depth-2">
+                                        @foreach($comments as $comment)
+                                            <li class="single-thread">
                                             <div class="media">
+                                                <div class="media-left">
+                                                    <img class="media-object" src="{{ asset('images/avtar-small.png') }}" alt="Commentator Avatar" style="width: 70px;">
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <div class="media-heading">
+                                                                <h4>{{$comment->name}}</h4>
+                                                            <span>{{$comment->created_at}}</span>
+                                                        </div>
+                                                        @if (Auth::check() && Auth::user()->is_admin == 1 && $comment->reply == null)
+                                                        <a href="#" class="reply-link">@lang('app.reply')</a>
+                                                        @elseif (Auth::check() && Auth::user()->is_admin == 1 && $comment->reply)
+                                                        <a href="#" class="reply-link">@lang('app.update')</a>
+                                                        @endif
+                                                    </div>
+                                                    <p>{{$comment->comment}}</p>
+                                                </div>
+                                                </div>
+    
+                                            <!-- comment reply -->
+    
+                                            
+                                            <ul class="children">
+                                                @if($comment->reply)
+                                                <li class="single-thread depth-2">
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <a href="#">
+                                                                <img class="media-object" src="{{asset('images/avtar-small.png')}}" alt="Commentator Avatar">
+                                                            </a>
+                                                        </div>
+                                                
+                                                        <div class="media-body">
+                                                            <div class="media-heading">
+                                                            @if(Auth::check())
+                                                            <h4>{{Auth::user()->name}}</h4>
+                                                            @endif
+                                                                {{-- <span>6 Hours Ago</span> --}}
+                                                            </div>
+                                                            <span class="comment-tag author">@lang('app.product_owner')</span>
+                                                            <p> {{$comment->reply}}</p>
+                                                        </div>
+                                            
+                                                    </div>
+                                                    @endif
+                                                </li>
+                                            </ul>
+                                            
+                                            <div class="media depth-2 reply-comment">
                                                 <div class="media-left">
                                                     <a href="#">
                                                         <img class="media-object" src="{{asset('images/avtar-small.png')}}" alt="Commentator Avatar">
                                                     </a>
                                                 </div>
-                                        
+    
+    
+    
                                                 <div class="media-body">
-                                                    <div class="media-heading">
-                                                       @if(Auth::check())
-                                                       <h4>{{Auth::user()->name}}</h4>
-                                                       @endif
-                                                        {{-- <span>6 Hours Ago</span> --}}
-                                                    </div>
-                                                    <span class="comment-tag author">Author</span>
-                                                    <p> {{$comment->reply}}</p>
+                                                    <form method="POST" action="{{route('reply' , ['product_id'=> $comment->product_id ,'comment_id'=> $comment->id])}}" class="comment-reply-form">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <textarea name="reply" placeholder="Write your reply...">
+                                                            {{$comment->reply}}
+                                                        </textarea>
+                                                        <button type="submit" class="btn btn--sm btn--round">@lang('app.contact_send')</button>
+                                                    </form>
                                                 </div>
-                                    
+    
                                             </div>
-                                            @endif
-                                        </li>
+                                            <!-- comment reply -->
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                    
-                                    <div class="media depth-2 reply-comment">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img class="media-object" src="{{asset('images/avtar-small.png')}}" alt="Commentator Avatar">
-                                            </a>
-                                        </div>
-
-
-
-                                        <div class="media-body">
-                                            <form method="POST" action="{{route('reply' , ['product_id'=> $comment->product_id ,'comment_id'=> $comment->id])}}" class="comment-reply-form">
-                                                @csrf
-                                                @method('PUT')
-                                                <textarea name="reply" placeholder="Write your reply...">
-                                                    {{$comment->reply}}
-                                                </textarea>
-                                                <button type="submit" class="btn btn--sm btn--round">Save</button>
-                                            </form>
-                                        </div>
-
-                                    </div>
-                                    <!-- comment reply -->
-                                </li>
-                                  @endforeach
-
-
-                                    </ul>
-                                    <!-- end /.media-list -->
-
-                                    <div class="item-action">
-                                        <div class="action-btns">
-                                            <button id="add_comment" class="btn btn--round btn--lg">@lang('app.add_comment')</button>
-                                            {{-- <a href="#" class="btn btn--round btn--lg btn--icon">
-                                                <span class="lnr lnr-heart"></span>Add To Favorites</a> --}}
-                                        </div>
-                                    </div>
-
-
-                                    <div class="message-form" id="form_comment" style="display: none">
-                                        <form action="{{route('comments')}}" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="product_id" value="{{$product->id}}"/>
-                                            <div class="form-group">
-                                                <input type="text" name="name" class="text_field" id="author-message" placeholder="Name">
-                                                
-                                                @error('name')
-                                                    <div style="color: red">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="email" name="email" class="text_field" id="author-message" placeholder="Email">
-                                                @error('email')
+                                </div> 
+                                
+                                <div class="message-form" id="form_comment" style="display: none">
+                                    <form action="{{route('comments')}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{$product->id}}"/>
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="text_field" id="author-message" placeholder="@lang('app.contact_name')">
+                                            
+                                            @error('name')
                                                 <div style="color: red">{{ $message }}</div>
-                                                @enderror
-                                            </div>
+                                            @enderror
+                                        </div>
 
-                                            <div class="form-group">
-                                                <textarea name="comment" class="text_field" id="author-message" placeholder="Comment"></textarea>
-                                                @error('comment')
-                                                <div style="color: red">{{ $message }}</div>
-                                                @enderror
-                                            </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="text_field" id="author-message" placeholder="@lang('app.email')">
+                                            @error('email')
+                                            <div style="color: red">{{ $message }}</div>
+                                            @enderror
+                                        </div>
 
-                                            <div class="msg_submit">
-                                                <button type="submit" class="btn btn--md btn--round">Send</button>
-                                            </div>
+                                        <div class="form-group">
+                                            <textarea name="comment" class="text_field" id="author-message" placeholder="@lang('app.add_comment')"></textarea>
+                                            @error('comment')
+                                            <div style="color: red">{{ $message }}</div>
+                                            @enderror
+                                        </div>
 
-                                            @if(session()->has('message'))
-                                            <br/>
-                                            <div class="alert alert-success fade-message">
-                                                {{ session()->get('message') }}
-                                            </div>
-                                            @endif
-                                        </form>
-                                    </div>
+                                        <div class="msg_submit">
+                                            <button type="submit" class="btn btn--md btn--round">@lang('app.contact_send')</button>
+                                        </div>
 
-
-
-
-                                            <div class="pagination-area pagination-area2">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="pagination-area">
-                                                            {!! $comments->links() !!}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                             {{-- <nav class="navigation pagination" role="navigation">
-                                            <div class="nav-links">
-                                                <a class="page-numbers current" href="#">1</a>
-                                                <a class="page-numbers" href="#">2</a>
-                                                <a class="page-numbers" href="#">3</a>
-                                                <a class="next page-numbers" href="#">
-                                                    <span class="lnr lnr-arrow-right"></span>
-                                                </a>
-                                            </div>
-                                             </nav> --}}
-                                            </div>
-                                    <!-- end /.comment pagination area -->
-                                    <!-- end /.comment-form-area -->
+                                        @if(session()->has('message'))
+                                        <br/>
+                                        <div class="alert alert-success fade-message">
+                                            {{ session()->get('message') }}
+                                        </div>
+                                        @endif
+                                    </form>
                                 </div>
-                                <!-- end /.comments -->
                             </div>
-                            <!-- end /.product-comment -->
                         </div>
-                    </div>
+
+                        <div class="pagination-area pagination-area2">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="pagination-area">
+                                        {!! $comments->links() !!}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
 
                 <div class="col-lg-4">
                     <aside class="sidebar sidebar--single-product">
                         <div class="sidebar-card card--metadata">
                             <ul class="data">
-                                {{-- <li>
-                                    <p>
-                                        <span class="lnr lnr-heart scolor"></span>Favorites</p>
-                                    <span>240</span>
-                                </li> --}}
                                 <li>
                                     <p>
                                         <span class="lnr lnr-bubble mcolor3"></span>@lang('app.comments')</p>
@@ -387,8 +284,8 @@
                                     </ul>
                                 </div>
 
-                                <div class="author-btn">
-                                    <a href="{{LaravelLocalization::localizeURL('/product-owner-profile')}}" class="btn btn--sm btn--round">View Profile</a>
+                                <div>
+                                    <a href="{{LaravelLocalization::localizeURL('/product-owner-profile')}}" class="btn btn--sm btn--round">@lang('app.view_profile')</a>
                                     {{-- <a href="#" class="btn btn--sm btn--round">Message</a> --}}
                                 </div>
                             </div>

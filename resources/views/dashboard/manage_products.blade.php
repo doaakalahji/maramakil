@@ -110,7 +110,11 @@
                                                 <span class="lnr lnr-pencil"></span>@lang('app.edit')</a>
                                         </li>
                                         <li>
+<<<<<<< HEAD
                                             <a href="{{route('show_comments' , $product->id)}}">
+=======
+                                            <a href="">
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                                 <span class="lnr lnr-eye"></span>@lang('app.show_comments')</a>
                                         </li>
                                         <li>

@@ -97,7 +97,10 @@
                         <div class="dashboard__content">
                             <div class="thread">
                                 <ul class="media-list thread-list">
+<<<<<<< HEAD
                                      @foreach($comments as $comment)
+=======
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                     <li class="single-thread">
                                         <div class="media">
                                             <div class="media-left">
@@ -109,6 +112,7 @@
                                                 <div>
                                                     <div class="media-heading">
                                                         <a href="author.html">
+<<<<<<< HEAD
                                                             <h4>{{$comment->name}}</h4>
                                                         </a>
                                                         <span>{{$comment->created_at}}</span>
@@ -121,11 +125,26 @@
                                                     {{-- <a href="" class="reply-link">delete</a> --}}
                                                 </div>
                                                 <p>{{$comment->comment}}</p>
+=======
+                                                            <h4>Themexylum</h4>
+                                                        </a>
+                                                        <span>9 Hours Ago</span>
+                                                    </div>
+                                                    <span class="comment-tag buyer">Purchased</span>
+                                                    <a href="#" class="reply-link">Reply</a>
+                                                </div>
+                                                <p>Nunc placerat mi id nisi interdum mollis. Praesent there pharetra, justo
+                                                    ut sceleris que the mattis.</p>
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                             </div>
                                         </div>
 
                                         <!-- comment reply -->
+<<<<<<< HEAD
                                         {{-- <div class="media depth-2 reply-comment" style="display: none;">
+=======
+                                        <div class="media depth-2 reply-comment" style="display: none;">
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                             <div class="media-left">
                                                 <a href="#">
                                                     <img class="media-object" src="images/m2.png" alt="Commentator Avatar">
@@ -137,10 +156,55 @@
                                                     <button class="btn btn--md btn--round">Post Comment</button>
                                                 </form>
                                             </div>
+<<<<<<< HEAD
                                         </div> --}}
                                         <!-- comment reply -->
                                     </li>
                                      @endforeach
+=======
+                                        </div>
+                                        <!-- comment reply -->
+                                    </li>
+                                    <!-- end single comment thread /.comment-->
+
+                                    <li class="single-thread">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="media-object" src="images/m3.png" alt="Commentator Avatar">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div>
+                                                    <div class="media-heading">
+                                                        <a href="author.html">
+                                                            <h4>Fierce Coder</h4>
+                                                        </a>
+                                                        <span>9 Hours Ago</span>
+                                                    </div>
+                                                    <a href="#" class="reply-link">Reply</a>
+                                                </div>
+                                                <p>Nunc placerat mi id nisi interdum mollis. Praesent phare tra, justo ut
+                                                    sceleris que the mattis, leo quam.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- comment reply -->
+                                        <div class="media depth-2 reply-comment" style="display: none;">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="media-object" src="images/m2.png" alt="Commentator Avatar">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <form action="#" class="comment-reply-form">
+                                                    <textarea name="reply-comment" placeholder="Write your comment..."></textarea>
+                                                    <button class="btn btn--sm btn--round">Post Comment</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                 </ul>
                             </div>
                         </div>
@@ -150,6 +214,7 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 <!-- Modal 2 -->
 <div class="modal fade rating_modal item_remove_modal" id="deleteComment" tabindex="-1" role="dialog" aria-labelledby="deleteComment">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -196,5 +261,14 @@
 
         }
     </script>
+=======
+
+@endsection
+
+@section("script")
+<script>
+
+</script>
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
 @endsection
 

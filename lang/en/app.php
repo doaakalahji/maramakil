@@ -113,5 +113,18 @@ return [
     'price' => 'Price',
     'product_image' => 'Product Image',
     'show_comments' => 'Show Comments',
+    'total_products' => 'Total Products',
+    'total_comments' => 'Total Comments',
+    'total_messages' => 'Total Messages',
+    'recent_comments' => 'Recent Comments',
+    'recent_messages' => 'Recent Messages',
+    'all_messages' => 'All Messages',
+    'message' => 'Message',
+    'view_profile' => 'View Profile',
+    'reply' => 'Reply',
+    'update' => 'Update',
+
+
+
 
 ];
