@@ -337,6 +337,24 @@ color: #0ea429;
     border-radius: 200px;
     cursor: pointer;
 }
+
+.product .product__thumbnail1 img {
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+}
+
+.dashboard-edit .product .prod_option .setting-icon {
+    font-size: 20px;
+    line-height: 45px;
+    width: 45px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    background: #1f1d1c;
+    border-radius: 200px;
+    cursor: pointer;
+}
 ul.nav-tabs li a.active{
     color: #e6af5d;
 }

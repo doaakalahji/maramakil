@@ -3,9 +3,20 @@
 @section("content")
 
 @section('css')
+<<<<<<< HEAD
+    <!-- css -->
+    {{-- <link href="{{ asset('css/pagination_delete.css') }}" rel="stylesheet"> --}}
+    <!-- jquery  -->
+    {{-- <script src="{{ asset('js/deleteMessage.js') }}"></script> --}}
+    {{-- <title>Admin</title> --}}
+    {{-- <link href="{{asset('node_modules/sweetalert2/dist/sweetalert2.css')}}" rel="stylesheet">  --}}
+
+ @endsection
+=======
 
 @endsection
 
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
     <section class="breadcrumb-area">
         <div class="container">
             <div class="row">
@@ -73,6 +84,81 @@
                 
 
                 <div class="row">
+<<<<<<< HEAD
+                    <div class="col-md-12">
+                        <div class="statement_table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Date</th>
+                                        {{-- <th>Product ID</th> --}}
+                                        <th>Product Name</th>
+                                        <th>Detail</th>
+                                        <th>Type</th>
+                                        <th>Price</th>
+
+                                        {{-- <th>Earning</th> --}}
+                                        <th>Action</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach ($products as $product)
+                                    <tr>
+                                        <td>
+                                            @if (File::exists(public_path("img/".$product->image)))
+                                              <img  width="250px" height="100px"
+                                              src="{{asset("img/".$product->image)}}" alt="{{asset("img/".$product->image)}}"
+                                              />
+                                            @else
+                                            {{-- {{dd("this")}} --}}
+                                              <img  width="250px" height="100px"
+                                              src="{{asset("img/product_default.jpg")}}" alt="{{asset("img/product_default.jpg")}}" />
+                                            @endif
+                                            {{-- <img src="{{asset("img/".$product->image)}} ?{{asset("img/".$product->image)}} :  {{asset("img/product_default.jpg")}}"> --}}
+                                        </td>
+                                        <td>{{date('Y-m-d',strtotime($product->created_at))}}</td>
+                                        {{-- <td>MP810094</td> --}}
+                                        <td class="author">{{$product->name}}</td>
+                                        <td class="detail">
+                                            <a href="single-product.html">
+                                                {{-- {!! nl2br($product->description) !!} --}}
+                                              {{\Illuminate\Support\Str::limit($product->description, $limit = 150, $end = '...')}}
+                                            </a>
+                                        </td>
+                                        <td class="type">
+                                            <span class="sale">marble</span>
+                                        </td>
+                                        <td>{{$product->price}}$</td>
+                                        {{-- <td class="earning">$24.50</td> --}}
+                                        <td class="action">
+                                           <a href="{{route('product.edit' , $product->id)}}" style="padding: 0 10px ; color : green ; background-color : white"> <span class="lnr lnr-pencil"></span></a>
+
+                                           <form action="" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                             <a style="color : red ; background-color : white">
+                                                <i class="lnr lnr-trash deletes del_id" data-id="{{$product->id}}"></i>
+                                             </a>
+                                          </form>
+
+                                           {{-- <a href="#" style="padding: 0 10px ; color : red ; background-color : white"
+                                           data-target="#myModal2" data-toggle="modal">  <span class="lnr lnr-trash"></span></a> --}}
+                                            {{-- <a href="invoice.html">view</a> --}}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
+
+                            </table>
+
+
+
+
+=======
                     <div class="col-lg-4 col-md-6">
                         <div class="author-info author-info--dashboard mcolorbg4">
                             <p>@lang('app.total_products')</p>
@@ -91,6 +177,7 @@
                         <div class="author-info author-info--dashboard mcolorbg3">
                             <p>@lang('app.total_messages')</p>
                             <h3>{{ count($messages) }}</h3>
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                         </div>
                     </div>
                 </div>
@@ -178,6 +265,11 @@
 
                 </div>
             </div>
+<<<<<<< HEAD
+
+            <!-- end /.container -->
+=======
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
         </div>
     </section>
 
@@ -185,4 +277,55 @@
 
 @section('script')
 
+<<<<<<< HEAD
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{-- <script src="{{asset('node_modules/sweetalert2/dist/sweetalert2.min.js')}}"></script> --}}
+<script>
+// import swal from 'sweetalert2';
+
+// window.swal = swal;
+    // const swal = window.swal = require('sweetalert2');
+    $(".del_id").on('click', function (e) {
+            var dataId = $(this).attr('data-id');
+            console.log('dataId' ,dataId);
+            e.preventDefault();
+            // console.log($('meta[name="csrf-token"]').attr('content'));
+            swal.fire({
+            title: "Are you sure from delete?",
+            icon: 'warning',
+            text: "You won't be able to revert this!",
+            type: "warning",
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            closeOnConfirm: true,
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'cancel',
+
+            }).then((result) => {
+                if(result.value){
+                    $.ajax({
+                    type: "DELETE",
+                    url: "/product/"+dataId,
+                    // contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                      _token: "{{csrf_token()}}",
+                    //   id : dataId
+                    },
+                 success: function (results) {
+
+                } //success
+                });
+                 location.reload();
+                }
+                else{
+                    location.reload();
+                }
+        });
+    });
+
+  </script>
+=======
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
 @endsection

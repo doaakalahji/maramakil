@@ -69,14 +69,20 @@ Route::group(
 
         Route::middleware(['auth' , 'admin'])->group(function () {
             Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-            Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+            // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
             Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
             Route::post('/save', [ProductController::class , "store"])->name("save_product");
+
+            Route::put('/profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
         });
 
         require __DIR__.'/auth.php';
 
         Route::middleware(['auth', 'verified' , 'admin'])->group(function () {
+            // Route::get('/dashboard', [ProductController::class , "index"])->name('dashboard');
+            Route::get('/manage_products', [ProductController::class , "manageProducts"])->name('manage_products');
+            Route::get('/show_comments/{product_id}', [ProductController::class , "showComments"])->name('show_comments');
+            Route::delete('/comment/{id}', [ProductController::class, 'deleteComment'])->name('comment.destroy');
             Route::get('/dashboard', [DashboardController::class , "getDataDashboard"])->name('dashboard');
             Route::get('/manage_products', [ProductController::class , "manageProducts"])->name('manage_products');
             Route::get('/show_messages', [DashboardController::class , "showMessages"])->name('show_messages');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -158,6 +159,17 @@ class ProductController extends Controller
         $product = Product::where("id" , $id)->first();
         if($product->delete()){
             return redirect()->back()->with('message',"Product Deleted Successfully");
+        }
+    }
+    public function showComments($product_id){
+        $comments = Comment::where("product_id" , $product_id)->get();
+        return view("dashboard.show_comments" , ["comments" => $comments]);
+    }
+    public function deleteComment($id){
+               // dd($id);
+        $comment = Comment::where("id" , $id)->first();
+        if($comment->delete()){
+            return redirect()->back()->with('message',"Comment Deleted Successfully");
         }
     }
 }

@@ -97,6 +97,10 @@
                         <div class="dashboard__content">
                             <div class="thread">
                                 <ul class="media-list thread-list">
+<<<<<<< HEAD
+                                     @foreach($comments as $comment)
+=======
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                     <li class="single-thread">
                                         <div class="media">
                                             <div class="media-left">
@@ -108,6 +112,20 @@
                                                 <div>
                                                     <div class="media-heading">
                                                         <a href="author.html">
+<<<<<<< HEAD
+                                                            <h4>{{$comment->name}}</h4>
+                                                        </a>
+                                                        <span>{{$comment->created_at}}</span>
+                                                    </div>
+                                                  
+                                                     <a  style="margin-left: 70%;" href="#" data-toggle="modal" data-target="#deleteComment" class="delete" onclick="loadDeleteModal({{ $comment->id }})">
+                                             
+                                                        <span class="lnr lnr-trash"></span>@lang('app.delete')</a>
+                                                    {{-- <span class="comment-tag buyer">Purchased</span> --}}
+                                                    {{-- <a href="" class="reply-link">delete</a> --}}
+                                                </div>
+                                                <p>{{$comment->comment}}</p>
+=======
                                                             <h4>Themexylum</h4>
                                                         </a>
                                                         <span>9 Hours Ago</span>
@@ -117,11 +135,16 @@
                                                 </div>
                                                 <p>Nunc placerat mi id nisi interdum mollis. Praesent there pharetra, justo
                                                     ut sceleris que the mattis.</p>
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                             </div>
                                         </div>
 
                                         <!-- comment reply -->
+<<<<<<< HEAD
+                                        {{-- <div class="media depth-2 reply-comment" style="display: none;">
+=======
                                         <div class="media depth-2 reply-comment" style="display: none;">
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                             <div class="media-left">
                                                 <a href="#">
                                                     <img class="media-object" src="images/m2.png" alt="Commentator Avatar">
@@ -133,6 +156,12 @@
                                                     <button class="btn btn--md btn--round">Post Comment</button>
                                                 </form>
                                             </div>
+<<<<<<< HEAD
+                                        </div> --}}
+                                        <!-- comment reply -->
+                                    </li>
+                                     @endforeach
+=======
                                         </div>
                                         <!-- comment reply -->
                                     </li>
@@ -175,6 +204,7 @@
                                             </div>
                                         </div>
                                     </li>
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
                                 </ul>
                             </div>
                         </div>
@@ -184,6 +214,54 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
+<!-- Modal 2 -->
+<div class="modal fade rating_modal item_remove_modal" id="deleteComment" tabindex="-1" role="dialog" aria-labelledby="deleteComment">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">@lang('app.delete_modal_title')  <span id="modal-comment"></span> ? </h3>
+                <input type="hidden" id="comment" name="id">
+                {{-- <p>You will not be able to recover this file!</p> --}}
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <button  type="button"  class="btn btn--round btn-danger btn--default" id="modal-confirm_delete">@lang('app.delete')</button>
+                <button class="btn btn--round modal_close" data-dismiss="modal">@lang('app.cancel')</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('script')
+    <script>
+        function loadDeleteModal(id) {
+            $('#modal-confirm_delete').attr('onclick', `confirmDelete(${id})`);
+            $('#deleteComment').modal('show');
+        }
+
+        function confirmDelete(id) {
+            $.ajax({
+                    type: "DELETE",
+                    url: "/comment/"+id,
+                    // contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                      _token: "{{csrf_token()}}",
+                    },
+                 success: function (results) {
+                                  } //success
+                });
+                $('#deleteComment').modal('hide');
+                location.reload();
+
+        }
+    </script>
+=======
 
 @endsection
 
@@ -191,5 +269,6 @@
 <script>
 
 </script>
+>>>>>>> 18d10868c88c179542e5ad86765db813cbcdaa34
 @endsection
 
